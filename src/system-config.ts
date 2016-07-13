@@ -7,6 +7,7 @@
  **********************************************************************************************/
 /** Map relative paths to URLs. */
 const map: any = {
+    'bootstrap': 'vendor/bootstrap',
 };
 
 /** User packages configuration. */
@@ -33,6 +34,12 @@ const barrels: string[] = [
   // App specific barrels.
   'app',
   'app/shared',
+  'app/cities',
+  'app/city',
+  'app/district',
+  'app/block',
+  'app/buildings',
+  'app/building',
   /** @cli-barrel */
 ];
 

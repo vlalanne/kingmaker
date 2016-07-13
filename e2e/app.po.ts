@@ -1,4 +1,4 @@
-export class PathfinderPage {
+export class KingmakerPage {
   navigateTo() {
     return browser.get('/');
   }

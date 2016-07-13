@@ -1,0 +1,32 @@
+.main {
+  margin: 1em;
+  width: 8em;
+  height: 8em;
+}
+
+.large {
+  width: 8em;
+  height: 8em;
+}
+
+.horizontal {
+  width: 8em;
+  height: 4em;
+}
+
+.vertical {
+  width: 4em;
+  height: 8em;
+}
+
+.vertical > img {
+  transform: rotate(90deg);
+  transform-origin: 25% 50%;
+  width: 8em;
+  height: 4em
+}
+
+.normal {
+  width: 4em;
+  height: 4em;
+}

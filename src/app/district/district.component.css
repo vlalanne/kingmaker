@@ -1,0 +1,47 @@
+td, tr{
+    border-width: 0;
+    text-align: center;
+}
+
+.water {
+    background: lightblue
+}
+.grass {
+    background: lightgreen
+}
+
+.vertical-text {
+	transform: rotate(90deg);
+}
+
+.north, .south {
+    height: 4em
+}
+
+.east, .west {
+    width: 4em
+}
+
+.north.district,.south.district {
+    height: 0em
+}
+
+.east.district, .west.district{
+    width: 0em
+}
+
+.wall{
+    border-style: solid;
+    border-width: .5em;
+}
+
+.wall.wooden{
+    border-color: brown;
+}
+
+.buildings{
+    width: 36em;
+    height: 36em;
+    background-color: lightgrey;
+}
+

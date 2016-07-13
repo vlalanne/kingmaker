@@ -1,10 +1,10 @@
-import { PathfinderPage } from './app.po';
+import { KingmakerPage } from './app.po';
 
-describe('pathfinder App', function() {
-  let page: PathfinderPage;
+describe('kingmaker App', function() {
+  let page: KingmakerPage;
 
   beforeEach(() => {
-    page = new PathfinderPage();
+    page = new KingmakerPage();
   });
 
   it('should display message saying app works', () => {

@@ -1,0 +1,167 @@
+[
+  {
+    "id": "wooden-wall",
+    "name": "wooden-wall"
+  },
+  {
+    "id": "house",
+    "name": "house",
+    "map": "/app/img/buildings/house.png"
+  },
+  {
+    "id": "trade-fair",
+    "name": "trade-fair",
+    "size": "MEDIUM",
+    "map": "/app/img/buildings/trade-fair.png"
+  },
+  {
+    "id": "garrison",
+    "name": "garrison",
+    "size": "MEDIUM",
+    "map": "/app/img/buildings/garrison.png"
+  },
+  {
+    "id": "healer",
+    "name": "healer",
+    "map": "/app/img/buildings/healer.png"
+  },
+  {
+    "id": "castle",
+    "name": "castle",
+    "size": "LARGE",
+    "map": "/app/img/buildings/castle.png"
+  },
+  {
+    "id": "city-hall",
+    "name": "city-hall",
+    "size": "MEDIUM",
+    "map": "/app/img/buildings/city-hall.png"
+  },
+  {
+    "id": "weaver",
+    "name": "weaver",
+    "map": "/app/img/buildings/weaver.png"
+  },
+  {
+    "id": "dock",
+    "name": "dock",
+    "map": "/app/img/buildings/dock.png"
+  },
+  {
+    "id": "dump",
+    "name": "dump",
+    "map": "/app/img/buildings/dump.png"
+  },
+  {
+    "id": "noble-house",
+    "name": "noble-house",
+    "map": "/app/img/buildings/noble-house.png"
+  },
+  {
+    "id": "school",
+    "name": "school",
+    "map": "/app/img/buildings/school.png"
+  },
+  {
+    "id": "blacksmith",
+    "name": "blacksmith",
+    "map": "/app/img/buildings/blacksmith.png"
+  },
+  {
+    "id": "forge",
+    "name": "forge",
+    "map": "/app/img/buildings/forge.png"
+  },
+  {
+    "id": "exotic-craftsman",
+    "name": "exotic-craftsman",
+    "map": "/app/img/buildings/exotic-craftsman.png"
+  },
+  {
+    "id": "brewery",
+    "name": "brewery",
+    "map": "/app/img/buildings/brewery.png"
+  },
+  {
+    "id": "park",
+    "name": "park",
+    "map": "/app/img/buildings/park.png"
+  },
+  {
+    "id": "mill",
+    "name": "mill",
+    "map": "/app/img/buildings/mill.png"
+  },
+  {
+    "id": "inn",
+    "name": "inn",
+    "map": "/app/img/buildings/inn.png"
+  },
+  {
+    "id": "statue",
+    "name": "statue",
+    "map": "/app/img/buildings/statue.png"
+  },
+  {
+    "id": "sawmill",
+    "name": "sawmill",
+    "map": "/app/img/buildings/sawmill.png"
+  },
+  {
+    "id": "tavern",
+    "name": "tavern",
+    "map": "/app/img/buildings/tavern.png"
+  },
+  {
+    "id": "barracks",
+    "name": "barracks",
+    "map": "/app/img/buildings/barracks.png"
+  },
+  {
+    "id": "shop",
+    "name": "shop",
+    "map": "/app/img/buildings/shop.png"
+  },
+  {
+    "id": "granary",
+    "name": "granary",
+    "map": "/app/img/buildings/granary.png"
+  },
+  {
+    "id": "stable",
+    "name": "stable",
+    "map": "/app/img/buildings/stable.png"
+  },
+  {
+    "id": "sanctuary-erastil",
+    "name": "sanctuary-erastil",
+    "map": "/app/img/buildings/sanctuary-erastil.png"
+  },
+  {
+    "id": "sanctuary-sarenrae",
+    "name": "sanctuary-sarenrae",
+    "map": "/app/img/buildings/sanctuary-sarenrae.png"
+  },
+  {
+    "id": "temple-sarenrae",
+    "name": "temple-sarenrae",
+    "size": "MEDIUM",
+    "map": "/app/img/buildings/temple-sarenrae.png"
+  },
+  {
+    "id": "graveyard",
+    "name": "graveyard",
+    "map": "/app/img/buildings/graveyard.png"
+  },
+  {
+    "id": "watchtower",
+    "name": "watchtower",
+    "map": "/app/img/buildings/watchtower.png"
+  },
+  {
+    "id": "magic-academy",
+    "name": "magic-academy",
+    "size": "LARGE",
+    "map": "/app/img/buildings/magic-academy.png"
+  }
+]
