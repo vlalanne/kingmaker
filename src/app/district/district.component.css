@@ -1,4 +1,4 @@
-td, tr{
+td, tr {
     border-width: 0;
     text-align: center;
 }
@@ -6,12 +6,13 @@ td, tr{
 .water {
     background: lightblue
 }
+
 .grass {
     background: lightgreen
 }
 
 .vertical-text {
-	transform: rotate(90deg);
+    transform: rotate(90deg);
 }
 
 .north, .south {
@@ -22,26 +23,35 @@ td, tr{
     width: 4em
 }
 
-.north.district,.south.district {
+.north.district, .south.district {
     height: 0em
 }
 
-.east.district, .west.district{
+.east.district, .west.district {
     width: 0em
 }
 
-.wall{
+.wall {
     border-style: solid;
     border-width: .5em;
 }
 
-.wall.wooden{
+.wall.wooden {
     border-color: brown;
 }
 
-.buildings{
+.buildings {
+    position: relative;
     width: 36em;
     height: 36em;
     background-color: lightgrey;
 }
 
+.watermark {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    opacity: 0.9;
+    z-index: 99;
+    color: white;
+}

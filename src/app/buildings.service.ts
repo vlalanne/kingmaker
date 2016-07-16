@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 import { BuildingModel } from './model';
+import { BUILDINGS } from './conf/buildings';
 
 @Injectable()
 export class BuildingsService {
@@ -21,9 +22,7 @@ export class BuildingsService {
   }
 
   getModels(): Promise<BuildingModel[]> {
-    return this.http.get(this.url)
-      .toPromise()
-      .then(response => response.json())
+    return Promise.resolve(BUILDINGS)
       .catch(this.handleError);
   }
 }

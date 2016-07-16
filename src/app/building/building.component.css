@@ -8,6 +8,7 @@
 img {
     margin: .5em
 }
+
 #main:hover > .summary {
     display: none;
 }
@@ -25,9 +26,13 @@ img {
 }
 
 .detail {
-    background: grey;
+    background: lightgray;
     padding: .5em;
     padding-left: 2em;
+}
+
+.detail label {
+    padding-right: 1em;
 }
 
 .image {

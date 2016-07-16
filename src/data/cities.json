@@ -3,7 +3,7 @@
     "name": "Port Colombe",
     "districts": [
       {
-        "name": "Chateau",
+        "name": "Mont-Sur",
         "south": {
           "type": "DISTRICT",
           "name": "Port"
@@ -170,7 +170,7 @@
         ]
       },
       {
-        "name": "Port",
+        "name": "Marché",
         "south": {
           "type": "WATER",
           "name": "Lac de la Défense"
@@ -225,7 +225,7 @@
     "name": "Olegbourg",
     "districts": [
       {
-        "name": "Chateau",
+        "name": "Avant-Poste",
         "south": {
           "type": "GRASS"
         },
