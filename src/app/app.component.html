@@ -1,11 +1,14 @@
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li [routerLinkActive]="['active']"><a [routerLink]="['cities']" >{{citiesLabel}}</a></li>
-      </ul>
+<div id="main">
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li [routerLinkActive]="['active']"><a [routerLink]="['buildings']">{{buildingsLabel}}</a></li>
+          <li [routerLinkActive]="['active']"><a [routerLink]="['cities']">{{citiesLabel}}</a></li>
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
-<router-outlet></router-outlet>
+  </nav>
+  <router-outlet></router-outlet>
+</div>

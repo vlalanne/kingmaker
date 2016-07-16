@@ -1,5 +1,6 @@
 {
   "cities": "Cities",
+  "buildings": "Buildings",
   "wooden-wall": "Wooden Wall",
   "house": "House",
   "trade-fair": "Trade Fair",
@@ -28,7 +29,7 @@
   "granary": "Granary",
   "stable": "Stable",
   "sanctuary-sarenrae": "Sanctuary of Sarenrae",
-  "sanctuary-erastil": "Sanctuaire of Erastil",
+  "sanctuary-erastil": "Sanctuary of Erastil",
   "temple-sarenrae": "Temple of Sarenrae",
   "graveyard": "Graveyard",
   "watchtower": "Watchtower",

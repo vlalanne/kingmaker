@@ -14,10 +14,13 @@ import { TranslationService } from './translation.service';
 })
 export class AppComponent {
   citiesLabel: string;
+  buildingsLabel: string;
   constructor(private translationService: TranslationService) { }
 
   ngOnInit() {
     this.translationService.getMessage('cities')
       .then(label => this.citiesLabel = label)
+    this.translationService.getMessage('buildings')
+      .then(label => this.buildingsLabel = label)
   }
 }
