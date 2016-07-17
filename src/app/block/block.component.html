@@ -1,25 +1,31 @@
 <div class="main">
-  <div *ngIf="topLeftModel && topLeftModel.size === 'LARGE'">
+  <div *ngIf="topLeftModel && topLeftModel.size === 'LARGE'" class="tooltip-container">
+    <building-detail class="{{getDetailClass(topLeftModel)}}" [building]="topLeftModel" [label]="topLeftLabel"></building-detail>
     <img class="large" src="{{topLeftModel.map}}" alt="{{topLeftLabel}}" title="{{topLeftLabel}}">
   </div>
   <table *ngIf="!topLeftModel || topLeftModel.size != 'LARGE'">
     <tr>
-      <td *ngIf="topLeftModel && topLeftModel.size === 'MEDIUM' && topLeft.vertical" rowspan="2">
-         <div class="vertical"><img src="{{topLeftModel.map}}" alt="{{topLeftLabel}}" title="{{topLeftLabel}}"></div>
+      <td *ngIf="topLeftModel && topLeftModel.size === 'MEDIUM' && topLeft.vertical" rowspan="2" class="tooltip-container">
+        <building-detail class="{{getDetailClass(topLeftModel)}}" [building]="topLeftModel" [label]="topLeftLabel"></building-detail>
+        <div class="vertical"><img src="{{topLeftModel.map}}" alt="{{topLeftLabel}}" title="{{topLeftLabel}}"></div>
       </td>
-      <td *ngIf="topLeftModel && topLeftModel.size === 'MEDIUM' && !topLeft.vertical" colspan="2">
+      <td *ngIf="topLeftModel && topLeftModel.size === 'MEDIUM' && !topLeft.vertical" colspan="2" class="tooltip-container">
+        <building-detail class="{{getDetailClass(topLeftModel)}}" [building]="topLeftModel" [label]="topLeftLabel"></building-detail>
         <img class="horizontal" src="{{topLeftModel.map}}" alt="{{topLeftLabel}}" title="{{topLeftLabel}}">
       </td>
-      <td *ngIf="topLeftModel && topLeftModel.size != 'MEDIUM'">
+      <td *ngIf="topLeftModel && topLeftModel.size != 'MEDIUM'" class="tooltip-container">
+        <building-detail class="{{getDetailClass(topLeftModel)}}" [building]="topLeftModel" [label]="topLeftLabel"></building-detail>
         <img class="normal" src="{{topLeftModel.map}}" alt="{{topLeftLabel}}" title="{{topLeftLabel}}">
       </td>
       <td *ngIf="!topLeftModel">
         <img class="normal" src="/app/img/maps/no-building.png" alt="{{noBuildingLabel}}" title="{{noBuildingLabel}}">
       </td>
-      <td *ngIf="canDrawTopRight() && topRightModel && topRightModel.size === 'MEDIUM' ">
+      <td *ngIf="canDrawTopRight() && topRightModel && topRightModel.size === 'MEDIUM' " class="tooltip-container">
+        <building-detail class="{{getDetailClass(topRightModel)}}" [building]="topRightModel" [label]="topRightLabel"></building-detail>
         <div class="vertical"><img src="{{topRightModel.map}}" alt="{{topRightLabel}}" title="{{topRightLabel}}"></div>
       </td>
-      <td *ngIf="canDrawTopRight() && topRightModel && topRightModel.size != 'MEDIUM'">
+      <td *ngIf="canDrawTopRight() && topRightModel && topRightModel.size != 'MEDIUM'" class="tooltip-container">
+        <building-detail class="{{getDetailClass(topRightModel)}}" [building]="topRightModel" [label]="topRightLabel"></building-detail>
         <img class="normal" src="{{topRightModel.map}}" alt="{{topRightLabel}}" title="{{topRightLabel}}">
       </td>
       <td *ngIf="canDrawTopRight() && !topRightModel">
@@ -27,16 +33,19 @@
       </td>
     </tr>
     <tr>
-      <td *ngIf="canDrawBottomLeft() && bottomLeftModel && bottomLeftModel.size === 'MEDIUM'" colspan="2">
+      <td *ngIf="canDrawBottomLeft() && bottomLeftModel && bottomLeftModel.size === 'MEDIUM'" colspan="2" class="tooltip-container">
+        <building-detail class="{{getDetailClass(bottomLeftModel)}}" [building]="bottomLeftModel" [label]="bottomLeftLabel"></building-detail>
         <img class="horizontal" src="{{bottomLeftModel.map}}" alt="{{bottomLeftLabel}}" title="{{bottomLeftLabel}}">
       </td>
-      <td *ngIf="canDrawBottomLeft() && bottomLeftModel && bottomLeftModel.size != 'MEDIUM'">
+      <td *ngIf="canDrawBottomLeft() && bottomLeftModel && bottomLeftModel.size != 'MEDIUM'" class="tooltip-container">
+        <building-detail class="{{getDetailClass(bottomLeftModel)}}" [building]="bottomLeftModel" [label]="bottomLeftLabel"></building-detail>
         <img class="normal" src="{{bottomLeftModel.map}}" alt="{{bottomLeftLabel}}" title="{{bottomLeftLabel}}">
       </td>
       <td *ngIf="canDrawBottomLeft() && !bottomLeftModel">
         <img class="normal" src="/app/img/maps/no-building.png" alt="{{noBuildingLabel}}" title="{{noBuildingLabel}}">
       </td>
-      <td *ngIf="canDrawBottomRight() && bottomRightModel">
+      <td *ngIf="canDrawBottomRight() && bottomRightModel" class="tooltip-container">
+        <building-detail class="{{getDetailClass(bottomRightModel)}}" [building]="bottomRightModel" [label]="bottomRightLabel"></building-detail>
         <img class="normal" src="{{bottomRightModel.map}}" alt="{{bottomRightLabel}}" title="{{bottomRightLabel}}">
       </td>
       <td *ngIf="canDrawBottomRight() && !bottomRightModel">

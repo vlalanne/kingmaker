@@ -4,6 +4,7 @@ import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class TranslationService {
+  private messages;
   private language: string;
   private url: string;
   constructor(private http: Http) {
@@ -16,10 +17,16 @@ export class TranslationService {
   }
 
   getMessages() {
-    return this.http.get(this.url)
-      .toPromise()
-      .then(response => response.json())
-      .catch(e => { });
+    if (this.messages == null) {
+      return this.http.get(this.url)
+        .toPromise()
+        .then(response => {
+          this.messages = response.json();
+          return this.messages;
+        })
+    } else {
+      return Promise.resolve(this.messages);
+    }
   }
 
   getMessage(key: string): Promise<string> {

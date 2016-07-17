@@ -1,0 +1,44 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="{{getStatsClass()}}">
+      <h3> {{label}} </h3>
+      <div class="row">
+        <div class="col-sm-4">
+          <label>{{economy}}</label><span>{{building.economy}}</span>
+        </div>
+        <div class="col-sm-4">
+          <label>{{loyalty}}</label><span>{{building.loyalty}}</span>
+        </div>
+        <div class="col-sm-4">
+          <label>{{stability}}</label><span>{{building.stability}}</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <label>{{defence}}</label><span>{{building.defence}}</span>
+        </div>
+        <div class="col-sm-4">
+          <label>{{value}}</label><span>{{building.value}}</span>
+        </div>
+        <div class="col-sm-4">
+          <label>{{price}}</label><span>{{building.price}}</span>
+        </div>
+      </div>
+      <h4>{{magicObjects}}</h4>
+      <div class="row">
+        <div class="col-sm-4">
+          <label>{{minor}}</label><span>{{building.minorMagicObject}}</span>
+        </div>
+        <div class="col-sm-4">
+          <label>{{medium}}</label><span>{{building.mediumMagicObject}}</span>
+        </div>
+        <div class="col-sm-4">
+          <label>{{major}}</label><span>{{building.majorMagicObject}}</span>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="building.image" class="col-sm-4">
+      <img class="image" src="{{building.image}}">
+    </div>
+  </div>
+</div>

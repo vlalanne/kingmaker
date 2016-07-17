@@ -30,13 +30,3 @@ img {
     padding: .5em;
     padding-left: 2em;
 }
-
-.detail label {
-    padding-right: 1em;
-}
-
-.image {
-    height: 10em;
-    border-radius: 5%;
-    border: goldenrod ridge 5px;
-}

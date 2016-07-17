@@ -4,6 +4,7 @@ export const BUILDINGS: BuildingModel[]=[
     .setSize("MEDIUM")
     .setMap("/app/img/maps/city-hall.png")
     .setIcon("/app/img/icons/city-hall.png")
+    .setImage("/app/img/images/city-hall.png")
     .setEconomy(1)
     .setLoyalty(1)
     .setStability(1)

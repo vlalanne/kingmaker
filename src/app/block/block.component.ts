@@ -2,12 +2,14 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Building, BuildingModel } from '../model/index';
 import { BuildingsService } from '../buildings.service';
 import { TranslationService } from '../translation.service';
+import { BuildingDetailComponent } from '../building-detail'
 
 @Component({
   moduleId: module.id,
   selector: 'city-block',
   templateUrl: 'block.component.html',
-  styleUrls: ['block.component.css']
+  styleUrls: ['block.component.css'],
+  directives: [BuildingDetailComponent]
 })
 export class BlockComponent implements OnInit {
 
@@ -57,6 +59,14 @@ export class BlockComponent implements OnInit {
           }
         }
         )
+    }
+  }
+
+  getDetailClass(building: BuildingModel) {
+    if (building.image) {
+      return "detail wide";
+    } else {
+      return "detail";
     }
   }
 

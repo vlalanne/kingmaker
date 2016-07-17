@@ -1,53 +1,26 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { BuildingModel } from '../model/index';
 import { TranslationService } from '../translation.service';
+import { BuildingDetailComponent } from '../building-detail';
 
 @Component({
   moduleId: module.id,
   selector: 'building',
   templateUrl: 'building.component.html',
-  styleUrls: ['building.component.css']
+  styleUrls: ['building.component.css'],
+  directives: [BuildingDetailComponent]
 })
 export class BuildingComponent implements OnInit {
   @Input()
   building: BuildingModel;
   label: string;
-  economy: string;
-  loyalty: string;
-  stability: string;
-  defence: string;
-  value: string;
-  price: string;
-  magicObjects: string;
-  minor: string;
-  medium: string;
-  major: string;
+
 
   constructor(private translationSerivce: TranslationService) { }
 
   ngOnInit() {
     this.translationSerivce.getMessage(this.building.name)
       .then(label => this.label = label)
-    this.translationSerivce.getMessage("economy")
-      .then(label => this.economy = label)
-    this.translationSerivce.getMessage("loyalty")
-      .then(label => this.loyalty = label)
-    this.translationSerivce.getMessage("stability")
-      .then(label => this.stability = label)
-    this.translationSerivce.getMessage("defence")
-      .then(label => this.defence = label)
-    this.translationSerivce.getMessage("value")
-      .then(label => this.value = label)
-    this.translationSerivce.getMessage("price")
-      .then(label => this.price = label)
-    this.translationSerivce.getMessage("magicObjects")
-      .then(label => this.magicObjects = label)
-    this.translationSerivce.getMessage("minor")
-      .then(label => this.minor = label)
-    this.translationSerivce.getMessage("medium")
-      .then(label => this.medium = label)
-    this.translationSerivce.getMessage("major")
-      .then(label => this.major = label)
   }
 
 }

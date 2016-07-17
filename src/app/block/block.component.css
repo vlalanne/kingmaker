@@ -30,3 +30,27 @@
   width: 4em;
   height: 4em;
 }
+
+.tooltip-container {
+  position: relative;
+}
+
+.tooltip-container .detail {
+  text-align: initial;
+  visibility: hidden;
+  height: max-content;
+  width: 30em;
+  background-color: white;
+  padding: .5em;
+  position: absolute;
+  z-index: 1;
+  border: black solid 1px;
+}
+
+.wide {
+  width: 50em !important;
+}
+
+.tooltip-container:hover .detail {
+  visibility: visible;
+}
