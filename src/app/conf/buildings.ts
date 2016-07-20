@@ -19,7 +19,7 @@ export const BUILDINGS: BuildingModel[]=[
   new BuildingModel("house", "house")
     .setMap("app/img/maps/house.png")
     .setIcon("app/img/icons/house.png")
-    .setPrice(2),
+    .setPrice(3),
   new BuildingModel("castle", "castle")
     .setSize("LARGE")
     .setMap("app/img/maps/castle.png")
@@ -46,10 +46,16 @@ export const BUILDINGS: BuildingModel[]=[
     .setIcon("app/img/icons/watchtower.png")
     .setStability(1)
     .setDefence(2),
-  new BuildingModel("wooden-wall", "wooden-wall")
-    .setIcon("app/img/icons/wooden-wall.png")
+  new BuildingModel("wall", "wall")
+    .setIcon("app/img/icons/wall.png")
     .setDefence(4)
     .setPrice(8),
+  new BuildingModel("jail", "jail")
+    .setMap("app/img/maps/jail.png")
+    .setIcon("app/img/icons/jail.png")
+    .setLoyalty(2)
+    .setStability(2)
+    .setPrice(14),
   new BuildingModel("dock", "dock")
     .setMap("app/img/maps/dock.png")
     .setIcon("app/img/icons/dock.png")
@@ -75,6 +81,12 @@ export const BUILDINGS: BuildingModel[]=[
     .setIcon("app/img/icons/school.png")
     .setEconomy(1)
     .setLoyalty(1)
+    .setPrice(6),
+  new BuildingModel("tannery", "tannery")
+    .setMap("app/img/maps/tannery.png")
+    .setIcon("app/img/icons/tannery.png")
+    .setEconomy(1)
+    .setStability(1)
     .setPrice(6),
   new BuildingModel("weaver", "weaver")
     .setMap("app/img/maps/weaver.png")
@@ -146,8 +158,18 @@ export const BUILDINGS: BuildingModel[]=[
     .setIcon("app/img/icons/shop.png")
     .setEconomy(1)
     .setStability(1)
-    .setValue(1)
+    .setValue(500)
     .setPrice(8),
+  new BuildingModel("magic-shop", "magic-shop")
+    .setSize("MEDIUM")
+    .setMap("app/img/maps/magic-shop.png")
+    .setIcon("app/img/icons/magic-shop.png")
+    .setEconomy(1)
+    .setValue(2000)
+    .setMinorMagicObject(4)
+    .setMediumMagicObject(2)
+    .setMajorMagicObject(1)
+    .setPrice(68),
   new BuildingModel("granary", "granary")
     .setMap("app/img/maps/granary.png")
     .setIcon("app/img/icons/granary.png")
@@ -161,10 +183,30 @@ export const BUILDINGS: BuildingModel[]=[
     .setLoyalty(1)
     .setValue(500)
     .setPrice(10),
+  new BuildingModel("sanctuary-abadar", "sanctuary-abadar")
+    .setMap("app/img/maps/sanctuary-abadar.png")
+    .setIcon("app/img/icons/sanctuary-abadar.png")
+    .setLoyalty(1)
+    .setMinorMagicObject(1)
+    .setPrice(8),
   new BuildingModel("sanctuary-erastil", "sanctuary-erastil")
     .setMap("app/img/maps/sanctuary-erastil.png")
     .setIcon("app/img/icons/sanctuary-erastil.png")
     .setLoyalty(1)
+    .setPrice(8),
+  new BuildingModel("temple-erastil", "temple-erastil")
+    .setSize("MEDIUM")
+    .setMap("app/img/maps/temple-erastil.png")
+    .setIcon("app/img/icons/temple-erastil.png")
+    .setLoyalty(2)
+    .setStability(2)
+    .setMinorMagicObject(2)
+    .setPrice(32),
+  new BuildingModel("sanctuary-irori", "sanctuary-irori")
+    .setMap("app/img/maps/sanctuary-irori.png")
+    .setIcon("app/img/icons/sanctuary-irori.png")
+    .setLoyalty(1)
+    .setMinorMagicObject(1)
     .setPrice(8),
   new BuildingModel("sanctuary-sarenrae", "sanctuary-sarenrae")
     .setMap("app/img/maps/sanctuary-sarenrae.png")
@@ -179,7 +221,15 @@ export const BUILDINGS: BuildingModel[]=[
     .setLoyalty(2)
     .setStability(2)
     .setMinorMagicObject(2)
-    .setPrice(8),
+    .setPrice(32),
+  new BuildingModel("cathedral-sarenrae", "cathedral-sarenrae")
+    .setSize("LARGE")
+    .setMap("app/img/maps/cathedral-sarenrae.png")
+    .setIcon("app/img/icons/cathedral-sarenrae.png")
+    .setLoyalty(6)
+    .setStability(3)
+    .setMinorMagicObject(2)
+    .setPrice(58),
   new BuildingModel("graveyard", "graveyard")
     .setMap("app/img/maps/graveyard.png")
     .setIcon("app/img/icons/graveyard.png")
@@ -194,6 +244,23 @@ export const BUILDINGS: BuildingModel[]=[
     .setMinorMagicObject(3)
     .setMediumMagicObject(2)
     .setPrice(52),
+  new BuildingModel("magic-academy-tower", "magic-academy-tower")
+    .setSize("LARGE")
+    .setMap("app/img/maps/magic-academy-tower.png")
+    .setIcon("app/img/icons/magic-academy-tower.png")
+    .setEconomy(3)
+    .setLoyalty(4)
+    .setMinorMagicObject(6)
+    .setMediumMagicObject(4)
+    .setPrice(82),
+  new BuildingModel("mage-tower", "mage-tower")
+    .setMap("app/img/maps/mage-tower.png")
+    .setIcon("app/img/icons/mage-tower.png")
+    .setEconomy(1)
+    .setLoyalty(2)
+    .setMinorMagicObject(3)
+    .setMediumMagicObject(5)
+    .setPrice(30),
   new BuildingModel("statue", "statue")
     .setMap("app/img/maps/statue.png")
     .setIcon("app/img/icons/statue.png")

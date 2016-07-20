@@ -34,10 +34,7 @@ td, tr {
 .wall {
     border-style: solid;
     border-width: .5em;
-}
-
-.wall.wooden {
-    border-color: brown;
+    border-color: darkslategrey;
 }
 
 .buildings {
