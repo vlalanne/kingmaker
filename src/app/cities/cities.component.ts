@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, ROUTER_DIRECTIVES } from '@angular/router';
 import { City } from '../model';
 import { CitiesService } from '../cities.service';
 import { CityComponent } from '../city';
@@ -9,7 +9,7 @@ import { CityComponent } from '../city';
   selector: 'app-cities',
   templateUrl: 'cities.component.html',
   styleUrls: ['cities.component.css'],
-  directives: [CityComponent]
+  directives: [CityComponent, ROUTER_DIRECTIVES]
 })
 export class CitiesComponent implements OnInit {
   cities: City[];
@@ -18,14 +18,10 @@ export class CitiesComponent implements OnInit {
   error: any;
   private sub: any;
 
-  constructor(private citiesService: CitiesService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private citiesService: CitiesService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.getCities();
-  }
-
-  onSelect(city: City) {
-    this.router.navigate(['/cities/' + city.id]);
   }
 
   getCities() {
@@ -36,7 +32,7 @@ export class CitiesComponent implements OnInit {
         this.sub = this.route.params.subscribe(params => {
           let id = params['selected'];
           if (id) {
-            this.selectedCity = this.cities.find(city => id === city.id);
+            this.selectedCity = this.cities.find(city => id.toLowerCase() === city.name.toLowerCase());
           } else {
             this.selectedCity = this.cities[0];
           }

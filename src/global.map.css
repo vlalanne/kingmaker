@@ -1,0 +1,28 @@
+@font-face {
+  font-family: parrishRoman;
+  src: url(p22-parrish-roman.ttf);
+}
+
+.map-icon {
+  background: transparent;
+  color: white;
+  font-family: parrishRoman;
+  font-size: .8em;
+}
+
+/*.number-icon {
+}*/
+
+.element-icon {
+  margin-left: -2.5em !important;
+  margin-top: -3em !important;
+  width: 5em !important;
+  height: auto !important;
+  text-align: center;
+}
+
+.element-icon img {
+  height: 4em;
+  width: 4em;
+  align-self: center;
+}

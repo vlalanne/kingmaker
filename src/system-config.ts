@@ -8,6 +8,7 @@
 /** Map relative paths to URLs. */
 const map: any = {
     'bootstrap': 'vendor/bootstrap',
+    'leaflet': 'vendor/leaflet',
 };
 
 /** User packages configuration. */
@@ -41,6 +42,7 @@ const barrels: string[] = [
   'app/buildings',
   'app/building',
   'app/building-detail',
+  'app/map',
   /** @cli-barrel */
 ];
 

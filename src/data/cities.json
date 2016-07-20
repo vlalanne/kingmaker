@@ -1,7 +1,6 @@
 [
   {
     "name": "Port Colombe",
-    "id": "port-colombe",
     "districts": [
       {
         "name": "Mont-Sur",
@@ -249,7 +248,6 @@
   },
   {
     "name": "Olegbourg",
-    "id": "olegbourg",
     "districts": [
       {
         "name": "Avant-Poste",
@@ -332,7 +330,6 @@
   },
   {
     "name": "Akadomia",
-    "id": "akadomia",
     "districts": [
       {
         "name": "Akadomia",
@@ -415,7 +412,6 @@
   },
   {
     "name": "Varnhold",
-    "id": "varnhold",
     "districts": [
       {
         "name": "Varnhold",

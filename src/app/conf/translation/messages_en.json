@@ -1,6 +1,7 @@
 {
-  "cities": "Cities",
   "buildings": "Buildings",
+  "cities": "Cities",
+  "map": "Map",
   "economy": "Economy:",
   "loyalty": "Loyalty:",
   "stability": "Stability:",
