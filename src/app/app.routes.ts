@@ -4,6 +4,7 @@ import { BuildingsComponent } from './buildings';
 
 const routes: RouterConfig = [
    { path: 'cities', component: CitiesComponent},
+   { path: 'cities/:selected', component: CitiesComponent},
    { path: 'buildings', component: BuildingsComponent}
 ];
 

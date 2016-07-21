@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { City } from '../model';
 import { CitiesService } from '../cities.service';
 import { CityComponent } from '../city';
@@ -15,21 +16,36 @@ export class CitiesComponent implements OnInit {
   selectedCity: City;
   addingHero = false;
   error: any;
+  private sub: any;
 
-  constructor(private citiesService: CitiesService) { }
+  constructor(private citiesService: CitiesService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     this.getCities();
   }
 
   onSelect(city: City) {
-    this.selectedCity = city;
+    this.router.navigate(['/cities/' + city.id]);
   }
 
   getCities() {
     this.citiesService
       .getCities()
-      .then(cities => this.cities = cities)
+      .then(cities => {
+        this.cities = cities;
+        this.sub = this.route.params.subscribe(params => {
+          let id = params['selected'];
+          if (id) {
+            this.selectedCity = this.cities.find(city => id === city.id);
+          } else {
+            this.selectedCity = this.cities[0];
+          }
+        });
+      })
       .catch(error => this.error = error);
+  }
+
+  ngOnDestroy() {
+    this.sub.unsubscribe();
   }
 }

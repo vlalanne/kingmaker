@@ -1,6 +1,7 @@
 [
   {
     "name": "Port Colombe",
+    "id": "port-colombe",
     "districts": [
       {
         "name": "Mont-Sur",
@@ -41,8 +42,8 @@
           },
           {
             "x": 0,
-            "y": 1,
-            "model": "temple-sarenrae"
+            "y": 0,
+            "model": "cathedral-sarenrae"
           },
           {
             "x": 2,
@@ -133,6 +134,11 @@
             "model": "school"
           },
           {
+            "x": 4,
+            "y": 4,
+            "model": "jail"
+          },
+          {
             "x": 5,
             "y": 4,
             "model": "dock"
@@ -203,9 +209,29 @@
             "model": "house"
           },
           {
+            "x": 3,
+            "y": 1,
+            "model": "sanctuary-abadar"
+          },
+          {
+            "x": 1,
+            "y": 2,
+            "model": "shop"
+          },
+          {
             "x": 2,
             "y": 2,
             "model": "trade-fair"
+          },
+          {
+            "x": 0,
+            "y": 3,
+            "model": "shop"
+          },
+          {
+            "x": 1,
+            "y": 3,
+            "model": "house"
           },
           {
             "x": 2,
@@ -223,6 +249,7 @@
   },
   {
     "name": "Olegbourg",
+    "id": "olegbourg",
     "districts": [
       {
         "name": "Avant-Poste",
@@ -265,6 +292,11 @@
             "model": "watchtower"
           },
           {
+            "x": 0,
+            "y": 4,
+            "model": "granary"
+          },
+          {
             "x": 1,
             "y": 4,
             "model": "house"
@@ -292,7 +324,7 @@
           {
             "x": -1,
             "y": -1,
-            "model": "wooden-wall"
+            "model": "wall"
           }
         ]
       }
@@ -300,6 +332,7 @@
   },
   {
     "name": "Akadomia",
+    "id": "akadomia",
     "districts": [
       {
         "name": "Akadomia",
@@ -317,6 +350,26 @@
         },
         "buildings": [
           {
+            "x": 0,
+            "y": 0,
+            "model": "sanctuary-irory"
+          },
+          {
+            "x": 2,
+            "y": 0,
+            "model": "house"
+          },
+          {
+            "x": 3,
+            "y": 0,
+            "model": "house"
+          },
+          {
+            "x": 2,
+            "y": 1,
+            "model": "magic-shop"
+          },
+          {
             "x": 1,
             "y": 2,
             "model": "house"
@@ -324,12 +377,22 @@
           {
             "x": 2,
             "y": 2,
-            "model": "magic-academy"
+            "model": "magic-academy-tower"
+          },
+          {
+            "x": 4,
+            "y": 2,
+            "model": "granary"
           },
           {
             "x": 5,
             "y": 2,
             "model": "house"
+          },
+          {
+            "x": 0,
+            "y": 3,
+            "model": "watchtower"
           },
           {
             "x": 1,
@@ -340,7 +403,148 @@
             "x": 5,
             "y": 3,
             "model": "stable"
-          }]
+          },
+          {
+            "x": -1,
+            "y": -1,
+            "model": "wall"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Varnhold",
+    "id": "varnhold",
+    "districts": [
+      {
+        "name": "Varnhold",
+        "south": {
+          "type": "GRASS"
+        },
+        "west": {
+          "type": "GRASS"
+        },
+        "north": {
+          "type": "GRASS"
+        },
+        "east": {
+          "type": "WATER",
+          "name": "Rivière Kiravoy"
+        },
+        "buildings": [
+          {
+            "x": 2,
+            "y": 0,
+            "model": "house"
+          },
+          {
+            "x": 3,
+            "y": 0,
+            "model": "house"
+          },
+          {
+            "x": 4,
+            "y": 0,
+            "model": "house"
+          },
+          {
+            "x": 5,
+            "y": 0,
+            "model": "house"
+          },
+          {
+            "x": 2,
+            "y": 1,
+            "model": "granary"
+          },
+          {
+            "x": 3,
+            "y": 1,
+            "model": "shop"
+          },
+          {
+            "x": 4,
+            "y": 1,
+            "model": "forge"
+          },
+          {
+            "x": 5,
+            "y": 1,
+            "model": "shop"
+          },
+          {
+            "x": 0,
+            "y": 2,
+            "vertical": true,
+            "model": "garrison"
+          },
+          {
+            "x": 2,
+            "y": 2,
+            "model": "brewery"
+          },
+          {
+            "x": 3,
+            "y": 2,
+            "model": "shop"
+          },
+          {
+            "x": 2,
+            "y": 3,
+            "model": "inn"
+          },
+          {
+            "x": 3,
+            "y": 3,
+            "model": "house"
+          },
+          {
+            "x": 5,
+            "y": 3,
+            "model": "tannery"
+          },
+          {
+            "x": 0,
+            "y": 4,
+            "model": "temple-erastil"
+          },
+          {
+            "x": 2,
+            "y": 4,
+            "model": "exotic-craftsman"
+          },
+          {
+            "x": 3,
+            "y": 4,
+            "model": "house"
+          },
+          {
+            "x": 0,
+            "y": 5,
+            "model": "house"
+          },
+          {
+            "x": 1,
+            "y": 5,
+            "model": "house"
+          },
+          {
+            "x": 2,
+            "y": 5,
+            "model": "statue"
+          },
+          {
+            "x": 3,
+            "y": 5,
+            "model": "stable"
+          },
+          {
+            "x": -1,
+            "y": -1,
+            "model": "wall"
+          }
+        ]
       }
     ]
   }
