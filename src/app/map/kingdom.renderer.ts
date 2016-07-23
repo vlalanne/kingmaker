@@ -58,29 +58,37 @@ export class KingdomRenderer {
     let offset = even ? 1 : 0;
     let center = this.computePoint(hex, 0, 2 / 3);
     if (this.hasRoads(hex, -1 + offset, -1)) {
-      this.paintRoad([center, this.computePoint(hex, - 1 / 4, 1 / 6)]);
+      this.paintRoad(center, this.computePoint(hex, - 1 / 4, 1 / 6));
     }
     if (this.hasRoads(hex, 0 + offset, -1)) {
-      this.paintRoad([center, this.computePoint(hex, 1 / 4, 1 / 6)]);
+      this.paintRoad(center, this.computePoint(hex, 1 / 4, 1 / 6));
     }
     if (this.hasRoads(hex, -1, 0)) {
-      this.paintRoad([center, this.computePoint(hex, - 1 / 2, 2 / 3)]);
+      this.paintRoad(center, this.computePoint(hex, - 1 / 2, 2 / 3));
     }
     if (this.hasRoads(hex, 1, 0)) {
-      this.paintRoad([center, this.computePoint(hex, 1 / 2, 2 / 3)]);
+      this.paintRoad(center, this.computePoint(hex, 1 / 2, 2 / 3));
     }
     if (this.hasRoads(hex, -1 + offset, 1)) {
-      this.paintRoad([center, this.computePoint(hex, - 1 / 4, 7 / 6)]);
+      this.paintRoad(center, this.computePoint(hex, - 1 / 4, 7 / 6));
     }
     if (this.hasRoads(hex, 0 + offset, 1)) {
-      this.paintRoad([center, this.computePoint(hex, 1 / 4, 7 / 6)]);
+      this.paintRoad(center, this.computePoint(hex, 1 / 4, 7 / 6));
     }
   }
   hasRoads(hex: Hex, xOffset: number, yOffset: number): boolean {
     let pos = (hex.x + xOffset) + ';' + (hex.y + yOffset);
     return this.roads.indexOf(pos) >= 0;
   }
-  paintRoad(road: any[]) {
+  paintRoad(start, end) {
+    let nb = Math.floor(Math.random() * 5);
+    let road = [start]
+    for (var i = 0; i < nb; i++) {
+      let lat = (start.lat + (end.lat - start.lat) / nb * i) * (1 + (Math.random() - 1) / 250);
+      let lng = (start.lng + (end.lng - start.lng) / nb * i) * (1 + (Math.random() - 1) / 250);
+      road.push(L.latLng(lat, lng));
+    }
+    road.push(end);
     L.polyline(road, { color: "#c3b07b" }).addTo(this.map);
   }
 
