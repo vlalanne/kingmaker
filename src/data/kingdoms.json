@@ -380,6 +380,12 @@
         "x": 25,
         "y": 0,
         "roads": true
+      },
+      {
+        "x": 26,
+        "y": 0,
+        "city": "Restov",
+        "roads": true
       }
     ]
   },
@@ -418,11 +424,6 @@
       {
         "x": 27,
         "y": -1,
-        "roads": true
-      },
-      {
-        "x": 26,
-        "y": 0,
         "roads": true
       },
       {
