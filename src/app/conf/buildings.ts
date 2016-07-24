@@ -20,6 +20,12 @@ export const BUILDINGS: BuildingModel[]=[
     .setMap("app/img/maps/house.png")
     .setIcon("app/img/icons/house.png")
     .setPrice(3),
+  new BuildingModel("ambassy", "ambassy")
+    .setMap("app/img/maps/ambassy.png")
+    .setIcon("app/img/icons/ambassy.png")
+    .setEconomy(1)
+    .setStability(2)
+    .setPrice(40),
   new BuildingModel("castle", "castle")
     .setSize("LARGE")
     .setMap("app/img/maps/castle.png")
@@ -63,6 +69,16 @@ export const BUILDINGS: BuildingModel[]=[
     .setStability(1)
     .setValue(1000)
     .setPrice(16),
+  new BuildingModel("pier", "pier")
+    .setMap("app/img/maps/pier.png")
+    .setIcon("app/img/icons/pier.png")
+    .setSize("LARGE")
+    .setEconomy(4)
+    .setValue(4000)
+    .setPrice(90)
+    .setMinorMagicObject(3)
+    .setMediumMagicObject(2)
+    .setMajorMagicObject(1),
   new BuildingModel("dump", "dump")
     .setMap("app/img/maps/dump.png")
     .setIcon("app/img/icons/dump.png")
@@ -205,6 +221,36 @@ export const BUILDINGS: BuildingModel[]=[
   new BuildingModel("sanctuary-irori", "sanctuary-irori")
     .setMap("app/img/maps/sanctuary-irori.png")
     .setIcon("app/img/icons/sanctuary-irori.png")
+    .setLoyalty(1)
+    .setMinorMagicObject(1)
+    .setPrice(8),
+  new BuildingModel("sanctuary-pharasmas", "sanctuary-pharasmas")
+    .setMap("app/img/maps/sanctuary-pharasmas.png")
+    .setIcon("app/img/icons/sanctuary-pharasmas.png")
+    .setLoyalty(1)
+    .setMinorMagicObject(1)
+    .setPrice(8),
+  new BuildingModel("sanctuary-shelym", "sanctuary-shelym")
+    .setMap("app/img/maps/sanctuary-shelym.png")
+    .setIcon("app/img/icons/sanctuary-shelym.png")
+    .setLoyalty(1)
+    .setMinorMagicObject(1)
+    .setPrice(8),
+  new BuildingModel("sanctuary-caden-caylan", "sanctuary-caden-caylan")
+    .setMap("app/img/maps/sanctuary-caden-caylan.png")
+    .setIcon("app/img/icons/sanctuary-caden-caylan.png")
+    .setLoyalty(1)
+    .setMinorMagicObject(1)
+    .setPrice(8),
+  new BuildingModel("sanctuary-calistria", "sanctuary-calistria")
+    .setMap("app/img/maps/sanctuary-calistria.png")
+    .setIcon("app/img/icons/sanctuary-calistria.png")
+    .setLoyalty(1)
+    .setMinorMagicObject(1)
+    .setPrice(8),
+  new BuildingModel("sanctuary-nethys", "sanctuary-nethys")
+    .setMap("app/img/maps/sanctuary-nethys.png")
+    .setIcon("app/img/icons/sanctuary-nethys.png")
     .setLoyalty(1)
     .setMinorMagicObject(1)
     .setPrice(8),

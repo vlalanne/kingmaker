@@ -196,10 +196,22 @@
             "x": 0,
             "y": 0,
             "model": "garrison"
-          },          {
+          },
+          {
             "x": 0,
             "y": 1,
             "model": "temple-erastil"
+          },
+          {
+            "x": 4,
+            "y": 0,
+            "model": "sanctuary-pharasmas"
+          },
+          {
+            "x": 5,
+            "y": 0,
+            "model": "ambassy",
+            "name": "Ambassade du Brévoy"
           },
           {
             "x": 2,
@@ -215,6 +227,11 @@
             "x": 3,
             "y": 1,
             "model": "sanctuary-abadar"
+          },
+          {
+            "x": 0,
+            "y": 2,
+            "model": "sanctuary-shelym"
           },
           {
             "x": 1,
@@ -256,6 +273,16 @@
             "x": 3,
             "y": 3,
             "model": "house"
+          },
+          {
+            "x": 4,
+            "y": 3,
+            "model": "sanctuary-calistria"
+          },
+          {
+            "x": 0,
+            "y": 4,
+            "model": "pier"
           }
         ]
       }
@@ -280,9 +307,25 @@
         },
         "buildings": [
           {
-            "x": 1,
+            "x": 0,
             "y": 2,
-            "model": "sanctuary-erastil"
+            "model": "temple-erastil"
+          },
+          {
+            "x": 0,
+            "y": 3,
+            "model": "school"
+          },
+          {
+            "x": 1,
+            "y": 1,
+            "model": "park"
+          },
+          {
+            "x": 1,
+            "y": 3,
+            "model": "statue",
+            "name": "Statue du Cerf"
           },
           {
             "x": 2,
@@ -428,6 +471,16 @@
             "model": "stable"
           },
           {
+            "x": 1,
+            "y": 4,
+            "model": "sanctuary-caden-caylan"
+          },
+          {
+            "x": 2,
+            "y": 4,
+            "model": "sanctuary-nethys"
+          },
+          {
             "x": 4,
             "y": 4,
             "model": "house"
@@ -436,6 +489,11 @@
             "x": 5,
             "y": 4,
             "model": "inn"
+          },
+          {
+            "x": 4,
+            "y": 5,
+            "model": "shop"
           },
           {
             "x": -1,
@@ -484,6 +542,11 @@
             "x": 5,
             "y": 0,
             "model": "house"
+          },
+          {
+            "x": 1,
+            "y": 1,
+            "model": "park"
           },
           {
             "x": 2,
@@ -563,7 +626,8 @@
           {
             "x": 2,
             "y": 5,
-            "model": "statue"
+            "model": "statue",
+            "name": "Statue de la Victoire sur Vordakoi"
           },
           {
             "x": 3,

@@ -188,7 +188,8 @@
       {
         "x": 25,
         "y": 3,
-        "resource": "farm"
+        "resource": "farm",
+        "roads": true
       },
       {
         "x": 26,
@@ -239,7 +240,9 @@
       },
       {
         "x": 25,
-        "y": 4
+        "y": 4,
+        "roads": true,
+        "resource": "farm"
       },
       {
         "x": 15,
@@ -302,6 +305,13 @@
         "y": 5
       },
       {
+        "x": 26,
+        "y": 5,
+        "pointOfInterest": "Tombe du Linorne",
+        "roads": true,
+        "resource": "mine"
+      },
+      {
         "x": 14,
         "y": 6,
         "city": "Akadomia",
@@ -359,6 +369,18 @@
         "roads": true
       },
       {
+        "x": 19,
+        "y": 7,
+        "roads": true,
+        "resource": "farm"
+      },
+      {
+        "x": 20,
+        "y": 7,
+        "roads": true,
+        "resource": "farm"
+      },
+      {
         "x": 17,
         "y": 8,
         "resource": "farm",
@@ -369,6 +391,13 @@
         "y": 8,
         "resource": "farm",
         "pointOfInterest": "Ville Abandonée",
+        "roads": true
+      },
+      {
+        "x": 19,
+        "y": 8,
+        "pointOfInterest": "Caverne des Ours-Hiboux",
+        "guardTower": true,
         "roads": true
       }
     ]
@@ -480,11 +509,6 @@
         "pointOfInterest": "Village des Nomens"
       },
       {
-        "x": 26,
-        "y": 5,
-        "pointOfInterest": "Tombe du Linorne"
-      },
-      {
         "x": 16,
         "y": 7,
         "pointOfInterest": "Village des Hommes-Lézards"
@@ -510,11 +534,6 @@
         "x": 14,
         "y": 8,
         "pointOfInterest": "Ruines Naines"
-      },
-      {
-        "x": 19,
-        "y": 8,
-        "pointOfInterest": "Caverne des Ours-Hiboux"
       },
       {
         "x": 18,
