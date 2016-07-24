@@ -196,6 +196,10 @@
             "x": 0,
             "y": 0,
             "model": "garrison"
+          },          {
+            "x": 0,
+            "y": 1,
+            "model": "temple-erastil"
           },
           {
             "x": 2,
@@ -221,6 +225,17 @@
             "x": 2,
             "y": 2,
             "model": "trade-fair"
+          },
+          {
+            "x": 4,
+            "y": 2,
+            "model": "inn",
+            "name": "Auberge du Marché"
+          },
+          {
+            "x": 5,
+            "y": 2,
+            "model": "house"
           },
           {
             "x": 0,
@@ -268,6 +283,11 @@
             "x": 1,
             "y": 2,
             "model": "sanctuary-erastil"
+          },
+          {
+            "x": 2,
+            "y": 1,
+            "model": "city-hall"
           },
           {
             "x": 2,
@@ -352,6 +372,11 @@
             "model": "sanctuary-irori"
           },
           {
+            "x": 1,
+            "y": 0,
+            "model": "school"
+          },
+          {
             "x": 2,
             "y": 0,
             "model": "house"
@@ -365,6 +390,12 @@
             "x": 2,
             "y": 1,
             "model": "magic-shop"
+          },
+          {
+            "x": 0,
+            "y": 2,
+            "model": "garrison",
+            "vertical": true
           },
           {
             "x": 1,
@@ -387,11 +418,6 @@
             "model": "house"
           },
           {
-            "x": 0,
-            "y": 3,
-            "model": "watchtower"
-          },
-          {
             "x": 1,
             "y": 3,
             "model": "tavern"
@@ -400,6 +426,16 @@
             "x": 5,
             "y": 3,
             "model": "stable"
+          },
+          {
+            "x": 4,
+            "y": 4,
+            "model": "house"
+          },
+          {
+            "x": 5,
+            "y": 4,
+            "model": "inn"
           },
           {
             "x": -1,
@@ -472,8 +508,7 @@
           {
             "x": 0,
             "y": 2,
-            "vertical": true,
-            "model": "garrison"
+            "model": "castle"
           },
           {
             "x": 2,
@@ -534,6 +569,21 @@
             "x": 3,
             "y": 5,
             "model": "stable"
+          },
+          {
+            "x": 4,
+            "y": 4,
+            "model": "temple-sarenrae"
+          },
+          {
+            "x": 4,
+            "y": 5,
+            "model": "school"
+          },
+          {
+            "x": 5,
+            "y": 5,
+            "model": "graveyard"
           },
           {
             "x": -1,

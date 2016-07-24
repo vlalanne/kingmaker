@@ -110,7 +110,8 @@
       {
         "x": 19,
         "y": 2,
-        "roads": true
+        "roads": true,
+        "resource": "farm"
       },
       {
         "x": 20,
@@ -125,7 +126,8 @@
       },
       {
         "x": 22,
-        "y": 2
+        "y": 2,
+        "resource": "farm"
       },
       {
         "x": 23,
@@ -174,7 +176,6 @@
       {
         "x": 23,
         "y": 3,
-        "resource": "farm",
         "guardTower": true,
         "roads": true
       },
@@ -210,6 +211,18 @@
         "x": 19,
         "y": 4,
         "resource": "mine",
+        "roads": true
+      },
+      {
+        "x": 20,
+        "y": 4,
+        "resource": "farm",
+        "roads": true
+      },
+      {
+        "x": 21,
+        "y": 4,
+        "resource": "farm",
         "roads": true
       },
       {
@@ -257,12 +270,32 @@
         "roads": true
       },
       {
+        "x": 20,
+        "y": 5,
+        "pointOfInterest": "Tumulus",
+        "roads": true
+      },
+      {
+        "x": 21,
+        "y": 5,
+        "resource": "farm",
+        "roads": true
+      },
+      {
+        "x": 22,
+        "y": 5,
+        "resource": "fishery",
+        "roads": true
+      },
+      {
         "x": 23,
-        "y": 5
+        "y": 5,
+        "pointOfInterest": "Hommes de boues"
       },
       {
         "x": 24,
-        "y": 5
+        "y": 5,
+        "resource": "farm"
       },
       {
         "x": 25,
@@ -301,6 +334,16 @@
         "x": 19,
         "y": 6,
         "resource": "fishery",
+        "roads": true
+      },
+      {
+        "x": 20,
+        "y": 6,
+        "roads": true
+      },
+      {
+        "x": 21,
+        "y": 6,
         "roads": true
       },
       {
@@ -435,11 +478,6 @@
         "x": 26,
         "y": 4,
         "pointOfInterest": "Village des Nomens"
-      },
-      {
-        "x": 20,
-        "y": 5,
-        "pointOfInterest": "Tumulus"
       },
       {
         "x": 26,
