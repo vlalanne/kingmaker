@@ -13,7 +13,7 @@
       </td>
       <td class="buildings">
         <div class="{{getWall()}} container-fluid">
-          <h1 class="watermark">{{district.name}}</h1>
+          <h3 class="watermark">{{district.name}}</h3>
           <div *ngFor="let y of [0,1,2]" class="row">
             <div *ngFor="let x of [0,1,2]" class="col-xs-4">
               <city-block [topLeft]="getBuilding(2*x,2*y)" [topRight]="getBuilding(2*x+1,2*y)" [bottomLeft]="getBuilding(2*x,2*y+1)" [bottomRight]="getBuilding(2*x+1,2*y+1)">

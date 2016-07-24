@@ -34,7 +34,7 @@ td, tr {
 .wall {
     border-style: solid;
     border-width: .5em;
-    border-color: darkslategrey;
+    border-color: #202020;
 }
 
 .buildings {
@@ -46,9 +46,9 @@ td, tr {
 
 .watermark {
     position: absolute;
-    top: 5%;
-    left: 5%;
+    top: 6.25em;
+    left: 8em;
     opacity: 0.9;
-    z-index: 99;
-    color: white;
+    z-index: 50;
+    color: #202020;
 }
