@@ -4,7 +4,6 @@ export class BuildingModel {
   size: string = "NORMAL";
   map: string = "";
   icon: string = "";
-  image: string = "";
   economy: number = 0;
   loyalty: number = 0;
   stability: number = 0;
@@ -28,11 +27,6 @@ export class BuildingModel {
 
   setMap(map:string) {
     this.map = map;
-    return this;
-  }
-
-  setImage(image:string) {
-    this.image = image;
     return this;
   }
 

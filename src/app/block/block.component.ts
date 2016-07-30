@@ -53,20 +53,10 @@ export class BlockComponent implements OnInit {
           if (this[property].name) {
             this[property + 'Label'] = this[property].name;
           } else {
-            this.translationService
-              .getMessage(model.name)
-              .then(label => this[property + 'Label'] = label);
+            this[property + 'Label'] = model.name;
           }
         }
         )
-    }
-  }
-
-  getDetailClass(building: BuildingModel) {
-    if (building.image) {
-      return "detail wide";
-    } else {
-      return "detail";
     }
   }
 

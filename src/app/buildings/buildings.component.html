@@ -1,4 +1,34 @@
 <div *ngIf="error"><span class="label label-danger">{{error}}</span></div>
-<ul class="list-group row">
-  <li class="list-group-item col-sm-6" *ngFor="let building of buildings"><building [building]="building"></building></li>
-</ul>
+<table #table class="table">
+  <thead>
+    <tr>
+      <th rowspan="2" (click)="sort('name')"  [class.sort]="'name' === order" [class.ascending]="ascending"></th>
+      <th rowspan="2" (click)="sort('economy')" [class.sort]="'economy' === order" [class.ascending]="ascending">{{economy}}</th>
+      <th rowspan="2" (click)="sort('loyalty')"  [class.sort]="'loyalty' === order" [class.ascending]="ascending">{{loyalty}}</th>
+      <th rowspan="2" (click)="sort('stability')" [class.sort]="'stability' === order" [class.ascending]="ascending">{{stability}}</th>
+      <th rowspan="2" (click)="sort('defence')" [class.sort]="'defence' === order" [class.ascending]="ascending">{{defence}}</th>
+      <th rowspan="2" (click)="sort('value')" [class.sort]="'value' === order" [class.ascending]="ascending">{{value}}</th>
+      <th rowspan="2" (click)="sort('price')" [class.sort]="'price' === order" [class.ascending]="ascending">{{price}}</th>
+      <th colspan="3">{{magicObjects}}</th>
+    </tr>
+    <tr>
+      <th (click)="sort('minorMagicObject')" [class.sort]="'minorMagicObject' === order" [class.ascending]="ascending">{{minor}}</th>
+      <th (click)="sort('mediumMagicObject')" [class.sort]="'mediumMagicObject' === order" [class.ascending]="ascending">{{medium}}</th>
+      <th (click)="sort('majorMagicObject')" [class.sort]="'majorMagicObject' === order" [class.ascending]="ascending">{{major}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let building of buildings | sortBuildings: order:ascending">
+      <th><img class="icon" src="{{building.icon}}"> {{building.name}} </th>
+      <td>{{building.economy}}</td>
+      <td>{{building.loyalty}}</td>
+      <td>{{building.stability}}</td>
+      <td>{{building.defence}}</td>
+      <td>{{building.value}}</td>
+      <td>{{building.price}}</td>
+      <td>{{building.minorMagicObject}}</td>
+      <td>{{building.mediumMagicObject}}</td>
+      <td>{{building.majorMagicObject}}</td>
+    </tr>
+  </tbody>
+</table>

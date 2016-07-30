@@ -47,10 +47,6 @@
   border: black solid 1px;
 }
 
-.wide {
-  width: 50em !important;
-}
-
 .tooltip-container:hover .detail {
   visibility: visible;
 }

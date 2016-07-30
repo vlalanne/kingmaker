@@ -26,3 +26,8 @@
   width: 4em;
   align-self: center;
 }
+
+.icon {
+    border-radius: 50%;
+    border: goldenrod ridge 3px;
+}

@@ -49,13 +49,4 @@ export class BuildingDetailComponent implements OnInit {
       .then(label => this.major = label)
   }
 
-
-  getStatsClass() {
-    if (this.building.image) {
-      return 'col-sm-8';
-    } else {
-      return 'col-sm-12';
-    }
-  }
-
 }
