@@ -38,18 +38,24 @@ td, tr {
 
 .watermark {
     position: absolute;
-    top: 6.25em;
+    top: 5.25em;
     left: 8em;
     opacity: 0.9;
     z-index: 50;
     color: #202020;
 }
 
-.streetBottom {
+.buildings .block {
+    width: 8em;
+    height: 8em;
+    display: inline-block;
+}
+
+.buildings .block.streetBottom {
     margin-bottom: 2em;
 }
 
-.streetRight {
+.buildings .block.streetRight {
     margin-right: 2em;
 }
 
@@ -66,20 +72,20 @@ td, tr {
 
 .buildings>div.waterWest {
     border-left-color: lightblue;
-    padding-left: 0 !important;
+    padding-left: 0;
 }
 
 .buildings>div.waterNorth {
     border-top-color: lightblue;
-    padding-top: 0 !important;
+    padding-top: 0;
 }
 
 .buildings>div.waterEast {
     border-right-color: lightblue;
-    padding-right: 0 !important;
+    padding-right: 0;
 }
 
 .buildings>div.waterSouth {
     border-bottom-color: lightblue;
-    padding-bottom: 0 !important;
+    padding-bottom: 0;
 }

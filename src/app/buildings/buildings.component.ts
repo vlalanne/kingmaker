@@ -24,10 +24,12 @@ export class BuildingsComponent implements OnInit {
   defence: string;
   value: string;
   price: string;
+  unrest: string;
   magicObjects: string;
   minor: string;
   medium: string;
   major: string;
+  requiredHouses: string;
 
   constructor(private buildingsService: BuildingsService, private translationService: TranslationService) { }
 
@@ -47,6 +49,8 @@ export class BuildingsComponent implements OnInit {
       .then(label => this.value = label)
     this.translationService.getMessage("price")
       .then(label => this.price = label)
+    this.translationService.getMessage("unrest")
+      .then(label => this.unrest = label)
     this.translationService.getMessage("magicObjects")
       .then(label => this.magicObjects = label)
     this.translationService.getMessage("minor")
@@ -55,6 +59,8 @@ export class BuildingsComponent implements OnInit {
       .then(label => this.medium = label)
     this.translationService.getMessage("major")
       .then(label => this.major = label)
+    this.translationService.getMessage("requiredHouses")
+      .then(label => this.requiredHouses = label)
   }
 
   sort(parameter: string) {

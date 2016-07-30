@@ -72,12 +72,12 @@
           {
             "x": 2,
             "y": 2,
-            "model": "sanctuary-sarenrae"
+            "model": "shrine-sarenrae"
           },
           {
             "x": 3,
             "y": 2,
-            "model": "statue",
+            "model": "monument",
             "name": "Statue de Talacos"
           },
           {
@@ -125,12 +125,12 @@
             "x": 2,
             "y": 4,
             "vertical": true,
-            "model": "city-hall"
+            "model": "town-hall"
           },
           {
             "x": 3,
             "y": 4,
-            "model": "school"
+            "model": "library"
           },
           {
             "x": 4,
@@ -140,22 +140,22 @@
           {
             "x": 5,
             "y": 4,
-            "model": "dock"
+            "model": "pier"
           },
           {
             "x": 0,
             "y": 5,
-            "model": "blacksmith"
+            "model": "smith"
           },
           {
             "x": 1,
             "y": 5,
-            "model": "forge"
+            "model": "smith"
           },
           {
             "x": 3,
             "y": 5,
-            "model": "noble-house"
+            "model": "noble-villa"
           },
           {
             "x": 4,
@@ -168,9 +168,7 @@
             "model": "weaver"
           },
           {
-            "x": -1,
-            "y": -1,
-            "model": "wall"
+            "model": "city-wall"
           }
         ]
       },
@@ -205,7 +203,7 @@
           {
             "x": 4,
             "y": 0,
-            "model": "sanctuary-pharasmas"
+            "model": "shrine-pharasma"
           },
           {
             "x": 5,
@@ -216,7 +214,7 @@
           {
             "x": 2,
             "y": 0,
-            "model": "healer"
+            "model": "herbalist"
           },
           {
             "x": 2,
@@ -226,12 +224,12 @@
           {
             "x": 3,
             "y": 1,
-            "model": "sanctuary-abadar"
+            "model": "shrine-abadar"
           },
           {
             "x": 0,
             "y": 2,
-            "model": "sanctuary-shelym"
+            "model": "shrine-shelyn"
           },
           {
             "x": 1,
@@ -241,7 +239,7 @@
           {
             "x": 2,
             "y": 2,
-            "model": "trade-fair"
+            "model": "market"
           },
           {
             "x": 4,
@@ -277,12 +275,12 @@
           {
             "x": 4,
             "y": 3,
-            "model": "sanctuary-calistria"
+            "model": "shrine-calistria"
           },
           {
-            "x": 0,
+            "x": 4,
             "y": 4,
-            "model": "pier"
+            "model": "waterfront"
           }
         ]
       }
@@ -314,7 +312,7 @@
           {
             "x": 0,
             "y": 3,
-            "model": "school"
+            "model": "library"
           },
           {
             "x": 1,
@@ -324,13 +322,13 @@
           {
             "x": 1,
             "y": 3,
-            "model": "statue",
+            "model": "monument",
             "name": "Statue du Cerf"
           },
           {
             "x": 2,
             "y": 1,
-            "model": "city-hall"
+            "model": "town-hall"
           },
           {
             "x": 2,
@@ -383,9 +381,7 @@
             "model": "house"
           },
           {
-            "x": -1,
-            "y": -1,
-            "model": "wall"
+            "model": "city-wall"
           }
         ]
       }
@@ -412,12 +408,12 @@
           {
             "x": 0,
             "y": 0,
-            "model": "sanctuary-irori"
+            "model": "shrine-irori"
           },
           {
             "x": 1,
             "y": 0,
-            "model": "school"
+            "model": "library"
           },
           {
             "x": 2,
@@ -448,7 +444,7 @@
           {
             "x": 2,
             "y": 2,
-            "model": "magic-academy-tower"
+            "model": "academy-tower"
           },
           {
             "x": 4,
@@ -473,12 +469,12 @@
           {
             "x": 1,
             "y": 4,
-            "model": "sanctuary-caden-caylan"
+            "model": "shrine-cayden-cailean"
           },
           {
             "x": 2,
             "y": 4,
-            "model": "sanctuary-nethys"
+            "model": "shrine-nethys"
           },
           {
             "x": 4,
@@ -496,9 +492,7 @@
             "model": "shop"
           },
           {
-            "x": -1,
-            "y": -1,
-            "model": "wall"
+            "model": "city-wall"
           }
         ]
       }
@@ -561,7 +555,7 @@
           {
             "x": 4,
             "y": 1,
-            "model": "forge"
+            "model": "smith"
           },
           {
             "x": 5,
@@ -626,7 +620,7 @@
           {
             "x": 2,
             "y": 5,
-            "model": "statue",
+            "model": "monument",
             "name": "Statue de la Victoire sur Vordakoi"
           },
           {
@@ -642,7 +636,7 @@
           {
             "x": 4,
             "y": 5,
-            "model": "school"
+            "model": "library"
           },
           {
             "x": 5,
@@ -650,9 +644,7 @@
             "model": "graveyard"
           },
           {
-            "x": -1,
-            "y": -1,
-            "model": "wall"
+            "model": "city-wall"
           }
         ]
       }

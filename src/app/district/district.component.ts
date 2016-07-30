@@ -20,18 +20,11 @@ export class DistrictComponent implements OnInit {
   ngOnInit() {
   }
 
-  getWall() {
+  hasWall() {
     let wall = this.district
       .buildings
-      .find(building => building.x === -1
-        && building.y === -1);
-    if (wall) {
-      return wall.model
-        .replace("-", " ")
-        .toLowerCase();
-    } else {
-      return "";
-    }
+      .find(building => building.model === 'city-wall');
+    return wall != undefined;
   }
 
 
