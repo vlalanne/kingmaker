@@ -31,16 +31,8 @@ td, tr {
     width: 0em
 }
 
-.wall {
-    border-style: solid;
-    border-width: .5em;
-    border-color: #202020;
-}
-
 .buildings {
     position: relative;
-    width: 36em;
-    height: 36em;
     background-color: lightgrey;
 }
 
@@ -51,4 +43,43 @@ td, tr {
     opacity: 0.9;
     z-index: 50;
     color: #202020;
+}
+
+.streetBottom {
+    margin-bottom: 2em;
+}
+
+.streetRight {
+    margin-right: 2em;
+}
+
+.buildings>div {
+    border-style: solid;
+    border-width: .5em;
+    padding: 2em;
+    border-color: transparent;
+}
+
+.buildings>div.wall {
+    border-color: #202020;
+}
+
+.buildings>div.waterWest {
+    border-left-color: lightblue;
+    padding-left: 0 !important;
+}
+
+.buildings>div.waterNorth {
+    border-top-color: lightblue;
+    padding-top: 0 !important;
+}
+
+.buildings>div.waterEast {
+    border-right-color: lightblue;
+    padding-right: 0 !important;
+}
+
+.buildings>div.waterSouth {
+    border-bottom-color: lightblue;
+    padding-bottom: 0 !important;
 }

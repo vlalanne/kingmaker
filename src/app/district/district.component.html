@@ -2,7 +2,7 @@
   <table>
     <tr *ngIf="district.north.type!='DISTRICT'" class="north {{district.north.type | lowercase}}">
       <td colspan="3">
-          {{district.north.name}}
+        {{district.north.name}}
       </td>
     </tr>
     <tr>
@@ -12,25 +12,27 @@
         </div>
       </td>
       <td class="buildings">
-        <div class="{{getWall()}} container-fluid">
+        <div class="{{getWall()}} container-fluid" [class.waterWest]="district.west.type === 'WATER'" [class.waterNorth]="district.north.type === 'WATER'"
+          [class.waterEast]="district.east.type === 'WATER'" [class.waterSouth]="district.south.type === 'WATER'">
           <h3 class="watermark">{{district.name}}</h3>
           <div *ngFor="let y of [0,1,2]" class="row">
             <div *ngFor="let x of [0,1,2]" class="col-xs-4">
-              <city-block [topLeft]="getBuilding(2*x,2*y)" [topRight]="getBuilding(2*x+1,2*y)" [bottomLeft]="getBuilding(2*x,2*y+1)" [bottomRight]="getBuilding(2*x+1,2*y+1)">
+              <city-block [topLeft]="getBuilding(2*x,2*y)" [topRight]="getBuilding(2*x+1,2*y)" [bottomLeft]="getBuilding(2*x,2*y+1)" [bottomRight]="getBuilding(2*x+1,2*y+1)"
+                [class.streetRight]="x!=2" [class.streetBottom]="y!=2">
               </city-block>
             </div>
           </div>
         </div>
       </td>
       <td *ngIf="district.east.type!='DISTRICT'" class="east {{district.east.type | lowercase}}">
-        <div class="vertical-text" >
+        <div class="vertical-text">
           {{district.east.name}}
         </div>
       </td>
     </tr>
     <tr *ngIf="district.south.type!='DISTRICT'" class="south {{district.south.type | lowercase}}">
       <td colspan="3">
-          {{district.south.name}}
+        {{district.south.name}}
       </td>
     </tr>
   </table>
