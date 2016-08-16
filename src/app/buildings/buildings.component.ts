@@ -3,13 +3,15 @@ import { BuildingsService } from '../buildings.service';
 import { TranslationService } from '../translation.service';
 import { SortBuildingsPipe } from '../sort-buildings.pipe';
 import { BuildingModel } from '../model/index';
+import { BuildingIconComponent } from '../building-icon';
 
 @Component({
   moduleId: module.id,
   selector: 'app-buildings',
   templateUrl: 'buildings.component.html',
   styleUrls: ['buildings.component.css'],
-  pipes: [SortBuildingsPipe]
+  pipes: [SortBuildingsPipe],
+  directives: [BuildingIconComponent]
 })
 export class BuildingsComponent implements OnInit {
 
@@ -30,6 +32,7 @@ export class BuildingsComponent implements OnInit {
   medium: string;
   major: string;
   requiredHouses: string;
+  halvedCostBuildings: string;
 
   constructor(private buildingsService: BuildingsService, private translationService: TranslationService) { }
 
@@ -61,6 +64,8 @@ export class BuildingsComponent implements OnInit {
       .then(label => this.major = label)
     this.translationService.getMessage("requiredHouses")
       .then(label => this.requiredHouses = label)
+    this.translationService.getMessage("halvedCostBuildings")
+      .then(label => this.halvedCostBuildings = label)
   }
 
   sort(parameter: string) {

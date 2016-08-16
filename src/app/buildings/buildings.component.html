@@ -12,6 +12,7 @@
       <th rowspan="2" (click)="sort('price')" [class.sort]="'price' === order" [class.ascending]="ascending">{{price}}</th>
       <th colspan="3">{{magicObjects}}</th>
       <th rowspan="2" (click)="sort('requiredHouses')" [class.sort]="'requiredHouses' === order" [class.ascending]="ascending">{{requiredHouses}}</th>
+      <th rowspan="2">{{halvedCostBuildings}}</th>
     </tr>
     <tr>
       <th (click)="sort('minorMagicObject')" [class.sort]="'minorMagicObject' === order" [class.ascending]="ascending">{{minor}}</th>
@@ -33,6 +34,7 @@
       <td>{{building.mediumMagicObject}}</td>
       <td>{{building.majorMagicObject}}</td>
       <td>{{building.requiredHouses}}</td>
+      <td class="limitedsize"><building-icon *ngFor="let id of building.halvedCosts" [id]="id"></building-icon></td>
     </tr>
   </tbody>
 </table>

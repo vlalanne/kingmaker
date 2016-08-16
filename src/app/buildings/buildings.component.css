@@ -1,7 +1,11 @@
-.sort::after{
+.sort::after {
   content: ' \21E7'
 }
 
-.sort.ascending::after{
+.sort.ascending::after {
   content: ' \21E9'
+}
+
+table td.limitedsize {
+  width: 40em;
 }
