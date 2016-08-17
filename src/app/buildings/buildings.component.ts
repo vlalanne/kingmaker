@@ -33,6 +33,7 @@ export class BuildingsComponent implements OnInit {
   major: string;
   requiredHouses: string;
   halvedCostBuildings: string;
+  upgradeTo: string;
 
   constructor(private buildingsService: BuildingsService, private translationService: TranslationService) { }
 
@@ -66,6 +67,8 @@ export class BuildingsComponent implements OnInit {
       .then(label => this.requiredHouses = label)
     this.translationService.getMessage("halvedCostBuildings")
       .then(label => this.halvedCostBuildings = label)
+    this.translationService.getMessage("upgradeTo")
+      .then(label => this.upgradeTo = label)
   }
 
   sort(parameter: string) {

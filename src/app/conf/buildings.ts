@@ -8,7 +8,7 @@ export const BUILDINGS: BuildingModel[] = [
     .setLoyalty(4)
     .setMinorMagicObject(6)
     .setMediumMagicObject(4)
-    .setPrice(82)
+    .setPrice(67)
     .addHalvedCost('library')
     .addHalvedCost('magic-shop'),
   new BuildingModel('academy', 'academy')
@@ -22,7 +22,8 @@ export const BUILDINGS: BuildingModel[] = [
     .setPrice(52)
     .addHalvedCost('caster-tower')
     .addHalvedCost('library')
-    .addHalvedCost('magic-shop'),
+    .addHalvedCost('magic-shop')
+    .addUpgradeTo('academy-tower'),
   new BuildingModel('alchemist', 'alchemist')
     .setMap('app/img/maps/alchemist.png')
     .setIcon('app/img/icons/alchemist.png')
@@ -30,7 +31,8 @@ export const BUILDINGS: BuildingModel[] = [
     .setValue(1000)
     .setMinorMagicObject(1)
     .setPrice(18)
-    .setRequiredHouses(1),
+    .setRequiredHouses(1)
+    .addUpgradeTo('caster-tower'),
   new BuildingModel('all-seeing-eye', 'all-seeing-eye')
     .setMap('app/img/maps/all-seeing-eye.png')
     .setIcon('app/img/icons/all-seeing-eye.png')
@@ -58,6 +60,9 @@ export const BUILDINGS: BuildingModel[] = [
   new BuildingModel('barracks', 'barracks')
     .setMap('app/img/maps/barracks.png')
     .setIcon('app/img/icons/barracks.png')
+    .addUpgradeTo('castle')
+    .addUpgradeTo('garrison')
+    .addUpgradeTo('jail')
     .setDefence(2)
     .setUnrest(-1)
     .setPrice(6),
@@ -86,6 +91,7 @@ export const BUILDINGS: BuildingModel[] = [
     .setEconomy(1)
     .setLoyalty(2)
     .setUnrest(1)
+    .addUpgradeTo('insatiable-flame-lust')
     .setPrice(4),
   new BuildingModel('caster-tower', 'caster-tower')
     .setMap('app/img/maps/caster-tower.png')
@@ -94,6 +100,7 @@ export const BUILDINGS: BuildingModel[] = [
     .setLoyalty(1)
     .setMinorMagicObject(3)
     .setMediumMagicObject(2)
+    .addUpgradeTo('all-seeing-eye')
     .setPrice(30),
   new BuildingModel('castle', 'castle')
     .setSize('LARGE')
@@ -468,6 +475,7 @@ export const BUILDINGS: BuildingModel[] = [
     .addHalvedCost('city-wall')
     .addHalvedCost('granary')
     .addHalvedCost('jail')
+    .addUpgradeTo('castle')
     .setPrice(28),
   new BuildingModel('granary', 'granary')
     .setMap('app/img/maps/granary.png')
@@ -479,6 +487,7 @@ export const BUILDINGS: BuildingModel[] = [
     .setMap('app/img/maps/graveyard.png')
     .setIcon('app/img/icons/graveyard.png')
     .setLoyalty(1)
+    .addUpgradeTo('ossuary')
     .setPrice(4),
   new BuildingModel('guildhall', 'guildhall')
     .setMap('app/img/maps/guildhall.png')
@@ -495,6 +504,7 @@ export const BUILDINGS: BuildingModel[] = [
   new BuildingModel('herbalist', 'herbalist')
     .setMap('app/img/maps/herbalist.png')
     .setIcon('app/img/icons/herbalist.png')
+    .addUpgradeTo('alchemist')
     .setRequiredHouses(1)
     .setLoyalty(1)
     .setStability(1)
@@ -503,6 +513,7 @@ export const BUILDINGS: BuildingModel[] = [
   new BuildingModel('house', 'house')
     .setMap('app/img/maps/house.png')
     .setIcon('app/img/icons/house.png')
+    .addUpgradeTo('mansion')
     .setUnrest(-1)
     .setPrice(3),
   new BuildingModel('inn', 'inn')
@@ -530,6 +541,7 @@ export const BUILDINGS: BuildingModel[] = [
   new BuildingModel('library', 'library')
     .setMap('app/img/maps/library.png')
     .setIcon('app/img/icons/library.png')
+    .addUpgradeTo('academy')
     .setEconomy(1)
     .setLoyalty(1)
     .setPrice(6),
@@ -551,6 +563,7 @@ export const BUILDINGS: BuildingModel[] = [
   new BuildingModel('luxury-shop', 'luxury-shop')
     .setMap('app/img/maps/luxury-shop.png')
     .setIcon('app/img/icons/luxury-shop.png')
+    .addUpgradeTo('magic-shop')
     .setPrice(28)
     .setRequiredHouses(1)
     .setValue(2000)
@@ -569,6 +582,7 @@ export const BUILDINGS: BuildingModel[] = [
   new BuildingModel('mansion', 'mansion')
     .setMap('app/img/maps/mansion.png')
     .setIcon('app/img/icons/mansion.png')
+    .addUpgradeTo('noble-villa')
     .setPrice(10)
     .setStability(1),
   new BuildingModel('market', 'market')
@@ -583,6 +597,7 @@ export const BUILDINGS: BuildingModel[] = [
     .addHalvedCost('black-market')
     .addHalvedCost('inn')
     .addHalvedCost('shop')
+    .addUpgradeTo('black-market')
     .setPrice(48),
   new BuildingModel('mill', 'mill')
     .setMap('app/img/maps/mill.png')
@@ -615,6 +630,7 @@ export const BUILDINGS: BuildingModel[] = [
   new BuildingModel('park', 'park')
     .setMap('app/img/maps/park.png')
     .setIcon('app/img/icons/park.png')
+    .addUpgradeTo('theatre')
     .setUnrest(-1)
     .setLoyalty(1)
     .setPrice(4),
@@ -624,6 +640,7 @@ export const BUILDINGS: BuildingModel[] = [
     .setEconomy(1)
     .setStability(1)
     .setValue(1000)
+    .addUpgradeTo('waterfront')
     .setPrice(16),
   new BuildingModel('rose-opera', 'rose-opera')
     .setMap('app/img/maps/rose-opera.png')
@@ -649,10 +666,13 @@ export const BUILDINGS: BuildingModel[] = [
     .setMap('app/img/maps/shop.png')
     .setIcon('app/img/icons/shop.png')
     .setRequiredHouses(1)
+    .addUpgradeTo('market')
+    .addUpgradeTo('luxury-shop')
     .setEconomy(1)
     .setValue(500)
     .setPrice(8),
   new BuildingModel('shrine-abadar', 'shrine-abadar')
+    .addUpgradeTo('temple-abadar')
     .setMap('app/img/maps/shrine-abadar.png')
     .setIcon('app/img/icons/shrine-abadar.png')
     .setUnrest(-1)
@@ -660,6 +680,7 @@ export const BUILDINGS: BuildingModel[] = [
     .setMinorMagicObject(1)
     .setPrice(8),
   new BuildingModel('shrine-asmodeus', 'shrine-asmodeus')
+    .addUpgradeTo('temple-asmodeus')
     .setMap('app/img/maps/shrine-asmodeus.png')
     .setIcon('app/img/icons/shrine-asmodeus.png')
     .setUnrest(-1)
@@ -667,6 +688,7 @@ export const BUILDINGS: BuildingModel[] = [
     .setMinorMagicObject(1)
     .setPrice(8),
   new BuildingModel('shrine-calistria', 'shrine-calistria')
+    .addUpgradeTo('temple-calistria')
     .setMap('app/img/maps/shrine-calistria.png')
     .setIcon('app/img/icons/shrine-calistria.png')
     .setUnrest(-1)
@@ -674,6 +696,7 @@ export const BUILDINGS: BuildingModel[] = [
     .setMinorMagicObject(1)
     .setPrice(8),
   new BuildingModel('shrine-cayden-cailean', 'shrine-cayden-cailean')
+    .addUpgradeTo('temple-cayden-cailean')
     .setMap('app/img/maps/shrine-cayden-cailean.png')
     .setIcon('app/img/icons/shrine-cayden-cailean.png')
     .setUnrest(-1)
@@ -681,6 +704,7 @@ export const BUILDINGS: BuildingModel[] = [
     .setMinorMagicObject(1)
     .setPrice(8),
   new BuildingModel('shrine-desna', 'shrine-desna')
+    .addUpgradeTo('temple-desna')
     .setMap('app/img/maps/shrine-desna.png')
     .setIcon('app/img/icons/shrine-desna.png')
     .setUnrest(-1)
@@ -688,30 +712,35 @@ export const BUILDINGS: BuildingModel[] = [
     .setMinorMagicObject(1)
     .setPrice(8),
   new BuildingModel('shrine-erastil', 'shrine-erastil')
+    .addUpgradeTo('temple-erastil')
     .setMap('app/img/maps/shrine-erastil.png')
     .setIcon('app/img/icons/shrine-erastil.png')
     .setUnrest(-1)
     .setLoyalty(1)
     .setPrice(8),
   new BuildingModel('shrine-gorum', 'shrine-gorum')
+    .addUpgradeTo('temple-gorum')
     .setMap('app/img/maps/shrine-gorum.png')
     .setIcon('app/img/icons/shrine-gorum.png')
     .setUnrest(-1)
     .setLoyalty(1)
     .setPrice(8),
   new BuildingModel('shrine-gozreh', 'shrine-gozreh')
+    .addUpgradeTo('temple-gozreh')
     .setMap('app/img/maps/shrine-gozreh.png')
     .setIcon('app/img/icons/shrine-gozreh.png')
     .setUnrest(-1)
     .setLoyalty(1)
     .setPrice(8),
   new BuildingModel('shrine-iomedae', 'shrine-iomedae')
+    .addUpgradeTo('temple-iomedae')
     .setMap('app/img/maps/shrine-iomedae.png')
     .setIcon('app/img/icons/shrine-iomedae.png')
     .setUnrest(-1)
     .setLoyalty(1)
     .setPrice(8),
   new BuildingModel('shrine-irori', 'shrine-irori')
+    .addUpgradeTo('temple-irori')
     .setMap('app/img/maps/shrine-irori.png')
     .setIcon('app/img/icons/shrine-irori.png')
     .setUnrest(-1)
@@ -719,6 +748,7 @@ export const BUILDINGS: BuildingModel[] = [
     .setMinorMagicObject(1)
     .setPrice(8),
   new BuildingModel('shrine-nethys', 'shrine-nethys')
+    .addUpgradeTo('temple-nethys')
     .setMap('app/img/maps/shrine-nethys.png')
     .setIcon('app/img/icons/shrine-nethys.png')
     .setUnrest(-1)
@@ -726,6 +756,7 @@ export const BUILDINGS: BuildingModel[] = [
     .setMinorMagicObject(1)
     .setPrice(8),
   new BuildingModel('shrine-pharasma', 'shrine-pharasma')
+    .addUpgradeTo('temple-pharasma')
     .setMap('app/img/maps/shrine-pharasma.png')
     .setIcon('app/img/icons/shrine-pharasma.png')
     .setUnrest(-1)
@@ -733,6 +764,7 @@ export const BUILDINGS: BuildingModel[] = [
     .setMinorMagicObject(1)
     .setPrice(8),
   new BuildingModel('shrine-sarenrae', 'shrine-sarenrae')
+    .addUpgradeTo('temple-sarenrae')
     .setMap('app/img/maps/shrine-sarenrae.png')
     .setIcon('app/img/icons/shrine-sarenrae.png')
     .setUnrest(-1)
@@ -740,6 +772,7 @@ export const BUILDINGS: BuildingModel[] = [
     .setMinorMagicObject(1)
     .setPrice(8),
   new BuildingModel('shrine-shelyn', 'shrine-shelyn')
+    .addUpgradeTo('temple-shelyn')
     .setMap('app/img/maps/shrine-shelyn.png')
     .setIcon('app/img/icons/shrine-shelyn.png')
     .setUnrest(-1)
@@ -747,6 +780,7 @@ export const BUILDINGS: BuildingModel[] = [
     .setMinorMagicObject(1)
     .setPrice(8),
   new BuildingModel('shrine-torag', 'shrine-torag')
+    .addUpgradeTo('temple-torag')
     .setMap('app/img/maps/shrine-torag.png')
     .setIcon('app/img/icons/shrine-torag.png')
     .setUnrest(-1)
@@ -754,6 +788,7 @@ export const BUILDINGS: BuildingModel[] = [
     .setMinorMagicObject(1)
     .setPrice(8),
   new BuildingModel('shrine-zon-kuthon', 'shrine-zon-kuthon')
+    .addUpgradeTo('temple-zon-kuthon')
     .setMap('app/img/maps/shrine-zon-kuthon.png')
     .setIcon('app/img/icons/shrine-zon-kuthon.png')
     .setUnrest(-1)
@@ -785,11 +820,13 @@ export const BUILDINGS: BuildingModel[] = [
     .setMap('app/img/maps/tavern.png')
     .setIcon('app/img/icons/tavern.png')
     .setRequiredHouses(1)
+    .addUpgradeTo('lucky-pint')
     .setEconomy(1)
     .setLoyalty(1)
     .setValue(500)
     .setPrice(12),
   new BuildingModel('temple-abadar', 'temple-abadar')
+    .addUpgradeTo('cathedral-abadar')
     .setSize('MEDIUM')
     .setMap('app/img/maps/temple-abadar.png')
     .setIcon('app/img/icons/temple-abadar.png')
@@ -801,6 +838,7 @@ export const BUILDINGS: BuildingModel[] = [
     .addHalvedCost('shop')
     .setPrice(32),
   new BuildingModel('temple-asmodeus', 'temple-asmodeus')
+    .addUpgradeTo('cathedral-asmodeus')
     .setSize('MEDIUM')
     .setMap('app/img/maps/temple-asmodeus.png')
     .setIcon('app/img/icons/temple-asmodeus.png')
@@ -827,6 +865,7 @@ export const BUILDINGS: BuildingModel[] = [
     .addHalvedCost('shrine-zon-kuthon')
     .setPrice(32),
   new BuildingModel('temple-calistria', 'temple-calistria')
+    .addUpgradeTo('cathedral-calistria')
     .setSize('MEDIUM')
     .setMap('app/img/maps/temple-calistria.png')
     .setIcon('app/img/icons/temple-calistria.png')
@@ -853,6 +892,7 @@ export const BUILDINGS: BuildingModel[] = [
     .addHalvedCost('shrine-zon-kuthon')
     .setPrice(32),
   new BuildingModel('temple-cayden-cailean', 'temple-cayden-cailean')
+    .addUpgradeTo('cathedral-cayden-cailean')
     .setSize('MEDIUM')
     .setMap('app/img/maps/temple-cayden-cailean.png')
     .setIcon('app/img/icons/temple-cayden-cailean.png')
@@ -880,6 +920,7 @@ export const BUILDINGS: BuildingModel[] = [
     .addHalvedCost('shrine-zon-kuthon')
     .setPrice(32),
   new BuildingModel('temple-desna', 'temple-desna')
+    .addUpgradeTo('cathedral-desna')
     .setSize('MEDIUM')
     .setMap('app/img/maps/temple-desna.png')
     .setIcon('app/img/icons/temple-desna.png')
@@ -906,6 +947,7 @@ export const BUILDINGS: BuildingModel[] = [
     .addHalvedCost('shrine-zon-kuthon')
     .setPrice(32),
   new BuildingModel('temple-erastil', 'temple-erastil')
+    .addUpgradeTo('cathedral-erastil')
     .setSize('MEDIUM')
     .setMap('app/img/maps/temple-erastil.png')
     .setIcon('app/img/icons/temple-erastil.png')
@@ -933,6 +975,7 @@ export const BUILDINGS: BuildingModel[] = [
     .addHalvedCost('shrine-zon-kuthon')
     .setPrice(32),
   new BuildingModel('temple-gorum', 'temple-gorum')
+    .addUpgradeTo('cathedral-gorum')
     .setSize('MEDIUM')
     .setMap('app/img/maps/temple-gorum.png')
     .setIcon('app/img/icons/temple-gorum.png')
@@ -960,6 +1003,7 @@ export const BUILDINGS: BuildingModel[] = [
     .addHalvedCost('shrine-zon-kuthon')
     .setPrice(32),
   new BuildingModel('temple-gozreh', 'temple-gozreh')
+    .addUpgradeTo('cathedral-gozreh')
     .setSize('MEDIUM')
     .setMap('app/img/maps/temple-gozreh.png')
     .setIcon('app/img/icons/temple-gozreh.png')
@@ -987,6 +1031,7 @@ export const BUILDINGS: BuildingModel[] = [
     .addHalvedCost('shrine-zon-kuthon')
     .setPrice(32),
   new BuildingModel('temple-iomedae', 'temple-iomedae')
+    .addUpgradeTo('cathedral-iomedae')
     .setSize('MEDIUM')
     .setMap('app/img/maps/temple-iomedae.png')
     .setIcon('app/img/icons/temple-iomedae.png')
@@ -1014,6 +1059,7 @@ export const BUILDINGS: BuildingModel[] = [
     .addHalvedCost('shrine-zon-kuthon')
     .setPrice(32),
   new BuildingModel('temple-irori', 'temple-irori')
+    .addUpgradeTo('cathedral-irori')
     .setSize('MEDIUM')
     .setMap('app/img/maps/temple-irori.png')
     .setIcon('app/img/icons/temple-irori.png')
@@ -1041,6 +1087,7 @@ export const BUILDINGS: BuildingModel[] = [
     .addHalvedCost('shrine-zon-kuthon')
     .setPrice(32),
   new BuildingModel('temple-nethys', 'temple-nethys')
+    .addUpgradeTo('cathedral-nethys')
     .setSize('MEDIUM')
     .setMap('app/img/maps/temple-nethys.png')
     .setIcon('app/img/icons/temple-nethys.png')
@@ -1069,6 +1116,7 @@ export const BUILDINGS: BuildingModel[] = [
     .addHalvedCost('shrine-zon-kuthon')
     .setPrice(32),
   new BuildingModel('temple-pharasma', 'temple-pharasma')
+    .addUpgradeTo('cathedral-pharasma')
     .setSize('MEDIUM')
     .setMap('app/img/maps/temple-pharasma.png')
     .setIcon('app/img/icons/temple-pharasma.png')
@@ -1096,6 +1144,7 @@ export const BUILDINGS: BuildingModel[] = [
     .addHalvedCost('shrine-zon-kuthon')
     .setPrice(32),
   new BuildingModel('temple-sarenrae', 'temple-sarenrae')
+    .addUpgradeTo('cathedral-sarenrae')
     .setSize('MEDIUM')
     .setMap('app/img/maps/temple-sarenrae.png')
     .setIcon('app/img/icons/temple-sarenrae.png')
@@ -1123,6 +1172,7 @@ export const BUILDINGS: BuildingModel[] = [
     .addHalvedCost('shrine-zon-kuthon')
     .setPrice(32),
   new BuildingModel('temple-shelyn', 'temple-shelyn')
+    .addUpgradeTo('cathedral-shelyn')
     .setSize('MEDIUM')
     .setMap('app/img/maps/temple-shelyn.png')
     .setIcon('app/img/icons/temple-shelyn.png')
@@ -1150,6 +1200,7 @@ export const BUILDINGS: BuildingModel[] = [
     .addHalvedCost('shrine-zon-kuthon')
     .setPrice(32),
   new BuildingModel('temple-torag', 'temple-torag')
+    .addUpgradeTo('cathedral-torag')
     .setSize('MEDIUM')
     .setMap('app/img/maps/temple-torag.png')
     .setIcon('app/img/icons/temple-torag.png')
@@ -1162,6 +1213,7 @@ export const BUILDINGS: BuildingModel[] = [
     .addHalvedCost('city-wall')
     .setPrice(32),
   new BuildingModel('temple-zon-kuthon', 'temple-zon-kuthon')
+    .addUpgradeTo('cathedral-zon-kuthon')
     .setSize('MEDIUM')
     .setMap('app/img/maps/temple-zon-kuthon.png')
     .setIcon('app/img/icons/temple-zon-kuthon.png')
@@ -1191,6 +1243,7 @@ export const BUILDINGS: BuildingModel[] = [
   new BuildingModel('tenement', 'tenement')
     .setMap('app/img/maps/tenement.png')
     .setIcon('app/img/icons/tenement.png')
+    .addUpgradeTo('house')
     .setPrice(1)
     .setUnrest(2),
   new BuildingModel('theatre', 'theatre')
@@ -1202,6 +1255,8 @@ export const BUILDINGS: BuildingModel[] = [
     .addHalvedCost('brothel')
     .addHalvedCost('park')
     .addHalvedCost('tavern')
+    .addUpgradeTo('arena')
+    .addUpgradeTo('rose-opera')
     .setStability(2),
   new BuildingModel('thieves-guild', 'thieves-guild')
     .setMap('app/img/maps/thieves-guild.png')
@@ -1220,6 +1275,7 @@ export const BUILDINGS: BuildingModel[] = [
     .setIcon('app/img/icons/tourney-grounds.png')
     .setEconomy(3)
     .setLoyalty(1)
+    .addUpgradeTo('arena')
     .setPrice(25),
   new BuildingModel('town-hall', 'town-hall')
     .setSize('MEDIUM')
@@ -1235,6 +1291,8 @@ export const BUILDINGS: BuildingModel[] = [
   new BuildingModel('tradesman', 'tradesman')
     .setMap('app/img/maps/tradesman.png')
     .setIcon('app/img/icons/tradesman.png')
+    .addUpgradeTo('exotic-craftsman')
+    .addUpgradeTo('guildhall')
     .setEconomy(1)
     .setRequiredHouses(1)
     .setValue(500)
@@ -1243,6 +1301,7 @@ export const BUILDINGS: BuildingModel[] = [
   new BuildingModel('watchtower', 'watchtower')
     .setMap('app/img/maps/watchtower.png')
     .setIcon('app/img/icons/watchtower.png')
+    .addUpgradeTo('castle')
     .setPrice(12)
     .setStability(1)
     .setDefence(2),

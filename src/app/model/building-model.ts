@@ -15,7 +15,8 @@ export class BuildingModel {
   price: number = 0;
   unrest: number = 0;
   requiredHouses: number = 0;
-  halvedCosts: string[] = []
+  halvedCosts: string[] = [];
+  upgradeTo: string[]=[];
 
 
   constructor(id: string, name: string) {
@@ -93,7 +94,12 @@ export class BuildingModel {
     return this;
   }
 
-  addHalvedCost(building){
+  addUpgradeTo(building) {
+    this.upgradeTo.push(building);
+    return this;
+  }
+
+  addHalvedCost(building) {
     this.halvedCosts.push(building);
     return this;
   }
