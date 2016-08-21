@@ -1,42 +1,48 @@
 <div *ngIf="error"><span class="label label-danger">{{error}}</span></div>
-<table #table class="table table-striped">
-  <thead>
-    <tr>
-      <th rowspan="2" (click)="sort('name')"  [class.sort]="'name' === order" [class.ascending]="ascending"></th>
-      <th rowspan="2" (click)="sort('economy')" [class.sort]="'economy' === order" [class.ascending]="ascending">{{economy}}</th>
-      <th rowspan="2" (click)="sort('loyalty')"  [class.sort]="'loyalty' === order" [class.ascending]="ascending">{{loyalty}}</th>
-      <th rowspan="2" (click)="sort('stability')" [class.sort]="'stability' === order" [class.ascending]="ascending">{{stability}}</th>
-      <th rowspan="2" (click)="sort('unrest')" [class.sort]="'unrest' === order" [class.ascending]="ascending">{{unrest}}</th>
-      <th rowspan="2" (click)="sort('defence')" [class.sort]="'defence' === order" [class.ascending]="ascending">{{defence}}</th>
-      <th rowspan="2" (click)="sort('value')" [class.sort]="'value' === order" [class.ascending]="ascending">{{value}}</th>
-      <th rowspan="2" (click)="sort('price')" [class.sort]="'price' === order" [class.ascending]="ascending">{{price}}</th>
-      <th colspan="3">{{magicObjects}}</th>
-      <th rowspan="2" (click)="sort('requiredHouses')" [class.sort]="'requiredHouses' === order" [class.ascending]="ascending">{{requiredHouses}}</th>
-      <th rowspan="2">{{halvedCostBuildings}}</th>
-      <th rowspan="2">{{upgradeTo}}</th>
-    </tr>
-    <tr>
-      <th (click)="sort('minorMagicObject')" [class.sort]="'minorMagicObject' === order" [class.ascending]="ascending">{{minor}}</th>
-      <th (click)="sort('mediumMagicObject')" [class.sort]="'mediumMagicObject' === order" [class.ascending]="ascending">{{medium}}</th>
-      <th (click)="sort('majorMagicObject')" [class.sort]="'majorMagicObject' === order" [class.ascending]="ascending">{{major}}</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let building of buildings | sortBuildings: order:ascending">
-      <th><img class="icon" src="{{building.icon}}"> {{building.name}} </th>
-      <td>{{building.economy}}</td>
-      <td>{{building.loyalty}}</td>
-      <td>{{building.stability}}</td>
-      <td>{{building.unrest}}</td>
-      <td>{{building.defence}}</td>
-      <td>{{building.value}}</td>
-      <td>{{building.price}}</td>
-      <td>{{building.minorMagicObject}}</td>
-      <td>{{building.mediumMagicObject}}</td>
-      <td>{{building.majorMagicObject}}</td>
-      <td>{{building.requiredHouses}}</td>
-      <td class="limitedsize"><building-icon *ngFor="let id of building.halvedCosts" [id]="id"></building-icon></td>
-      <td class="limitedsize"><building-icon *ngFor="let id of building.upgradeTo" [id]="id"></building-icon></td>
-    </tr>
-  </tbody>
-</table>
+<div id="main">
+  <table class="table table-striped buildings">
+    <thead>
+      <tr>
+        <th class="medium" rowspan="2" (click)="sort('name')" [class.sort]="'name' === order" [class.ascending]="ascending"></th>
+        <th class="small" rowspan="2" (click)="sort('economy')" [class.sort]="'economy' === order" [class.ascending]="ascending">{{economy}}</th>
+        <th class="small" rowspan="2" (click)="sort('loyalty')" [class.sort]="'loyalty' === order" [class.ascending]="ascending">{{loyalty}}</th>
+        <th class="small" rowspan="2" (click)="sort('stability')" [class.sort]="'stability' === order" [class.ascending]="ascending">{{stability}}</th>
+        <th class="small" rowspan="2" (click)="sort('unrest')" [class.sort]="'unrest' === order" [class.ascending]="ascending">{{unrest}}</th>
+        <th class="small" rowspan="2" (click)="sort('defence')" [class.sort]="'defence' === order" [class.ascending]="ascending">{{defence}}</th>
+        <th class="small" rowspan="2" (click)="sort('value')" [class.sort]="'value' === order" [class.ascending]="ascending">{{value}}</th>
+        <th class="small" rowspan="2" (click)="sort('price')" [class.sort]="'price' === order" [class.ascending]="ascending">{{price}}</th>
+        <th colspan="3">{{magicObjects}}</th>
+        <th class="small" rowspan="2" (click)="sort('requiredHouses')" [class.sort]="'requiredHouses' === order" [class.ascending]="ascending">{{requiredHouses}}</th>
+        <th class="large" rowspan="2">{{halvedCostBuildings}}</th>
+        <th class="medium" rowspan="2">{{upgradeTo}}</th>
+      </tr>
+      <tr>
+        <th class="small" (click)="sort('minorMagicObject')" [class.sort]="'minorMagicObject' === order" [class.ascending]="ascending">{{minor}}</th>
+        <th class="small" (click)="sort('mediumMagicObject')" [class.sort]="'mediumMagicObject' === order" [class.ascending]="ascending">{{medium}}</th>
+        <th class="small" (click)="sort('majorMagicObject')" [class.sort]="'majorMagicObject' === order" [class.ascending]="ascending">{{major}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let building of buildings | sortBuildings: order:ascending">
+        <th class="medium"><img class="icon" src="{{building.icon}}"> {{building.name}} </th>
+        <td class="small">{{building.economy}}</td>
+        <td class="small">{{building.loyalty}}</td>
+        <td class="small">{{building.stability}}</td>
+        <td class="small">{{building.unrest}}</td>
+        <td class="small">{{building.defence}}</td>
+        <td class="small">{{building.value}}</td>
+        <td class="small">{{building.price}}</td>
+        <td class="small">{{building.minorMagicObject}}</td>
+        <td class="small">{{building.mediumMagicObject}}</td>
+        <td class="small">{{building.majorMagicObject}}</td>
+        <td class="small">{{building.requiredHouses}}</td>
+        <td class="large">
+          <building-icon *ngFor="let id of building.halvedCosts" [id]="id"></building-icon>
+        </td>
+        <td class="medium">
+          <building-icon *ngFor="let id of building.upgradeTo" [id]="id"></building-icon>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

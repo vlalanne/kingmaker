@@ -1,11 +1,34 @@
 .sort::after {
-  content: ' \21E7'
+    content: ' \21E9';
 }
 
 .sort.ascending::after {
-  content: ' \21E9'
+    content: ' \21E7';
 }
 
 table td.limitedsize {
-  max-width: 40em;
+    max-width: 40em;
+}
+table.buildings{
+    width: 100%
+}
+
+table.buildings tbody, table.buildings thead {
+    display: block;
+    width: 100%;
+}
+
+table.buildings tbody {
+    overflow: auto;
+    height: 50em;
+}
+
+table.buildings td.small, table.buildings th.small{
+    width:5%;
+}
+table.buildings td.medium, table.buildings th.medium{
+    width:10%;
+}
+table.buildings td.large, table.buildings th.large{
+    width:20%;
 }
