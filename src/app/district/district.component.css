@@ -7,6 +7,13 @@ td, tr {
     background: lightblue
 }
 
+.north.bridge, .south.bridge {
+    background: linear-gradient(to left, lightblue 0%,lightblue 45%,lightgrey 45%,lightgrey 55%,lightblue 55%,lightblue 100%);
+}
+.west.bridge, .east.bridge {
+    background: linear-gradient(to bottom, lightblue 0%,lightblue 45%,lightgrey 45%,lightgrey 55%,lightblue 55%,lightblue 100%);
+}
+
 .grass {
     background: lightgreen
 }

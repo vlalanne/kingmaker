@@ -522,7 +522,7 @@
           "type": "GRASS"
         },
         "east": {
-          "type": "WATER",
+            "type": "BRIDGE",
           "name": "Rivière Kiravoy"
         },
         "buildings": [

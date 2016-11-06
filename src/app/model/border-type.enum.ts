@@ -1,3 +1,3 @@
 export enum BorderType {
-  WATER, DISTRICT, GRASS
+  WATER, DISTRICT, GRASS, BRIDGE
 }
