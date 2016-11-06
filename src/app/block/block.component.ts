@@ -5,11 +5,9 @@ import { TranslationService } from '../translation.service';
 import { BuildingDetailComponent } from '../building-detail'
 
 @Component({
-  moduleId: module.id,
   selector: 'city-block',
   templateUrl: 'block.component.html',
-  styleUrls: ['block.component.css'],
-  directives: [BuildingDetailComponent]
+  styleUrls: ['block.component.css']
 })
 export class BlockComponent implements OnInit {
 

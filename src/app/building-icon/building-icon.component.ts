@@ -4,7 +4,6 @@ import { BuildingsService } from '../buildings.service'
 import { BuildingModel } from '../model'
 
 @Component({
-  moduleId: module.id,
   selector: 'building-icon',
   templateUrl: 'building-icon.component.html',
   styleUrls: ['building-icon.component.css']

@@ -3,7 +3,6 @@ import { BuildingModel } from '../model/index';
 import { TranslationService } from '../translation.service';
 
 @Component({
-  moduleId: module.id,
   selector: 'building-detail',
   templateUrl: 'building-detail.component.html',
   styleUrls: ['building-detail.component.css']

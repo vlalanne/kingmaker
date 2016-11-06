@@ -5,11 +5,9 @@ import { BlockComponent } from '../block/block.component';
 
 const EMPTY_BUILDING = '<td class="building"></td>';
 @Component({
-  moduleId: module.id,
   selector: 'district',
   templateUrl: 'district.component.html',
-  styleUrls: ['district.component.css'],
-  directives: [BlockComponent]
+  styleUrls: ['district.component.css']
 })
 export class DistrictComponent implements OnInit {
   @Input()

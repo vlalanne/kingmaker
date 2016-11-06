@@ -3,11 +3,9 @@ import { City } from '../model/city';
 import { DistrictComponent } from '../district';
 
 @Component({
-  moduleId: module.id,
   selector: 'city',
   templateUrl: 'city.component.html',
-  styleUrls: ['city.component.css'],
-  directives: [DistrictComponent]
+  styleUrls: ['city.component.css']
 })
 export class CityComponent implements OnInit {
   @Input()

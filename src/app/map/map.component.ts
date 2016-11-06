@@ -7,9 +7,7 @@ import { WIDTH, HEIGHT, HEX_WIDTH, HEX_HEIGHT, EVEN_X_OFFSET, ODD_X_OFFSET, Y_OF
 declare var L: any;
 
 
-
 @Component({
-  moduleId: module.id,
   selector: 'app-map',
   templateUrl: 'map.component.html',
   styleUrls: ['map.component.css']

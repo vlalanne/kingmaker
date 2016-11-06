@@ -8,7 +8,7 @@ export class TranslationService {
   private language: string;
   private url: string;
   constructor(private http: Http) {
-    this.language = (window.navigator.userLanguage || window.navigator.language).split("-")[0];
+    this.language = window.navigator.language.split("-")[0];
     if (this.language != 'fr' && this.language != 'en') {
       this.language = 'en';
     }

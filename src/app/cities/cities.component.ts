@@ -1,15 +1,13 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute, ROUTER_DIRECTIVES } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { City } from '../model';
 import { CitiesService } from '../cities.service';
 import { CityComponent } from '../city';
 
 @Component({
-  moduleId: module.id,
   selector: 'app-cities',
   templateUrl: 'cities.component.html',
-  styleUrls: ['cities.component.css'],
-  directives: [CityComponent, ROUTER_DIRECTIVES]
+  styleUrls: ['cities.component.css']
 })
 export class CitiesComponent implements OnInit {
   cities: City[];

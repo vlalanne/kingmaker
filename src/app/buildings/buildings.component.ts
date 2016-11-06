@@ -6,12 +6,9 @@ import { BuildingModel } from '../model/index';
 import { BuildingIconComponent } from '../building-icon';
 
 @Component({
-  moduleId: module.id,
   selector: 'app-buildings',
   templateUrl: 'buildings.component.html',
-  styleUrls: ['buildings.component.css'],
-  pipes: [SortBuildingsPipe],
-  directives: [BuildingIconComponent]
+  styleUrls: ['buildings.component.css']
 })
 export class BuildingsComponent implements OnInit {
 
