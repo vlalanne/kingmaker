@@ -2,6 +2,7 @@
   {
     "name": "Port Colombe",
     "districts": [
+      [
       {
         "name": "Mont-Sur",
         "south": {
@@ -171,7 +172,9 @@
             "model": "city-wall"
           }
         ]
-      },
+        }
+      ],
+      [
       {
         "name": "Marché",
         "south": {
@@ -285,10 +288,12 @@
         ]
       }
     ]
+    ]
   },
   {
     "name": "Olegbourg",
     "districts": [
+      [
       {
         "name": "Avant-Poste",
         "south": {
@@ -386,10 +391,12 @@
         ]
       }
     ]
+    ]
   },
   {
     "name": "Akadomia",
     "districts": [
+      [
       {
         "name": "Akadomia",
         "south": {
@@ -497,10 +504,12 @@
         ]
       }
     ]
+    ]
   },
   {
     "name": "Varnhold",
     "districts": [
+      [
       {
         "name": "Varnhold",
         "south": {
@@ -648,6 +657,7 @@
           }
         ]
       }
+      ]
     ]
   }
 ]
