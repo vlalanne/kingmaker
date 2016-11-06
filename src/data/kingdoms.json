@@ -516,6 +516,11 @@
         "roads": true
       },
       {
+        "x": 10,
+        "y": 4,
+        "pointOfInterest": "Village des Bourbirins"
+      },
+      {
         "x": 26,
         "y": 4,
         "pointOfInterest": "Village des Nomens"
@@ -523,12 +528,27 @@
       {
         "x": 12,
         "y": 5,
-        "pointOfInterest": "Tertre"
+        "pointOfInterest": "Tertre du Naga Corrupteur"
+      },
+      {
+        "x": 10,
+        "y": 6,
+        "pointOfInterest": "Chuuls"
       },
       {
         "x": 24,
         "y": 6,
         "pointOfInterest": "Pierre Fantôme"
+      },
+      {
+        "x": 10,
+        "y": 7,
+        "pointOfInterest": "Nénuphars Bleus"
+      },
+      {
+        "x": 11,
+        "y": 7,
+        "pointOfInterest": "Village des Arpenteurs des Marais"
       },
       {
         "x": 16,
@@ -546,6 +566,11 @@
         "y": 7,
         "pointOfInterest": "Vallée de la Mort",
         "roads": true
+      },
+      {
+        "x": 8,
+        "y": 8,
+        "pointOfInterest": "Campement des Réfugiés"
       },
       {
         "x": 14,
