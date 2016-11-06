@@ -516,6 +516,11 @@
         "roads": true
       },
       {
+        "x": 10,
+        "y": 4,
+        "pointOfInterest": "Village des Bourbirins"
+      },
+      {
         "x": 26,
         "y": 4,
         "pointOfInterest": "Village des Nomens"
@@ -523,7 +528,12 @@
       {
         "x": 12,
         "y": 5,
-        "pointOfInterest": "Tertre"
+        "pointOfInterest": "Tertre du Naga Corrupteur"
+      },
+      {
+        "x": 10,
+        "y": 6,
+        "pointOfInterest": "Chuuls"
       },
       {
         "x": 24,
@@ -536,6 +546,11 @@
         "pointOfInterest": "Village des Hommes-Lézards"
       },
       {
+        "x": 11,
+        "y": 7,
+        "pointOfInterest": "Village des Arpenteurs des Marais"
+      },
+      {
         "x": 25,
         "y": 7,
         "pointOfInterest": "Tombe de Vordakai",
@@ -546,6 +561,11 @@
         "y": 7,
         "pointOfInterest": "Vallée de la Mort",
         "roads": true
+      },
+      {
+        "x": 8,
+        "y": 8,
+        "pointOfInterest": "Camp des Réfugiés"
       },
       {
         "x": 14,
