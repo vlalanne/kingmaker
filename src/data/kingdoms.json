@@ -102,6 +102,11 @@
         "resource": "farm"
       },
       {
+        "x": 16,
+        "y": 2,
+        "pointOfInterest": "Temple d'Erastil"
+      },
+      {
         "x": 18,
         "y": 2,
         "resource": "mine",
@@ -143,6 +148,21 @@
         "x": 25,
         "y": 2,
         "resource": "farm"
+      },
+      {
+        "x": 14,
+        "y": 3
+      },
+      {
+        "x": 15,
+        "y": 3,
+        "pointOfInterest": "Statue d'Erastil"
+      },
+      {
+        "x": 16,
+        "y": 3,
+        "city": "Guet de Tazl",
+        "roads": true
       },
       {
         "x": 18,
@@ -195,6 +215,11 @@
         "x": 26,
         "y": 3,
         "resource": "farm"
+      },
+      {
+        "x": 16,
+        "y": 4,
+        "roads": true
       },
       {
         "x": 17,
@@ -403,31 +428,6 @@
     ]
   },
   {
-    "name": "Erastil",
-    "color": "blue",
-    "hexs": [
-      {
-        "x": 16,
-        "y": 2,
-        "pointOfInterest": "Temple d'Erastil"
-      },
-      {
-        "x": 14,
-        "y": 3
-      },
-      {
-        "x": 15,
-        "y": 3,
-        "pointOfInterest": "Statue d'Erastil"
-      },
-      {
-        "x": 16,
-        "y": 3,
-        "city": "Guet de Tazl"
-      }
-    ]
-  },
-  {
     "name": "Brevoy",
     "color": "red",
     "hexs": [
@@ -457,6 +457,18 @@
         "x": 26,
         "y": 0,
         "city": "Restov",
+        "roads": true
+      }
+    ]
+  },
+  {
+    "name": "Drelev",
+    "color": "yellow",
+    "hexs": [
+      {
+        "x": 9,
+        "y": 4,
+        "city": "Drelev",
         "roads": true
       }
     ]
@@ -509,14 +521,19 @@
         "pointOfInterest": "Village des Nomens"
       },
       {
-        "x": 16,
-        "y": 7,
-        "pointOfInterest": "Village des Hommes-Lézards"
+        "x": 12,
+        "y": 5,
+        "pointOfInterest": "Tertre"
       },
       {
         "x": 24,
         "y": 6,
         "pointOfInterest": "Pierre Fantôme"
+      },
+      {
+        "x": 16,
+        "y": 7,
+        "pointOfInterest": "Village des Hommes-Lézards"
       },
       {
         "x": 25,
