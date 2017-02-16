@@ -101,7 +101,7 @@ export class KingdomRenderer {
   }
 
   paintCity(hex: Hex) {
-    let city = L.divIcon({ html: '<div title="' + hex.city + '"><img src="app/img/map/city.svg" ><p>' + hex.city + '</p></div>', className: 'element-icon map-icon' });
+    let city = L.divIcon({ html: '<div title="' + hex.city + '"><img src="assets/img/map/city.svg" ><p>' + hex.city + '</p></div>', className: 'element-icon map-icon' });
     L.marker(this.computePoint(hex, 0, 2 / 3), { icon: city })
       .on('click', e => this.router.navigate(['/cities', hex.city]))
       .addTo(this.map);
@@ -128,17 +128,17 @@ export class KingdomRenderer {
   }
 
   paintResource(hex: Hex, point) {
-    let resource = L.divIcon({ html: '<img src="app/img/map/' + hex.resource + '.svg" >', className: 'element-icon map-icon' });
+    let resource = L.divIcon({ html: '<img src="assets/img/map/' + hex.resource + '.svg" >', className: 'element-icon map-icon' });
     L.marker(point, { icon: resource }).addTo(this.map);
   }
 
   paintGuardTower(hex: Hex, point) {
-    let tower = L.divIcon({ html: '<img src="app/img/map/tower_round.svg" >', className: 'element-icon map-icon' });
+    let tower = L.divIcon({ html: '<img src="assets/img/map/tower_round.svg" >', className: 'element-icon map-icon' });
     L.marker(point, { icon: tower }).addTo(this.map);
   }
 
   paintPointOfInterest(hex: Hex, point) {
-    let poi = L.divIcon({ html: '<div title="' + hex.pointOfInterest + '"><img src="app/img/map/ruins.svg" ><p>' + hex.pointOfInterest + '</p></div>', className: 'element-icon map-icon' });
+    let poi = L.divIcon({ html: '<div title="' + hex.pointOfInterest + '"><img src="assets/img/map/ruins.svg" ><p>' + hex.pointOfInterest + '</p></div>', className: 'element-icon map-icon' });
     L.marker(point, { icon: poi })
       .addTo(this.map);
   }

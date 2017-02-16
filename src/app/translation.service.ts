@@ -13,7 +13,7 @@ export class TranslationService {
       this.language = 'en';
     }
 
-    this.url = 'app/conf/translation/messages_' + this.language + '.json';  // URL to web api
+    this.url = 'assets/conf/translation/messages_' + this.language + '.json';  // URL to web api
   }
 
   getMessages() {

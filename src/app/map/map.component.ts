@@ -27,7 +27,7 @@ export class MapComponent implements AfterViewInit {
     let northEast = map.unproject([WIDTH, 0], map.getMaxZoom());
     let bounds = new L.LatLngBounds(southWest, northEast);
     map.setMaxBounds(bounds);
-    L.tileLayer('app/img/map/{z}/{x}_{y}.png', {
+    L.tileLayer('assets/img/map/{z}/{x}_{y}.png', {
       format: 'image/png',
       minZoom: 18,
       maxZoom: 20,

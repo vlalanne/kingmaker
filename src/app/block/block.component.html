@@ -21,7 +21,7 @@
       <img class="normal" src="{{topLeftModel.map}}" alt="{{topLeftLabel}}" title="{{topLeftLabel}}">
     </td>
     <td *ngIf="!topLeftModel">
-      <img class="normal" src="app/img/maps/no-building.png" alt="{{noBuildingLabel}}" title="{{noBuildingLabel}}">
+      <img class="normal" src="assets/img/maps/no-building.png" alt="{{noBuildingLabel}}" title="{{noBuildingLabel}}">
     </td>
     <td *ngIf="canDrawTopRight() && topRightModel && topRightModel.size === 'MEDIUM' " class="tooltip-container">
       <building-detail class="detail" [building]="topRightModel" [label]="topRightLabel"></building-detail>
@@ -32,7 +32,7 @@
       <img class="normal" src="{{topRightModel.map}}" alt="{{topRightLabel}}" title="{{topRightLabel}}">
     </td>
     <td *ngIf="canDrawTopRight() && !topRightModel">
-      <img class="normal" src="app/img/maps/no-building.png" alt="{{noBuildingLabel}}" title="{{noBuildingLabel}}">
+      <img class="normal" src="assets/img/maps/no-building.png" alt="{{noBuildingLabel}}" title="{{noBuildingLabel}}">
     </td>
   </tr>
   <tr>
@@ -45,14 +45,14 @@
       <img class="normal" src="{{bottomLeftModel.map}}" alt="{{bottomLeftLabel}}" title="{{bottomLeftLabel}}">
     </td>
     <td *ngIf="canDrawBottomLeft() && !bottomLeftModel">
-      <img class="normal" src="app/img/maps/no-building.png" alt="{{noBuildingLabel}}" title="{{noBuildingLabel}}">
+      <img class="normal" src="assets/img/maps/no-building.png" alt="{{noBuildingLabel}}" title="{{noBuildingLabel}}">
     </td>
     <td *ngIf="canDrawBottomRight() && bottomRightModel" class="tooltip-container">
       <building-detail class="detail" [building]="bottomRightModel" [label]="bottomRightLabel"></building-detail>
       <img class="normal" src="{{bottomRightModel.map}}" alt="{{bottomRightLabel}}" title="{{bottomRightLabel}}">
     </td>
     <td *ngIf="canDrawBottomRight() && !bottomRightModel">
-      <img class="normal" src="app/img/maps/no-building.png" alt="{{noBuildingLabel}}" title="{{noBuildingLabel}}">
+      <img class="normal" src="assets/img/maps/no-building.png" alt="{{noBuildingLabel}}" title="{{noBuildingLabel}}">
     </td>
   </tr>
 </table>
