@@ -1,0 +1,592 @@
+[
+  {
+    "name": "Talacos",
+    "color": "#ff00ff",
+    "hexs": [
+      {
+        "x": 14,
+        "y": 0,
+        "resource": "farm",
+        "roads": true
+      },
+      {
+        "x": 15,
+        "y": 0,
+        "resource": "farm",
+        "roads": true
+      },
+      {
+        "x": 16,
+        "y": 0,
+        "roads": true
+      },
+      {
+        "x": 17,
+        "y": 0,
+        "resource": "farm",
+        "roads": true
+      },
+      {
+        "x": 18,
+        "y": 0,
+        "city": "Olegbourg",
+        "roads": true
+      },
+      {
+        "x": 19,
+        "y": 0,
+        "resource": "farm",
+        "pointOfInterest": "Boken l'Alchimiste",
+        "roads": true
+      },
+      {
+        "x": 20,
+        "y": 0,
+        "resource": "farm",
+        "roads": true
+      },
+      {
+        "x": 21,
+        "y": 0,
+        "resource": "farm",
+        "roads": true
+      },
+      {
+        "x": 15,
+        "y": 1,
+        "resource": "farm",
+        "roads": true
+      },
+      {
+        "x": 18,
+        "y": 1,
+        "resource": "monastery",
+        "roads": true
+      },
+      {
+        "x": 19,
+        "y": 1,
+        "resource": "farm",
+        "roads": true
+      },
+      {
+        "x": 20,
+        "y": 1,
+        "resource": "farm",
+        "roads": true
+      },
+      {
+        "x": 21,
+        "y": 1,
+        "resource": "farm",
+        "roads": true
+      },
+      {
+        "x": 22,
+        "y": 1,
+        "roads": true
+      },
+      {
+        "x": 23,
+        "y": 1
+      },
+      {
+        "x": 24,
+        "y": 1,
+        "resource": "farm",
+        "roads": true
+      },
+      {
+        "x": 25,
+        "y": 1,
+        "resource": "farm"
+      },
+      {
+        "x": 16,
+        "y": 2,
+        "pointOfInterest": "Temple d'Erastil"
+      },
+      {
+        "x": 18,
+        "y": 2,
+        "resource": "mine",
+        "roads": true
+      },
+      {
+        "x": 19,
+        "y": 2,
+        "roads": true,
+        "resource": "farm"
+      },
+      {
+        "x": 20,
+        "y": 2,
+        "resource": "farm",
+        "roads": true
+      },
+      {
+        "x": 21,
+        "y": 2,
+        "roads": true
+      },
+      {
+        "x": 22,
+        "y": 2,
+        "resource": "farm"
+      },
+      {
+        "x": 23,
+        "y": 2
+      },
+      {
+        "x": 24,
+        "y": 2,
+        "resource": "farm",
+        "roads": true
+      },
+      {
+        "x": 25,
+        "y": 2,
+        "resource": "farm"
+      },
+      {
+        "x": 14,
+        "y": 3
+      },
+      {
+        "x": 15,
+        "y": 3,
+        "pointOfInterest": "Statue d'Erastil"
+      },
+      {
+        "x": 16,
+        "y": 3,
+        "city": "Guet de Tazl",
+        "roads": true
+      },
+      {
+        "x": 18,
+        "y": 3,
+        "resource": "farm",
+        "roads": true
+      },
+      {
+        "x": 19,
+        "y": 3,
+        "resource": "farm",
+        "roads": true
+      },
+      {
+        "x": 20,
+        "y": 3,
+        "resource": "farm",
+        "roads": true
+      },
+      {
+        "x": 21,
+        "y": 3,
+        "roads": true
+      },
+      {
+        "x": 22,
+        "y": 3,
+        "resource": "farm",
+        "roads": true
+      },
+      {
+        "x": 23,
+        "y": 3,
+        "guardTower": true,
+        "roads": true
+      },
+      {
+        "x": 24,
+        "y": 3,
+        "city": "Varnhold",
+        "roads": true
+      },
+      {
+        "x": 25,
+        "y": 3,
+        "resource": "farm",
+        "roads": true
+      },
+      {
+        "x": 26,
+        "y": 3,
+        "resource": "farm"
+      },
+      {
+        "x": 16,
+        "y": 4,
+        "roads": true
+      },
+      {
+        "x": 17,
+        "y": 4,
+        "resource": "farm",
+        "roads": true
+      },
+      {
+        "x": 18,
+        "y": 4,
+        "resource": "farm",
+        "roads": true
+      },
+      {
+        "x": 19,
+        "y": 4,
+        "resource": "mine",
+        "roads": true
+      },
+      {
+        "x": 20,
+        "y": 4,
+        "resource": "farm",
+        "roads": true
+      },
+      {
+        "x": 21,
+        "y": 4,
+        "resource": "farm",
+        "roads": true
+      },
+      {
+        "x": 22,
+        "y": 4
+      },
+      {
+        "x": 23,
+        "y": 4
+      },
+      {
+        "x": 24,
+        "y": 4
+      },
+      {
+        "x": 25,
+        "y": 4,
+        "roads": true,
+        "resource": "farm"
+      },
+      {
+        "x": 15,
+        "y": 5,
+        "pointOfInterest": "Bosquet de la Reine des Fées"
+      },
+      {
+        "x": 16,
+        "y": 5,
+        "resource": "lumberjack",
+        "roads": true
+      },
+      {
+        "x": 17,
+        "y": 5,
+        "roads": true
+      },
+      {
+        "x": 18,
+        "y": 5,
+        "city": "Port Colombe",
+        "roads": true
+      },
+      {
+        "x": 19,
+        "y": 5,
+        "resource": "farm",
+        "roads": true
+      },
+      {
+        "x": 20,
+        "y": 5,
+        "pointOfInterest": "Tumulus",
+        "roads": true
+      },
+      {
+        "x": 21,
+        "y": 5,
+        "resource": "farm",
+        "roads": true
+      },
+      {
+        "x": 22,
+        "y": 5,
+        "resource": "fishery",
+        "roads": true
+      },
+      {
+        "x": 23,
+        "y": 5,
+        "pointOfInterest": "Hommes de boues"
+      },
+      {
+        "x": 24,
+        "y": 5,
+        "resource": "farm"
+      },
+      {
+        "x": 25,
+        "y": 5
+      },
+      {
+        "x": 26,
+        "y": 5,
+        "pointOfInterest": "Tombe du Linorne",
+        "roads": true,
+        "resource": "mine"
+      },
+      {
+        "x": 14,
+        "y": 6,
+        "city": "Akadomia",
+        "roads": true
+      },
+      {
+        "x": 15,
+        "y": 6,
+        "roads": true
+      },
+      {
+        "x": 16,
+        "y": 6,
+        "roads": true
+      },
+      {
+        "x": 17,
+        "y": 6,
+        "resource": "farm",
+        "pointOfInterest": "Domain de Belle-Dame",
+        "roads": true
+      },
+      {
+        "x": 18,
+        "y": 6,
+        "resource": "fishery",
+        "roads": true
+      },
+      {
+        "x": 19,
+        "y": 6,
+        "resource": "fishery",
+        "roads": true
+      },
+      {
+        "x": 20,
+        "y": 6,
+        "roads": true
+      },
+      {
+        "x": 21,
+        "y": 6,
+        "roads": true
+      },
+      {
+        "x": 17,
+        "y": 7,
+        "guardTower": true,
+        "roads": true
+      },
+      {
+        "x": 18,
+        "y": 7,
+        "resource": "farm",
+        "roads": true
+      },
+      {
+        "x": 19,
+        "y": 7,
+        "roads": true,
+        "resource": "farm"
+      },
+      {
+        "x": 20,
+        "y": 7,
+        "roads": true,
+        "resource": "farm"
+      },
+      {
+        "x": 17,
+        "y": 8,
+        "resource": "farm",
+        "roads": true
+      },
+      {
+        "x": 18,
+        "y": 8,
+        "resource": "farm",
+        "pointOfInterest": "Ville Abandonée",
+        "roads": true
+      },
+      {
+        "x": 19,
+        "y": 8,
+        "pointOfInterest": "Caverne des Ours-Hiboux",
+        "guardTower": true,
+        "roads": true
+      }
+    ]
+  },
+  {
+    "name": "Brevoy",
+    "color": "red",
+    "hexs": [
+      {
+        "x": 22,
+        "y": 0,
+        "city": "Fort Serenko",
+        "roads": true
+      },
+      {
+        "x": 23,
+        "y": 0,
+        "roads": true
+      },
+      {
+        "x": 24,
+        "y": 0,
+        "city": "Guet de Nivatka",
+        "roads": true
+      },
+      {
+        "x": 25,
+        "y": 0,
+        "roads": true
+      },
+      {
+        "x": 26,
+        "y": 0,
+        "city": "Restov",
+        "roads": true
+      }
+    ]
+  },
+  {
+    "name": "Drelev",
+    "color": "yellow",
+    "hexs": [
+      {
+        "x": 9,
+        "y": 4,
+        "city": "Drelev",
+        "roads": true
+      }
+    ]
+  },
+  {
+    "hexs": [
+      {
+        "x": 18,
+        "y": -1,
+        "roads": true
+      },
+      {
+        "x": 19,
+        "y": -1,
+        "roads": true
+      },
+      {
+        "x": 20,
+        "y": -1,
+        "roads": true
+      },
+      {
+        "x": 21,
+        "y": -1,
+        "roads": true
+      },
+      {
+        "x": 22,
+        "y": -1,
+        "roads": true
+      },
+      {
+        "x": 26,
+        "y": -1,
+        "roads": true
+      },
+      {
+        "x": 27,
+        "y": -1,
+        "roads": true
+      },
+      {
+        "x": 27,
+        "y": 0,
+        "roads": true
+      },
+      {
+        "x": 10,
+        "y": 4,
+        "pointOfInterest": "Village des Bourbirins"
+      },
+      {
+        "x": 26,
+        "y": 4,
+        "pointOfInterest": "Village des Nomens"
+      },
+      {
+        "x": 12,
+        "y": 5,
+        "pointOfInterest": "Tertre du Naga Corrupteur"
+      },
+      {
+        "x": 10,
+        "y": 6,
+        "pointOfInterest": "Chuuls"
+      },
+      {
+        "x": 24,
+        "y": 6,
+        "pointOfInterest": "Pierre Fantôme"
+      },
+      {
+        "x": 10,
+        "y": 7,
+        "pointOfInterest": "Nénuphars Bleus"
+      },
+      {
+        "x": 11,
+        "y": 7,
+        "pointOfInterest": "Village des Arpenteurs des Marais"
+      },
+      {
+        "x": 16,
+        "y": 7,
+        "pointOfInterest": "Village des Hommes-Lézards"
+      },
+      {
+        "x": 25,
+        "y": 7,
+        "pointOfInterest": "Tombe de Vordakai",
+        "roads": true
+      },
+      {
+        "x": 26,
+        "y": 7,
+        "pointOfInterest": "Vallée de la Mort",
+        "roads": true
+      },
+      {
+        "x": 8,
+        "y": 8,
+        "pointOfInterest": "Campement des Réfugiés"
+      },
+      {
+        "x": 14,
+        "y": 8,
+        "pointOfInterest": "Ruines Naines"
+      },
+      {
+        "x": 18,
+        "y": 9,
+        "roads": true
+      },
+      {
+        "x": 17,
+        "y": 10,
+        "roads": true
+      }
+    ]
+  }
+]
