@@ -7,11 +7,11 @@ const EMPTY_BUILDING = '<td class="building"></td>';
 @Component({
   selector: 'district',
   templateUrl: 'district.component.html',
-  styleUrls: ['district.component.css']
+  styleUrls: ['district.component.scss']
 })
 export class DistrictComponent implements OnInit {
   @Input()
-  private district: District;
+  district: District;
 
   constructor() { }
 

@@ -7,7 +7,7 @@ import { BuildingDetailComponent } from '../building-detail'
 @Component({
   selector: 'city-block',
   templateUrl: 'block.component.html',
-  styleUrls: ['block.component.css']
+  styleUrls: ['block.component.scss']
 })
 export class BlockComponent implements OnInit {
 

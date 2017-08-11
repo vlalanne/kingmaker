@@ -5,11 +5,11 @@ import { DistrictComponent } from '../district';
 @Component({
   selector: 'city',
   templateUrl: 'city.component.html',
-  styleUrls: ['city.component.css']
+  styleUrls: ['city.component.scss']
 })
 export class CityComponent implements OnInit {
   @Input()
-  private city: City;
+  city: City;
 
   constructor() { }
 

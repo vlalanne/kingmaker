@@ -6,7 +6,7 @@ import { BuildingModel } from '../model'
 @Component({
   selector: 'building-icon',
   templateUrl: 'building-icon.component.html',
-  styleUrls: ['building-icon.component.css']
+  styleUrls: ['building-icon.component.scss']
 })
 export class BuildingIconComponent implements OnInit {
   @Input()
@@ -20,10 +20,10 @@ export class BuildingIconComponent implements OnInit {
   ngOnInit() {
     this.buildingsService
       .getModel(this.id)
-      .then(model => this.model=model)
+      .then(model => this.model = model)
     this.translationService
       .getMessage(this.id)
-      .then(label => this.label=label)
+      .then(label => this.label = label)
   }
 
 }

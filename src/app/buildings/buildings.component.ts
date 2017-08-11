@@ -8,7 +8,7 @@ import { BuildingIconComponent } from '../building-icon';
 @Component({
   selector: 'app-buildings',
   templateUrl: 'buildings.component.html',
-  styleUrls: ['buildings.component.css']
+  styleUrls: ['buildings.component.scss']
 })
 export class BuildingsComponent implements OnInit {
 

@@ -7,7 +7,7 @@ import { CityComponent } from '../city';
 @Component({
   selector: 'app-cities',
   templateUrl: 'cities.component.html',
-  styleUrls: ['cities.component.css']
+  styleUrls: ['cities.component.scss']
 })
 export class CitiesComponent implements OnInit {
   cities: City[];

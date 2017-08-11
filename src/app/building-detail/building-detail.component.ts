@@ -5,7 +5,7 @@ import { TranslationService } from '../translation.service';
 @Component({
   selector: 'building-detail',
   templateUrl: 'building-detail.component.html',
-  styleUrls: ['building-detail.component.css']
+  styleUrls: ['building-detail.component.scss']
 })
 export class BuildingDetailComponent implements OnInit {
   @Input()
