@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { KingdomsService } from '../../services';
 import { KingdomRenderer } from './kingdom.renderer';
 import { WIDTH, HEIGHT, HEX_WIDTH, HEX_HEIGHT, EVEN_X_OFFSET, ODD_X_OFFSET, Y_OFFSET } from './map.constants';
-declare var L: any;
 
 
 @Component({
@@ -45,7 +44,7 @@ export class MapComponent implements AfterViewInit {
 
     this.kingdomsService
       .getKingdoms()
-      .then(x => new KingdomRenderer(this.router, map).paintKingdoms(x));
+      .subscribe(x => new KingdomRenderer(this.router, map).paintKingdoms(x));
 
   }
 

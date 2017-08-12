@@ -1,7 +1,6 @@
 import { Router } from '@angular/router';
 import { Kingdom, Hex } from '../../models';
 import { EVEN_X_OFFSET, ODD_X_OFFSET, HEX_WIDTH, HEX_HEIGHT, Y_OFFSET } from './map.constants';
-declare var L: any;
 
 
 
