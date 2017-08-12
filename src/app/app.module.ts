@@ -4,21 +4,20 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
-import { AppComponent } from './app.component';
-import { BuildingsService } from './buildings.service';
-import { CitiesService } from './cities.service';
-import { KingdomsService } from './kingdoms.service';
-import { TranslationService } from './translation.service';
-import { AppRoutingModule }     from './app-routing.module';
-import { SortBuildingsPipe }     from './sort-buildings.pipe';
-import { MapComponent } from './map/map.component';
-import { BuildingsComponent } from './buildings/buildings.component';
-import { CitiesComponent } from './cities/cities.component';
-import { CityComponent } from './city/city.component';
-import { BlockComponent } from './block/block.component';
-import { BuildingDetailComponent } from './building-detail/building-detail.component';
-import { BuildingIconComponent } from './building-icon/building-icon.component';
-import { DistrictComponent } from './district/district.component';
+import {
+  AppComponent,
+  BlockComponent,
+  BuildingDetailComponent,
+  BuildingIconComponent,
+  BuildingsComponent,
+  CitiesComponent,
+  CityComponent,
+  DistrictComponent,
+  MapComponent
+} from './components';
+import { SortBuildingsPipe } from './pipes';
+import { BuildingsService, CitiesService, KingdomsService, TranslationService } from './services';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -41,9 +40,9 @@ import { DistrictComponent } from './district/district.component';
     AppRoutingModule
   ],
   providers: [
-    CitiesService, 
-    BuildingsService, 
-    KingdomsService, 
+    CitiesService,
+    BuildingsService,
+    KingdomsService,
     TranslationService
   ],
   bootstrap: [AppComponent]

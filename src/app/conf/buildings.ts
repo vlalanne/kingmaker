@@ -1,4 +1,4 @@
-import { BuildingModel } from '../model/index'
+import { BuildingModel } from '../models';
 export const BUILDINGS: BuildingModel[] = [
   new BuildingModel('academy-tower', 'academy-tower')
     .setSize('LARGE')
@@ -1332,4 +1332,4 @@ export const BUILDINGS: BuildingModel[] = [
     .setLoyalty(1)
     .setStability(1)
     .setPrice(10)
-]
+];

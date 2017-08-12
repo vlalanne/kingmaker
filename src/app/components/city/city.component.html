@@ -1,0 +1,5 @@
+<div *ngIf="city">
+    <div *ngFor="let row of city.districts" class="district-row">
+        <app-district *ngFor="let district of row" [district]="district"></app-district>
+    </div>
+</div>
