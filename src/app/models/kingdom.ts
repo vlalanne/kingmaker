@@ -1,6 +1,5 @@
 import { Hex } from './hex';
-export class Kingdom {
+export interface Kingdom {
   name: string;
-  color: string;
   hexs: Hex[];
 }

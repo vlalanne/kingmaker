@@ -5,46 +5,55 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
 import {
-  AppComponent,
-  BlockComponent,
-  BuildingDetailComponent,
-  BuildingIconComponent,
-  BuildingsComponent,
-  CitiesComponent,
-  CityComponent,
-  DistrictComponent,
-  MapComponent
-} from './components';
-import { SortBuildingsPipe } from './pipes';
-import { BuildingsService, CitiesService, KingdomsService, TranslationService } from './services';
-import { AppRoutingModule } from './app-routing.module';
-
-@NgModule({
-  declarations: [
     AppComponent,
-    MapComponent,
+    BlockComponent,
+    BuildingDetailComponent,
+    BuildingIconComponent,
     BuildingsComponent,
     CitiesComponent,
     CityComponent,
-    BuildingDetailComponent,
-    BuildingIconComponent,
-    SortBuildingsPipe,
     DistrictComponent,
-    BlockComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule,
-    RouterModule,
-    AppRoutingModule
-  ],
-  providers: [
-    CitiesService,
+    MapComponent
+} from './components';
+import { SortBuildingsPipe } from './pipes';
+import {
     BuildingsService,
+    CitiesSheetsService,
+    CitiesService,
+    KingdomsSheetService,
     KingdomsService,
+    SheetsApiService,
     TranslationService
-  ],
-  bootstrap: [AppComponent]
+} from './services';
+import { AppRoutingModule } from './app-routing.module';
+
+@NgModule({
+    declarations: [
+        AppComponent,
+        MapComponent,
+        BuildingsComponent,
+        CitiesComponent,
+        CityComponent,
+        BuildingDetailComponent,
+        BuildingIconComponent,
+        SortBuildingsPipe,
+        DistrictComponent,
+        BlockComponent
+    ],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        HttpModule,
+        RouterModule,
+        AppRoutingModule
+    ],
+    providers: [
+        { provide: CitiesService, useClass: CitiesSheetsService },
+        BuildingsService,
+        { provide: KingdomsService, useClass: KingdomsSheetService },
+        SheetsApiService,
+        TranslationService
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

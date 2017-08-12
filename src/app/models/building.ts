@@ -1,7 +1,7 @@
-export class Building {
+export interface Building {
   x: number;
   y: number;
-  vertical: boolean;
+  vertical?: boolean;
   model: string;
-  name: string;
+  name?: string;
 }

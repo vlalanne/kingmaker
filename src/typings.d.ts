@@ -3,4 +3,5 @@
 
 declare var System: any;
 declare var L: any;
+declare var gapi: any;
 

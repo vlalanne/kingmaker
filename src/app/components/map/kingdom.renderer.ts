@@ -2,6 +2,7 @@ import { Router } from '@angular/router';
 import { Kingdom, Hex } from '../../models';
 import { EVEN_X_OFFSET, ODD_X_OFFSET, HEX_WIDTH, HEX_HEIGHT, Y_OFFSET } from './map.constants';
 
+const COLORS = ['#ff00ff', 'red', 'yellow', 'blue'];
 
 
 export class KingdomRenderer {
@@ -17,20 +18,24 @@ export class KingdomRenderer {
       .reduce((acc, x) => acc.concat(x), [])
       .filter(x => x.roads)
       .map(x => x.x + ';' + x.y);
+    let colorIndex = 0;
     for (let i = 0; i < kingdoms.length; i++) {
-      this.paintKingdom(kingdoms[i]);
+      this.paintKingdom(kingdoms[i], kingdoms[i].name && COLORS[colorIndex]);
+      if (kingdoms[i].name) {
+        colorIndex++;
+      }
     }
   }
 
-  paintKingdom(kingdom: Kingdom) {
+  paintKingdom(kingdom: Kingdom, color: string) {
     for (let j = 0; j < kingdom.hexs.length; j++) {
-      this.paintHex(kingdom, kingdom.hexs[j]);
+      this.paintHex(kingdom, kingdom.hexs[j], color);
     }
   }
 
-  paintHex(kingdom: Kingdom, hex: Hex) {
+  paintHex(kingdom: Kingdom, hex: Hex, color: string) {
     if (kingdom.name) {
-      this.paintOwnership(kingdom, hex);
+      this.paintOwnership(kingdom, hex, color);
     }
     if (hex.roads) {
       this.paintRoads(hex);
@@ -38,7 +43,7 @@ export class KingdomRenderer {
     this.paintElements(hex);
   }
 
-  paintOwnership(kingdom: Kingdom, hex: Hex) {
+  paintOwnership(kingdom: Kingdom, hex: Hex, color: string) {
     const points = [
       this.computePoint(hex, - 1 / 2, 1 / 3),
       this.computePoint(hex, - 1 / 2, 1),
@@ -47,7 +52,7 @@ export class KingdomRenderer {
       this.computePoint(hex, 1 / 2, 1 / 3),
       this.computePoint(hex, 0, 0)
     ];
-    L.polygon(points, { color: kingdom.color })
+    L.polygon(points, { color })
       .bindPopup('<h4>' + kingdom.name + '<h4>')
       .addTo(this.map);
   }

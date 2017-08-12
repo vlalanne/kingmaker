@@ -1,5 +1,4 @@
-import { BorderType } from './border-type.enum';
-export class Border {
-  type: BorderType = BorderType.GRASS;
-  name: '';
+export interface Border {
+    type: 'WATER' | 'DISTRICT' | 'GRASS' | 'BRIDGE';
+    name: '';
 }

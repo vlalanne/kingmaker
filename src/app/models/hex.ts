@@ -1,9 +1,9 @@
-export class Hex {
+export interface Hex {
   x: number;
   y: number;
-  city: string;
-  resource: string;
-  guardTower: boolean;
-  pointOfInterest: string;
-  roads: boolean;
+  city?: string;
+  resource?: string;
+  guardTower?: boolean;
+  pointOfInterest?: string;
+  roads?: boolean;
 }

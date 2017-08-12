@@ -1,5 +1,5 @@
 import { District } from './district';
-export class City {
+export interface City {
   name: string;
   districts: District[][];
 }
