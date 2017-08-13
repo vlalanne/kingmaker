@@ -41,9 +41,9 @@ export const BUILDINGS: BuildingModel[] = [
     .setMinorMagicObject(4)
     .setMediumMagicObject(3)
     .setMajorMagicObject(1),
-  new BuildingModel('ambassy', 'ambassy')
-    .setMap('assets/img/maps/ambassy.png')
-    .setIcon('assets/img/icons/ambassy.png')
+  new BuildingModel('embassy', 'embassy')
+    .setMap('assets/img/maps/embassy.png')
+    .setIcon('assets/img/icons/embassy.png')
     .setEconomy(1)
     .setStability(2)
     .addHalvedCost('twoAlliedBuildings')

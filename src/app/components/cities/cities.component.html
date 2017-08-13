@@ -1,7 +1,4 @@
-<div *ngIf="error"><span class="label label-danger">{{error}}</span></div>
-<ul class="nav nav-pills">
-    <li role="presentation" *ngFor="let city of cities" [class.active]="city === selectedCity"><a [routerLink]="['/cities',city.name]">{{city.name}}</a></li>
+<ul class="nav nav-pills" *ngIf="$cities | async; let cities">
+    <li role="presentation" *ngFor="let city of cities"><a [routerLink]="city">{{city}}</a></li>
 </ul>
-<div *ngIf="selectedCity">
-    <app-city [city]="selectedCity"></app-city>
-</div>
+<router-outlet></router-outlet>
