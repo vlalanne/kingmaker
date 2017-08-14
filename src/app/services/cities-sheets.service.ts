@@ -5,17 +5,19 @@ import { Observable } from 'rxjs/Observable';
 import { Border, Building, City, District } from '../models';
 import { SheetsApiService } from './sheets-api.service';
 import { CitiesService } from './cities.service';
-import * as translation from 'assets/conf/translation/messages_fr.json';
-
-const SHRINE_REGEX = /sanctuaire d[e'] ?(.+)/;
-const TEMPLE_REGEX = /temple d[e'] ?(.+)/;
-const CATHEDRAL_REGEX = /cathédrale d[e'] ?(.+)/;
+import * as translation from '../conf/translation/messages_fr.json';
 
 @Injectable()
 export class CitiesSheetsService extends CitiesService {
+    private map: { [translation: string]: string };
 
     constructor(private sheets: SheetsApiService) {
         super(null);
+        this.map = Object.entries(translation)
+            .reduce((current, entry) => {
+                current[entry[1].toLowerCase()] = entry[0];
+                return current;
+            }, {});
     }
 
     getCities(): Observable<string[]> {
@@ -137,84 +139,30 @@ export class CitiesSheetsService extends CitiesService {
 
     private getModelAndName(value: string): string[] {
         const lowercase = value.toLowerCase();
-        if (lowercase === 'château') {
-            return ['castle'];
-        } else if (lowercase === 'académie avec tour de mage') {
-            return ['academy-tower'];
+        if (this.map.hasOwnProperty(lowercase)) {
+            return [this.map[lowercase]];
         } else if (lowercase.includes('académie')) {
             return ['academy', this.getName(value, 'académie')];
-        } else if (lowercase === 'ecurie') {
-            return ['stable'];
         } else if (lowercase.includes('maison')) {
             return ['house'];
         } else if (lowercase.includes('taverne')) {
             return ['tavern', this.getName(value, 'taverne')];
-        } else if (lowercase === 'grenier') {
-            return ['granary'];
-        } else if (lowercase === 'garnison') {
-            return ['garrison'];
-        } else if (lowercase === 'tour de mages') {
-            return ['caster-tower'];
-        } else if (lowercase === 'muraille') {
-            return ['city-wall'];
-        } else if (lowercase.match(SHRINE_REGEX)) {
-            return [lowercase.replace(SHRINE_REGEX, (match, p1) => `shrine-${p1.replace(' ', '-')}`)];
-        } else if (lowercase.match(TEMPLE_REGEX)) {
-            return [lowercase.replace(TEMPLE_REGEX, (match, p1) => `temple-${p1.replace(' ', '-')}`)];
-        } else if (lowercase.match(CATHEDRAL_REGEX)) {
-            return [lowercase.replace(CATHEDRAL_REGEX, (match, p1) => `cathedral-${p1.replace(' ', '-')}`)];
         } else if (lowercase.includes('echope de magie')) {
             return ['magic-shop', this.getName(value, 'echope de magie')];
         } else if (lowercase.includes('auberge')) {
             return ['inn', this.getName(value, 'auberge')];
         } else if (lowercase === 'ecole' || value === 'bibliothèque') {
             return ['library', this.getName(value, 'bibliothèque')];
-        } else if (lowercase === 'echoppe') {
-            return ['shop'];
-        } else if (lowercase === 'moulin') {
-            return ['mill'];
-        } else if (lowercase === 'scierie') {
-            return ['sawmill'];
-        } else if (lowercase === 'baraquement') {
-            return ['barracks'];
-        } else if (lowercase === 'villa noble') {
-            return ['noble-villa'];
-        } else if (lowercase === 'cimetière') {
-            return ['graveyard'];
-        } else if (lowercase === 'brasserie') {
-            return ['brewery'];
         } else if (lowercase === 'forge' || lowercase === 'maréchal ferrant') {
             return ['smith', this.getName(value, 'forge')];
-        } else if (lowercase === 'tisserand') {
-            return ['weaver'];
-        } else if (lowercase === 'hôtel de ville') {
-            return ['town-hall'];
         } else if (lowercase.includes('statue') || lowercase === 'monument') {
             return ['monument', this.getName(value, 'monument')];
         } else if (lowercase.includes('artisan exotique')) {
             return ['exotic-craftsman', this.getName(value, 'artisan exotique')];
-        } else if (lowercase.includes('quai')) {
-            return ['pier'];
         } else if (lowercase.includes('parc')) {
             return ['park', this.getName(value, 'parc')];
         } else if (lowercase.includes('ambassade')) {
             return ['embassy', this.getName(value, 'ambassade')];
-        } else if (lowercase.includes('décharge')) {
-            return ['dump'];
-        } else if (lowercase.includes('prison')) {
-            return ['jail'];
-        } else if (lowercase.includes('marché')) {
-            return ['market'];
-        } else if (lowercase.includes('herboriste')) {
-            return ['herbalist'];
-        } else if (lowercase.includes('front de mer')) {
-            return ['waterfront'];
-        } else if (lowercase.includes('tannerie')) {
-            return ['tannery'];
-        } else if (lowercase.includes('bordel')) {
-            return ['brothel'];
-        } else if (lowercase.includes('tour de garde')) {
-            return ['watchtower'];
         } else {
             throw new Error(`unknown building: ${value}`);
         }
