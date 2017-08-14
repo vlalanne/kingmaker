@@ -3,26 +3,24 @@ import { BuildingsService, TranslationService } from '../../services';
 import { BuildingModel } from '../../models';
 
 @Component({
-  selector: 'app-building-icon',
-  templateUrl: 'building-icon.component.html',
-  styleUrls: ['building-icon.component.scss']
+    selector: 'app-building-icon',
+    templateUrl: 'building-icon.component.html',
+    styleUrls: ['building-icon.component.scss']
 })
 export class BuildingIconComponent implements OnInit {
-  @Input()
-  id: string;
-  model: BuildingModel;
-  label: string;
+    @Input()
+    id: string;
+    model: BuildingModel;
+    label: string;
 
 
-  constructor(private translationService: TranslationService, private buildingsService: BuildingsService) { }
+    constructor(private translationService: TranslationService, private buildingsService: BuildingsService) { }
 
-  ngOnInit() {
-    this.buildingsService
-      .getModel(this.id)
-      .then(model => this.model = model);
-    this.translationService
-      .getMessage(this.id)
-      .then(label => this.label = label);
-  }
+    ngOnInit() {
+        this.buildingsService
+            .getModel(this.id)
+            .then(model => this.model = model);
+        this.label = this.translationService.getMessage('this.id');
+    }
 
 }

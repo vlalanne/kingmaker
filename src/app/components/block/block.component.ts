@@ -35,9 +35,7 @@ export class BlockComponent implements OnInit {
     this.getData('topRight');
     this.getData('bottomLeft');
     this.getData('bottomRight');
-    this.translationService
-      .getMessage('no-building')
-      .then(label => this.noBuildingLabel = label);
+    this.noBuildingLabel =  this.translationService.getMessage('no-building');
   }
 
   getData(property: string) {

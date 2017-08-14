@@ -3,5 +3,7 @@
 
 declare var System: any;
 declare var L: any;
-declare var gapi: any;
-
+declare module '*.json' {
+    const value: any;
+    export default value;
+}

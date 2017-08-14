@@ -5,6 +5,7 @@ import { Observable } from 'rxjs/Observable';
 import { Border, Building, City, District } from '../models';
 import { SheetsApiService } from './sheets-api.service';
 import { CitiesService } from './cities.service';
+import * as translation from 'assets/conf/translation/messages_fr.json';
 
 const SHRINE_REGEX = /sanctuaire d[e'] ?(.+)/;
 const TEMPLE_REGEX = /temple d[e'] ?(.+)/;

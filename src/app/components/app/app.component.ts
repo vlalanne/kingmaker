@@ -14,11 +14,8 @@ export class AppComponent implements OnInit {
   constructor(private translationService: TranslationService) { }
 
   ngOnInit() {
-    this.translationService.getMessage('buildings')
-      .then(label => this.buildingsLabel = label);
-    this.translationService.getMessage('cities')
-      .then(label => this.citiesLabel = label);
-    this.translationService.getMessage('map')
-      .then(label => this.mapLabel = label);
+    this.buildingsLabel =  this.translationService.getMessage('buildings');
+    this.citiesLabel =  this.translationService.getMessage('cities');
+    this.mapLabel =  this.translationService.getMessage('map');
   }
 }

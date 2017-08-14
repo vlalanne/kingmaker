@@ -1,38 +1,23 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
-import 'rxjs/add/operator/toPromise';
+import * as fr from '../conf/translation/messages_fr.json';
+import * as en from '../conf/translation/messages_en.json';
 
 @Injectable()
 export class TranslationService {
-  private messages;
-  private language: string;
-  private url: string;
-  constructor(private http: Http) {
-    this.language = window.navigator.language.split('-')[0];
-    if (this.language !== 'fr' && this.language !== 'en') {
-      this.language = 'en';
+    messages;
+    constructor() {
+        const language = window.navigator.language.split('-')[0];
+        if (language === 'fr') {
+            this.messages = fr;
+        } else {
+            this.messages = en;
+        }
+
     }
 
-    this.url = `assets/conf/translation/messages_${this.language}.json`;  // URL to web api
-  }
+    getMessage(key: string): string {
+        return this.messages.hasOwnProperty(key) ? this.messages[key] : key;
 
-  getMessages() {
-    if (this.messages == null) {
-      return this.http.get(this.url)
-        .toPromise()
-        .then(response => {
-          this.messages = response.json();
-          return this.messages;
-        });
-    } else {
-      return Promise.resolve(this.messages);
     }
-  }
-
-  getMessage(key: string): Promise<string> {
-    return this.getMessages()
-      .then(messages => messages.hasOwnProperty(key) ? messages[key] : key);
-
-  }
 
 }

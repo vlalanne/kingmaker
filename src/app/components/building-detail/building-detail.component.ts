@@ -23,29 +23,19 @@ export class BuildingDetailComponent implements OnInit {
   medium: string;
   major: string;
 
-  constructor(private translationSerivce: TranslationService) { }
+  constructor(private service: TranslationService) { }
 
   ngOnInit() {
-    this.translationSerivce.getMessage('economy')
-      .then(label => this.economy = label);
-    this.translationSerivce.getMessage('loyalty')
-      .then(label => this.loyalty = label);
-    this.translationSerivce.getMessage('stability')
-      .then(label => this.stability = label);
-    this.translationSerivce.getMessage('defence')
-      .then(label => this.defence = label);
-    this.translationSerivce.getMessage('value')
-      .then(label => this.value = label);
-    this.translationSerivce.getMessage('price')
-      .then(label => this.price = label);
-    this.translationSerivce.getMessage('magicObjects')
-      .then(label => this.magicObjects = label);
-    this.translationSerivce.getMessage('minor')
-      .then(label => this.minor = label);
-    this.translationSerivce.getMessage('medium')
-      .then(label => this.medium = label);
-    this.translationSerivce.getMessage('major')
-      .then(label => this.major = label);
+    this.economy =  this.service.getMessage('economy');
+    this.loyalty =  this.service.getMessage('loyalty');
+    this.stability =  this.service.getMessage('stability');
+    this.defence =  this.service.getMessage('defence');
+    this.value =  this.service.getMessage('value');
+    this.price =  this.service.getMessage('price');
+    this.magicObjects =  this.service.getMessage('magicObjects');
+    this.minor =  this.service.getMessage('minor');
+    this.medium =  this.service.getMessage('medium');
+    this.major =  this.service.getMessage('major');
   }
 
 }
