@@ -42,7 +42,7 @@ export class BlockComponent implements OnInit {
     if (this[property]) {
       this.buildingsService
         .getModel(this[property].model)
-        .then(model => {
+        .subscribe(model => {
           this[property + 'Model'] = model;
           if (this[property].name) {
             this[property + 'Label'] = this[property].name;

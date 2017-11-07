@@ -17,7 +17,6 @@ export class TranslationService {
 
     getMessage(key: string): string {
         return this.messages.hasOwnProperty(key) ? this.messages[key] : key;
-
     }
 
 }

@@ -1,12 +1,8 @@
-<div id="main">
-  <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container-fluid">
-        <ul class="nav navbar-nav">
-          <li [routerLinkActive]="['active']"><a [routerLink]="['buildings']">{{buildingsLabel}}</a></li>
-          <li [routerLinkActive]="['active']"><a [routerLink]="['cities']">{{citiesLabel}}</a></li>
-          <li [routerLinkActive]="['active']"><a [routerLink]="['map']">{{mapLabel}}</a></li>
-        </ul>
-    </div>
-  </nav>
-  <router-outlet></router-outlet>
+<ul class="nav">
+    <li [routerLinkActive]="['active']"><a [routerLink]="['buildings']">{{buildingsLabel}}</a></li>
+    <li [routerLinkActive]="['active']"><a [routerLink]="['cities']">{{citiesLabel}}</a></li>
+    <li [routerLinkActive]="['active']"><a [routerLink]="['map']">{{mapLabel}}</a></li>
+</ul>
+<div id="router">
+    <router-outlet></router-outlet>
 </div>

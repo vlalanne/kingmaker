@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
-import 'rxjs/add/operator/toPromise';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/of';
+import 'rxjs/add/observable/throw';
 import { BuildingModel } from '../models';
 import { BUILDINGS } from '../conf/buildings';
 import { TranslationService } from './translation.service';
@@ -12,17 +14,17 @@ export class BuildingsService {
 
     private handleError(error: any) {
         console.error('An error occurred', error);
-        return Promise.reject(error.message || error);
+        return Observable.throw(error.message || error);
     }
-    getModel(id: string): Promise<BuildingModel> {
+    getModel(id: string): Observable<BuildingModel> {
         return this.getModels()
-            .then(models => models.find(model => model.id === id));
+            .map(models => models.find(model => model.id === id));
 
     }
 
-    getModels(): Promise<BuildingModel[]> {
-        return Promise.resolve(BUILDINGS)
-            .then(buildings => {
+    getModels(): Observable<BuildingModel[]> {
+        return Observable.of(BUILDINGS)
+            .map(buildings => {
                 buildings.forEach(building => building.name = this.translationService.getMessage(building.name));
                 return buildings;
             })

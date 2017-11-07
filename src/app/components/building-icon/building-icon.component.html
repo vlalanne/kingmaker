@@ -1,2 +1,4 @@
-<img class="icon" *ngIf="model" src="{{model.icon}}" title="{{model.name}}">
-<p *ngIf="!model">{{label}}</p>
+<img class="icon" *ngIf="model$ | async as model; else text" src="{{model.icon}}" title="{{model.name}}">
+<ng-template #text>
+    <p>{{label}}</p>
+</ng-template>

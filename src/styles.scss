@@ -1,34 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
+
 @font-face {
-  font-family: parrishRoman;
-  src: url(p22-parrish-roman.ttf);
+    font-family: parrishRoman;
+    src: url(p22-parrish-roman.ttf);
 }
 
 .map-icon {
-  background: transparent;
-  color: white;
-  font-family: parrishRoman;
-  font-size: 1em;
-  margin-left: -2.5em !important;
-  width: 5em !important;
-  text-align: center;
+    background: transparent;
+    color: white;
+    font-family: parrishRoman;
+    font-size: 1em;
+    margin-left: -2.5em !important;
+    width: 5em !important;
+    text-align: center;
 }
+
 
 /*.number-icon {
 }*/
 
 .element-icon {
-  margin-top: -3em !important;
-  height: auto !important;
+    margin-top: -3em !important;
+    height: auto !important;
 }
 
 .element-icon img {
-  height: 4em;
-  width: 4em;
-  align-self: center;
+    height: 4em;
+    width: 4em;
+    align-self: center;
 }
 
 .icon {
     border-radius: 50%;
     border: goldenrod ridge 3px;
+}
+
+router-outlet {
+    display: none;
 }
