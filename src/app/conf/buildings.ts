@@ -1,1335 +1,1957 @@
 import { BuildingModel } from '../models';
+const defaultBuilding = new BuildingModel();
 export const BUILDINGS: BuildingModel[] = [
-  new BuildingModel('academy-tower', 'academy-tower')
-    .setSize('LARGE')
-    .setMap('assets/img/maps/academy-tower.png')
-    .setIcon('assets/img/icons/academy-tower.png')
-    .setEconomy(3)
-    .setLoyalty(4)
-    .setMinorMagicObject(6)
-    .setMediumMagicObject(4)
-    .setPrice(67)
-    .addHalvedCost('library')
-    .addHalvedCost('magic-shop'),
-  new BuildingModel('academy', 'academy')
-    .setSize('LARGE')
-    .setMap('assets/img/maps/academy.png')
-    .setIcon('assets/img/icons/academy.png')
-    .setEconomy(2)
-    .setLoyalty(2)
-    .setMinorMagicObject(3)
-    .setMediumMagicObject(2)
-    .setPrice(52)
-    .addHalvedCost('caster-tower')
-    .addHalvedCost('library')
-    .addHalvedCost('magic-shop')
-    .addUpgradeTo('academy-tower'),
-  new BuildingModel('alchemist', 'alchemist')
-    .setMap('assets/img/maps/alchemist.png')
-    .setIcon('assets/img/icons/alchemist.png')
-    .setEconomy(1)
-    .setValue(1000)
-    .setMinorMagicObject(1)
-    .setPrice(18)
-    .setRequiredHouses(1)
-    .addUpgradeTo('caster-tower'),
-  new BuildingModel('all-seeing-eye', 'all-seeing-eye')
-    .setMap('assets/img/maps/all-seeing-eye.png')
-    .setIcon('assets/img/icons/all-seeing-eye.png')
-    .setEconomy(1)
-    .setLoyalty(1)
-    .setMinorMagicObject(4)
-    .setMediumMagicObject(3)
-    .setMajorMagicObject(1),
-  new BuildingModel('embassy', 'embassy')
-    .setMap('assets/img/maps/embassy.png')
-    .setIcon('assets/img/icons/embassy.png')
-    .setEconomy(1)
-    .setStability(2)
-    .addHalvedCost('twoAlliedBuildings')
-    .setPrice(40),
-  new BuildingModel('arena', 'arena')
-    .setMap('assets/img/maps/arena.png')
-    .setIcon('assets/img/icons/arena.png')
-    .setSize('LARGE')
-    .setStability(4)
-    .addHalvedCost('garrison')
-    .addHalvedCost('theatre')
-    .addHalvedCost('festivalEdicts')
-    .setPrice(40),
-  new BuildingModel('barracks', 'barracks')
-    .setMap('assets/img/maps/barracks.png')
-    .setIcon('assets/img/icons/barracks.png')
-    .addUpgradeTo('castle')
-    .addUpgradeTo('garrison')
-    .addUpgradeTo('jail')
-    .setDefence(2)
-    .setUnrest(-1)
-    .setPrice(6),
-  new BuildingModel('black-market', 'black-market')
-    .setMap('assets/img/maps/black-market.png')
-    .setIcon('assets/img/icons/black-market.png')
-    .setValue(2000)
-    .setMinorMagicObject(2)
-    .setMediumMagicObject(1)
-    .setMajorMagicObject(1)
-    .setUnrest(1)
-    .setEconomy(2)
-    .setStability(1)
-    .setRequiredHouses(2)
-    .setPrice(50),
-  new BuildingModel('brewery', 'brewery')
-    .setMap('assets/img/maps/brewery.png')
-    .setIcon('assets/img/icons/brewery.png')
-    .setLoyalty(1)
-    .setStability(1)
-    .setPrice(6),
-  new BuildingModel('brothel', 'brothel')
-    .setMap('assets/img/maps/brothel.png')
-    .setIcon('assets/img/icons/brothel.png')
-    .setRequiredHouses(1)
-    .setEconomy(1)
-    .setLoyalty(2)
-    .setUnrest(1)
-    .addUpgradeTo('insatiable-flame-lust')
-    .setPrice(4),
-  new BuildingModel('caster-tower', 'caster-tower')
-    .setMap('assets/img/maps/caster-tower.png')
-    .setIcon('assets/img/icons/caster-tower.png')
-    .setEconomy(1)
-    .setLoyalty(1)
-    .setMinorMagicObject(3)
-    .setMediumMagicObject(2)
-    .addUpgradeTo('all-seeing-eye')
-    .setPrice(30),
-  new BuildingModel('castle', 'castle')
-    .setSize('LARGE')
-    .setMap('assets/img/maps/castle.png')
-    .setIcon('assets/img/icons/castle.png')
-    .setEconomy(2)
-    .setLoyalty(2)
-    .setStability(2)
-    .setDefence(8)
-    .setUnrest(-4)
-    .addHalvedCost('noble-villa')
-    .addHalvedCost('town-hall')
-    .setPrice(54),
-  new BuildingModel('cathedral-abadar', 'cathedral-abadar')
-    .setSize('LARGE')
-    .setMap('assets/img/maps/cathedral-abadar.png')
-    .setIcon('assets/img/icons/cathedral-abadar.png')
-    .setUnrest(-4)
-    .setLoyalty(2)
-    .setEconomy(1)
-    .setValue(1000)
-    .setStability(3)
-    .setMinorMagicObject(3)
-    .setMediumMagicObject(2)
-    .addHalvedCost('academy')
-    .addHalvedCost('temple-abadar')
-    .addHalvedCost('temple-asmodeus')
-    .addHalvedCost('temple-calistria')
-    .addHalvedCost('temple-cayden-cailean')
-    .addHalvedCost('temple-desna')
-    .addHalvedCost('temple-erastil')
-    .addHalvedCost('temple-gorum')
-    .addHalvedCost('temple-gozreh')
-    .addHalvedCost('temple-iomedae')
-    .addHalvedCost('temple-irori')
-    .addHalvedCost('temple-nethys')
-    .addHalvedCost('temple-pharasma')
-    .addHalvedCost('temple-sarenrae')
-    .addHalvedCost('temple-shelyn')
-    .addHalvedCost('temple-torag')
-    .addHalvedCost('temple-zon-kuthon')
-    .addHalvedCost('promotionEdicts')
-    .setPrice(58),
-  new BuildingModel('cathedral-asmodeus', 'cathedral-asmodeus')
-    .setSize('LARGE')
-    .setMap('assets/img/maps/cathedral-asmodeus.png')
-    .setIcon('assets/img/icons/cathedral-asmodeus.png')
-    .setUnrest(-4)
-    .setLoyalty(2)
-    .setStability(3)
-    .setMinorMagicObject(3)
-    .setMediumMagicObject(2)
-    .addHalvedCost('academy')
-    .addHalvedCost('temple-abadar')
-    .addHalvedCost('temple-asmodeus')
-    .addHalvedCost('temple-calistria')
-    .addHalvedCost('temple-cayden-cailean')
-    .addHalvedCost('temple-desna')
-    .addHalvedCost('temple-erastil')
-    .addHalvedCost('temple-gorum')
-    .addHalvedCost('temple-gozreh')
-    .addHalvedCost('temple-iomedae')
-    .addHalvedCost('temple-irori')
-    .addHalvedCost('temple-nethys')
-    .addHalvedCost('temple-pharasma')
-    .addHalvedCost('temple-sarenrae')
-    .addHalvedCost('temple-shelyn')
-    .addHalvedCost('temple-torag')
-    .addHalvedCost('temple-zon-kuthon')
-    .addHalvedCost('promotionEdicts')
-    .setPrice(58),
-  new BuildingModel('cathedral-calistria', 'cathedral-calistria')
-    .setSize('LARGE')
-    .setMap('assets/img/maps/cathedral-calistria.png')
-    .setIcon('assets/img/icons/cathedral-calistria.png')
-    .setUnrest(-4)
-    .setLoyalty(2)
-    .setMinorMagicObject(3)
-    .setMediumMagicObject(2)
-    .addHalvedCost('academy')
-    .addHalvedCost('temple-abadar')
-    .addHalvedCost('temple-asmodeus')
-    .addHalvedCost('temple-calistria')
-    .addHalvedCost('temple-cayden-cailean')
-    .addHalvedCost('temple-desna')
-    .addHalvedCost('temple-erastil')
-    .addHalvedCost('temple-gorum')
-    .addHalvedCost('temple-gozreh')
-    .addHalvedCost('temple-iomedae')
-    .addHalvedCost('temple-irori')
-    .addHalvedCost('temple-nethys')
-    .addHalvedCost('temple-pharasma')
-    .addHalvedCost('temple-sarenrae')
-    .addHalvedCost('temple-shelyn')
-    .addHalvedCost('temple-torag')
-    .addHalvedCost('temple-zon-kuthon')
-    .addHalvedCost('promotionEdicts')
-    .setPrice(58),
-  new BuildingModel('cathedral-cayden-cailean', 'cathedral-cayden-cailean')
-    .setSize('LARGE')
-    .setMap('assets/img/maps/cathedral-cayden-cailean.png')
-    .setIcon('assets/img/icons/cathedral-cayden-cailean.png')
-    .setUnrest(-4)
-    .setLoyalty(2)
-    .setMinorMagicObject(3)
-    .setMediumMagicObject(2)
-    .addHalvedCost('academy')
-    .addHalvedCost('temple-abadar')
-    .addHalvedCost('temple-asmodeus')
-    .addHalvedCost('temple-calistria')
-    .addHalvedCost('temple-cayden-cailean')
-    .addHalvedCost('temple-desna')
-    .addHalvedCost('temple-erastil')
-    .addHalvedCost('temple-gorum')
-    .addHalvedCost('temple-gozreh')
-    .addHalvedCost('temple-iomedae')
-    .addHalvedCost('temple-irori')
-    .addHalvedCost('temple-nethys')
-    .addHalvedCost('temple-pharasma')
-    .addHalvedCost('temple-sarenrae')
-    .addHalvedCost('temple-shelyn')
-    .addHalvedCost('temple-torag')
-    .addHalvedCost('temple-zon-kuthon')
-    .addHalvedCost('promotionEdicts')
-    .setPrice(58),
-  new BuildingModel('cathedral-desna', 'cathedral-desna')
-    .setSize('LARGE')
-    .setMap('assets/img/maps/cathedral-desna.png')
-    .setIcon('assets/img/icons/cathedral-desna.png')
-    .setUnrest(-4)
-    .setLoyalty(4)
-    .setMinorMagicObject(3)
-    .setMediumMagicObject(2)
-    .addHalvedCost('promotionEdicts')
-    .setPrice(58),
-  new BuildingModel('cathedral-erastil', 'cathedral-erastil')
-    .setSize('LARGE')
-    .setMap('assets/img/maps/cathedral-erastil.png')
-    .setIcon('assets/img/icons/cathedral-erastil.png')
-    .setUnrest(-4)
-    .setLoyalty(4)
-    .setMinorMagicObject(3)
-    .setMediumMagicObject(2)
-    .addHalvedCost('promotionEdicts')
-    .setPrice(58),
-  new BuildingModel('cathedral-gorum', 'cathedral-gorum')
-    .setSize('LARGE')
-    .setMap('assets/img/maps/cathedral-gorum.png')
-    .setIcon('assets/img/icons/cathedral-gorum.png')
-    .setUnrest(-4)
-    .setLoyalty(4)
-    .setMinorMagicObject(3)
-    .setMediumMagicObject(2)
-    .addHalvedCost('promotionEdicts')
-    .setPrice(58),
-  new BuildingModel('cathedral-gozreh', 'cathedral-gozreh')
-    .setSize('LARGE')
-    .setMap('assets/img/maps/cathedral-gozreh.png')
-    .setIcon('assets/img/icons/cathedral-gozreh.png')
-    .setUnrest(-4)
-    .setLoyalty(4)
-    .setMinorMagicObject(3)
-    .setMediumMagicObject(2)
-    .addHalvedCost('promotionEdicts')
-    .setPrice(58),
-  new BuildingModel('cathedral-iomedae', 'cathedral-iomedae')
-    .setSize('LARGE')
-    .setMap('assets/img/maps/cathedral-iomedae.png')
-    .setIcon('assets/img/icons/cathedral-iomedae.png')
-    .setUnrest(-4)
-    .setLoyalty(4)
-    .setMinorMagicObject(3)
-    .setMediumMagicObject(2)
-    .addHalvedCost('promotionEdicts')
-    .setPrice(58),
-  new BuildingModel('cathedral-irori', 'cathedral-irori')
-    .setSize('LARGE')
-    .setMap('assets/img/maps/cathedral-irori.png')
-    .setIcon('assets/img/icons/cathedral-irori.png')
-    .setUnrest(-4)
-    .setLoyalty(2)
-    .setMinorMagicObject(3)
-    .setMediumMagicObject(2)
-    .addHalvedCost('academy')
-    .addHalvedCost('temple-abadar')
-    .addHalvedCost('temple-asmodeus')
-    .addHalvedCost('temple-calistria')
-    .addHalvedCost('temple-cayden-cailean')
-    .addHalvedCost('temple-desna')
-    .addHalvedCost('temple-erastil')
-    .addHalvedCost('temple-gorum')
-    .addHalvedCost('temple-gozreh')
-    .addHalvedCost('temple-iomedae')
-    .addHalvedCost('temple-irori')
-    .addHalvedCost('temple-nethys')
-    .addHalvedCost('temple-pharasma')
-    .addHalvedCost('temple-sarenrae')
-    .addHalvedCost('temple-shelyn')
-    .addHalvedCost('temple-torag')
-    .addHalvedCost('temple-zon-kuthon')
-    .addHalvedCost('promotionEdicts')
-    .setPrice(58),
-  new BuildingModel('cathedral-nethys', 'cathedral-nethys')
-    .setSize('LARGE')
-    .setMap('assets/img/maps/cathedral-nethys.png')
-    .setIcon('assets/img/icons/cathedral-nethys.png')
-    .setUnrest(-4)
-    .setLoyalty(4)
-    .setMinorMagicObject(3)
-    .setMediumMagicObject(2)
-    .addHalvedCost('promotionEdicts')
-    .setPrice(58),
-  new BuildingModel('cathedral-pharasma', 'cathedral-pharasma')
-    .setSize('LARGE')
-    .setMap('assets/img/maps/cathedral-pharasma.png')
-    .setIcon('assets/img/icons/cathedral-pharasma.png')
-    .setUnrest(-4)
-    .setLoyalty(2)
-    .setMinorMagicObject(3)
-    .setMediumMagicObject(2)
-    .addHalvedCost('academy')
-    .addHalvedCost('temple-abadar')
-    .addHalvedCost('temple-asmodeus')
-    .addHalvedCost('temple-calistria')
-    .addHalvedCost('temple-cayden-cailean')
-    .addHalvedCost('temple-desna')
-    .addHalvedCost('temple-erastil')
-    .addHalvedCost('temple-gorum')
-    .addHalvedCost('temple-gozreh')
-    .addHalvedCost('temple-iomedae')
-    .addHalvedCost('temple-irori')
-    .addHalvedCost('temple-nethys')
-    .addHalvedCost('temple-pharasma')
-    .addHalvedCost('temple-sarenrae')
-    .addHalvedCost('temple-shelyn')
-    .addHalvedCost('temple-torag')
-    .addHalvedCost('temple-zon-kuthon')
-    .addHalvedCost('promotionEdicts')
-    .setPrice(58),
-  new BuildingModel('cathedral-sarenrae', 'cathedral-sarenrae')
-    .setSize('LARGE')
-    .setMap('assets/img/maps/cathedral-sarenrae.png')
-    .setIcon('assets/img/icons/cathedral-sarenrae.png')
-    .setUnrest(-4)
-    .setLoyalty(4)
-    .setMinorMagicObject(3)
-    .setMediumMagicObject(2)
-    .addHalvedCost('promotionEdicts')
-    .setPrice(58),
-  new BuildingModel('cathedral-shelyn', 'cathedral-shelyn')
-    .setSize('LARGE')
-    .setMap('assets/img/maps/cathedral-shelyn.png')
-    .setIcon('assets/img/icons/cathedral-shelyn.png')
-    .setUnrest(-4)
-    .setLoyalty(2)
-    .setMinorMagicObject(3)
-    .setMediumMagicObject(2)
-    .addHalvedCost('academy')
-    .addHalvedCost('temple-abadar')
-    .addHalvedCost('temple-asmodeus')
-    .addHalvedCost('temple-calistria')
-    .addHalvedCost('temple-cayden-cailean')
-    .addHalvedCost('temple-desna')
-    .addHalvedCost('temple-erastil')
-    .addHalvedCost('temple-gorum')
-    .addHalvedCost('temple-gozreh')
-    .addHalvedCost('temple-iomedae')
-    .addHalvedCost('temple-irori')
-    .addHalvedCost('temple-nethys')
-    .addHalvedCost('temple-pharasma')
-    .addHalvedCost('temple-sarenrae')
-    .addHalvedCost('temple-shelyn')
-    .addHalvedCost('temple-torag')
-    .addHalvedCost('temple-zon-kuthon')
-    .addHalvedCost('promotionEdicts')
-    .setPrice(58),
-  new BuildingModel('cathedral-torag', 'cathedral-torag')
-    .setSize('LARGE')
-    .setMap('assets/img/maps/cathedral-torag.png')
-    .setIcon('assets/img/icons/cathedral-torag.png')
-    .setUnrest(-4)
-    .setLoyalty(2)
-    .setDefence(4)
-    .setMinorMagicObject(3)
-    .setMediumMagicObject(2)
-    .addHalvedCost('academy')
-    .addHalvedCost('temple-abadar')
-    .addHalvedCost('temple-asmodeus')
-    .addHalvedCost('temple-calistria')
-    .addHalvedCost('temple-cayden-cailean')
-    .addHalvedCost('temple-desna')
-    .addHalvedCost('temple-erastil')
-    .addHalvedCost('temple-gorum')
-    .addHalvedCost('temple-gozreh')
-    .addHalvedCost('temple-iomedae')
-    .addHalvedCost('temple-irori')
-    .addHalvedCost('temple-nethys')
-    .addHalvedCost('temple-pharasma')
-    .addHalvedCost('temple-sarenrae')
-    .addHalvedCost('temple-shelyn')
-    .addHalvedCost('temple-torag')
-    .addHalvedCost('temple-zon-kuthon')
-    .addHalvedCost('promotionEdicts')
-    .setPrice(58),
-  new BuildingModel('cathedral-zon-kuthon', 'cathedral-zon-kuthon')
-    .setSize('LARGE')
-    .setMap('assets/img/maps/cathedral-zon-kuthon.png')
-    .setIcon('assets/img/icons/cathedral-zon-kuthon.png')
-    .setUnrest(-4)
-    .setLoyalty(3)
-    .setDefence(2)
-    .setMinorMagicObject(3)
-    .setMediumMagicObject(2)
-    .addHalvedCost('academy')
-    .addHalvedCost('temple-abadar')
-    .addHalvedCost('temple-asmodeus')
-    .addHalvedCost('temple-calistria')
-    .addHalvedCost('temple-cayden-cailean')
-    .addHalvedCost('temple-desna')
-    .addHalvedCost('temple-erastil')
-    .addHalvedCost('temple-gorum')
-    .addHalvedCost('temple-gozreh')
-    .addHalvedCost('temple-iomedae')
-    .addHalvedCost('temple-irori')
-    .addHalvedCost('temple-nethys')
-    .addHalvedCost('temple-pharasma')
-    .addHalvedCost('temple-sarenrae')
-    .addHalvedCost('temple-shelyn')
-    .addHalvedCost('temple-torag')
-    .addHalvedCost('temple-zon-kuthon')
-    .addHalvedCost('promotionEdicts')
-    .setPrice(58),
-  new BuildingModel('city-wall', 'city-wall')
-    .setIcon('assets/img/icons/city-wall.png')
-    .setDefence(4)
-    .setUnrest(-2)
-    .setPrice(8),
-  new BuildingModel('dump', 'dump')
-    .setMap('assets/img/maps/dump.png')
-    .setIcon('assets/img/icons/dump.png')
-    .setLoyalty(1)
-    .setStability(1)
-    .setPrice(6),
-  new BuildingModel('exotic-craftsman', 'exotic-craftsman')
-    .setMap('assets/img/maps/exotic-craftsman.png')
-    .setIcon('assets/img/icons/exotic-craftsman.png')
-    .setEconomy(1)
-    .setStability(1)
-    .setMinorMagicObject(1)
-    .setPrice(10)
-    .setRequiredHouses(1),
-  new BuildingModel('gallows', 'gallows')
-    .setMap('assets/img/maps/gallows.png')
-    .setIcon('assets/img/icons/gallows.png')
-    .setStability(1)
-    .setUnrest(-2)
-    .setPrice(8),
-  new BuildingModel('gambling-den', 'gambling-den')
-    .setMap('assets/img/maps/gambling-den.png')
-    .setIcon('assets/img/icons/gambling-den.png')
-    .setLoyalty(-1)
-    .setUnrest(-1)
-    .setValue(500)
-    .setPrice(12),
-  new BuildingModel('garrison', 'garrison')
-    .setSize('MEDIUM')
-    .setMap('assets/img/maps/garrison.png')
-    .setIcon('assets/img/icons/garrison.png')
-    .setLoyalty(2)
-    .setStability(2)
-    .setUnrest(-2)
-    .addHalvedCost('city-wall')
-    .addHalvedCost('granary')
-    .addHalvedCost('jail')
-    .addUpgradeTo('castle')
-    .setPrice(28),
-  new BuildingModel('granary', 'granary')
-    .setMap('assets/img/maps/granary.png')
-    .setIcon('assets/img/icons/granary.png')
-    .setLoyalty(1)
-    .setStability(1)
-    .setPrice(12),
-  new BuildingModel('graveyard', 'graveyard')
-    .setMap('assets/img/maps/graveyard.png')
-    .setIcon('assets/img/icons/graveyard.png')
-    .setLoyalty(1)
-    .addUpgradeTo('ossuary')
-    .setPrice(4),
-  new BuildingModel('guildhall', 'guildhall')
-    .setMap('assets/img/maps/guildhall.png')
-    .setIcon('assets/img/icons/guildhall.png')
-    .setSize('MEDIUM')
-    .setRequiredHouses(1)
-    .setValue(1000)
-    .setLoyalty(2)
-    .setEconomy(2)
-    .addHalvedCost('pier')
-    .addHalvedCost('stable')
-    .addHalvedCost('tradesman')
-    .setPrice(34),
-  new BuildingModel('herbalist', 'herbalist')
-    .setMap('assets/img/maps/herbalist.png')
-    .setIcon('assets/img/icons/herbalist.png')
-    .addUpgradeTo('alchemist')
-    .setRequiredHouses(1)
-    .setLoyalty(1)
-    .setStability(1)
-    .setMinorMagicObject(1)
-    .setPrice(10),
-  new BuildingModel('house', 'house')
-    .setMap('assets/img/maps/house.png')
-    .setIcon('assets/img/icons/house.png')
-    .addUpgradeTo('mansion')
-    .setUnrest(-1)
-    .setPrice(3),
-  new BuildingModel('inn', 'inn')
-    .setMap('assets/img/maps/inn.png')
-    .setIcon('assets/img/icons/inn.png')
-    .setPrice(10)
-    .setRequiredHouses(1)
-    .setEconomy(1)
-    .setLoyalty(1)
-    .setValue(500),
-  new BuildingModel('insatiable-flame-lust', 'insatiable-flame-lust')
-    .setMap('assets/img/maps/insatiable-flame-lust.png')
-    .setIcon('assets/img/icons/insatiable-flame-lust.png')
-    .setRequiredHouses(1)
-    .setEconomy(2)
-    .setLoyalty(3)
-    .setUnrest(1),
-  new BuildingModel('jail', 'jail')
-    .setMap('assets/img/maps/jail.png')
-    .setIcon('assets/img/icons/jail.png')
-    .setLoyalty(2)
-    .setStability(2)
-    .setUnrest(-2)
-    .setPrice(14),
-  new BuildingModel('library', 'library')
-    .setMap('assets/img/maps/library.png')
-    .setIcon('assets/img/icons/library.png')
-    .addUpgradeTo('academy')
-    .setEconomy(1)
-    .setLoyalty(1)
-    .setPrice(6),
-  new BuildingModel('lighthouse', 'lighthouse')
-    .setMap('assets/img/maps/lighthouse.png')
-    .setIcon('assets/img/icons/lighthouse.png')
-    .setEconomy(1)
-    .setLoyalty(1)
-    .setStability(2)
-    .setUnrest(-1)
-    .setPrice(22),
-  new BuildingModel('lucky-pint', 'lucky-pint')
-    .setMap('assets/img/maps/lucky-pint.png')
-    .setIcon('assets/img/icons/lucky-pint.png')
-    .setRequiredHouses(1)
-    .setEconomy(2)
-    .setLoyalty(2)
-    .setValue(500),
-  new BuildingModel('luxury-shop', 'luxury-shop')
-    .setMap('assets/img/maps/luxury-shop.png')
-    .setIcon('assets/img/icons/luxury-shop.png')
-    .addUpgradeTo('magic-shop')
-    .setPrice(28)
-    .setRequiredHouses(1)
-    .setValue(2000)
-    .setMinorMagicObject(2)
-    .setEconomy(1),
-  new BuildingModel('magic-shop', 'magic-shop')
-    .setMap('assets/img/maps/magic-shop.png')
-    .setIcon('assets/img/icons/magic-shop.png')
-    .setRequiredHouses(2)
-    .setEconomy(1)
-    .setValue(2000)
-    .setMinorMagicObject(4)
-    .setMediumMagicObject(2)
-    .setMajorMagicObject(1)
-    .setPrice(68),
-  new BuildingModel('mansion', 'mansion')
-    .setMap('assets/img/maps/mansion.png')
-    .setIcon('assets/img/icons/mansion.png')
-    .addUpgradeTo('noble-villa')
-    .setPrice(10)
-    .setStability(1),
-  new BuildingModel('market', 'market')
-    .setSize('MEDIUM')
-    .setMap('assets/img/maps/market.png')
-    .setIcon('assets/img/icons/market.png')
-    .setRequiredHouses(2)
-    .setEconomy(2)
-    .setStability(2)
-    .setValue(2000)
-    .setMinorMagicObject(2)
-    .addHalvedCost('black-market')
-    .addHalvedCost('inn')
-    .addHalvedCost('shop')
-    .addUpgradeTo('black-market')
-    .setPrice(48),
-  new BuildingModel('mill', 'mill')
-    .setMap('assets/img/maps/mill.png')
-    .setIcon('assets/img/icons/mill.png')
-    .setEconomy(1)
-    .setStability(1)
-    .setPrice(6),
-  new BuildingModel('monument', 'monument')
-    .setMap('assets/img/maps/monument.png')
-    .setIcon('assets/img/icons/monument.png')
-    .setLoyalty(3)
-    .setUnrest(-1)
-    .setPrice(6),
-  new BuildingModel('noble-villa', 'noble-villa')
-    .setMap('assets/img/maps/noble-villa.png')
-    .setIcon('assets/img/icons/noble-villa.png')
-    .setSize('MEDIUM')
-    .setEconomy(1)
-    .setStability(1)
-    .setLoyalty(1)
-    .addHalvedCost('exotic-craftsman')
-    .addHalvedCost('luxury-shop')
-    .addHalvedCost('mansion')
-    .setPrice(24),
-  new BuildingModel('ossuary', 'ossuary')
-    .setMap('assets/img/maps/ossuary.png')
-    .setIcon('assets/img/icons/ossuary.png')
-    .setLoyalty(2)
-    .setEconomy(1),
-  new BuildingModel('park', 'park')
-    .setMap('assets/img/maps/park.png')
-    .setIcon('assets/img/icons/park.png')
-    .addUpgradeTo('theatre')
-    .setUnrest(-1)
-    .setLoyalty(1)
-    .setPrice(4),
-  new BuildingModel('pier', 'pier')
-    .setMap('assets/img/maps/pier.png')
-    .setIcon('assets/img/icons/pier.png')
-    .setEconomy(1)
-    .setStability(1)
-    .setValue(1000)
-    .addUpgradeTo('waterfront')
-    .setPrice(16),
-  new BuildingModel('rose-opera', 'rose-opera')
-    .setMap('assets/img/maps/rose-opera.png')
-    .setIcon('assets/img/icons/rose-opera.png')
-    .setSize('MEDIUM')
-    .setEconomy(3)
-    .setStability(3),
-  new BuildingModel('sawmill', 'sawmill')
-    .setMap('assets/img/maps/sawmill.png')
-    .setIcon('assets/img/icons/sawmill.png')
-    .setEconomy(1)
-    .setStability(1),
-  new BuildingModel('shipyard', 'shipyard')
-    .setMap('assets/img/maps/shipyard.png')
-    .setIcon('assets/img/icons/shipyard.png')
-    .setSize('MEDIUM')
-    .setEconomy(2)
-    .setStability(1)
-    .setValue(1000)
-    .addHalvedCost('lighthouse')
-    .setPrice(30),
-  new BuildingModel('shop', 'shop')
-    .setMap('assets/img/maps/shop.png')
-    .setIcon('assets/img/icons/shop.png')
-    .setRequiredHouses(1)
-    .addUpgradeTo('market')
-    .addUpgradeTo('luxury-shop')
-    .setEconomy(1)
-    .setValue(500)
-    .setPrice(8),
-  new BuildingModel('shrine-abadar', 'shrine-abadar')
-    .addUpgradeTo('temple-abadar')
-    .setMap('assets/img/maps/shrine-abadar.png')
-    .setIcon('assets/img/icons/shrine-abadar.png')
-    .setUnrest(-1)
-    .setLoyalty(1)
-    .setMinorMagicObject(1)
-    .setPrice(8),
-  new BuildingModel('shrine-asmodeus', 'shrine-asmodeus')
-    .addUpgradeTo('temple-asmodeus')
-    .setMap('assets/img/maps/shrine-asmodeus.png')
-    .setIcon('assets/img/icons/shrine-asmodeus.png')
-    .setUnrest(-1)
-    .setLoyalty(1)
-    .setMinorMagicObject(1)
-    .setPrice(8),
-  new BuildingModel('shrine-calistria', 'shrine-calistria')
-    .addUpgradeTo('temple-calistria')
-    .setMap('assets/img/maps/shrine-calistria.png')
-    .setIcon('assets/img/icons/shrine-calistria.png')
-    .setUnrest(-1)
-    .setLoyalty(1)
-    .setMinorMagicObject(1)
-    .setPrice(8),
-  new BuildingModel('shrine-cayden-cailean', 'shrine-cayden-cailean')
-    .addUpgradeTo('temple-cayden-cailean')
-    .setMap('assets/img/maps/shrine-cayden-cailean.png')
-    .setIcon('assets/img/icons/shrine-cayden-cailean.png')
-    .setUnrest(-1)
-    .setLoyalty(1)
-    .setMinorMagicObject(1)
-    .setPrice(8),
-  new BuildingModel('shrine-desna', 'shrine-desna')
-    .addUpgradeTo('temple-desna')
-    .setMap('assets/img/maps/shrine-desna.png')
-    .setIcon('assets/img/icons/shrine-desna.png')
-    .setUnrest(-1)
-    .setLoyalty(1)
-    .setMinorMagicObject(1)
-    .setPrice(8),
-  new BuildingModel('shrine-erastil', 'shrine-erastil')
-    .addUpgradeTo('temple-erastil')
-    .setMap('assets/img/maps/shrine-erastil.png')
-    .setIcon('assets/img/icons/shrine-erastil.png')
-    .setUnrest(-1)
-    .setLoyalty(1)
-    .setPrice(8),
-  new BuildingModel('shrine-gorum', 'shrine-gorum')
-    .addUpgradeTo('temple-gorum')
-    .setMap('assets/img/maps/shrine-gorum.png')
-    .setIcon('assets/img/icons/shrine-gorum.png')
-    .setUnrest(-1)
-    .setLoyalty(1)
-    .setPrice(8),
-  new BuildingModel('shrine-gozreh', 'shrine-gozreh')
-    .addUpgradeTo('temple-gozreh')
-    .setMap('assets/img/maps/shrine-gozreh.png')
-    .setIcon('assets/img/icons/shrine-gozreh.png')
-    .setUnrest(-1)
-    .setLoyalty(1)
-    .setPrice(8),
-  new BuildingModel('shrine-iomedae', 'shrine-iomedae')
-    .addUpgradeTo('temple-iomedae')
-    .setMap('assets/img/maps/shrine-iomedae.png')
-    .setIcon('assets/img/icons/shrine-iomedae.png')
-    .setUnrest(-1)
-    .setLoyalty(1)
-    .setPrice(8),
-  new BuildingModel('shrine-irori', 'shrine-irori')
-    .addUpgradeTo('temple-irori')
-    .setMap('assets/img/maps/shrine-irori.png')
-    .setIcon('assets/img/icons/shrine-irori.png')
-    .setUnrest(-1)
-    .setLoyalty(1)
-    .setMinorMagicObject(1)
-    .setPrice(8),
-  new BuildingModel('shrine-nethys', 'shrine-nethys')
-    .addUpgradeTo('temple-nethys')
-    .setMap('assets/img/maps/shrine-nethys.png')
-    .setIcon('assets/img/icons/shrine-nethys.png')
-    .setUnrest(-1)
-    .setLoyalty(1)
-    .setMinorMagicObject(1)
-    .setPrice(8),
-  new BuildingModel('shrine-pharasma', 'shrine-pharasma')
-    .addUpgradeTo('temple-pharasma')
-    .setMap('assets/img/maps/shrine-pharasma.png')
-    .setIcon('assets/img/icons/shrine-pharasma.png')
-    .setUnrest(-1)
-    .setLoyalty(1)
-    .setMinorMagicObject(1)
-    .setPrice(8),
-  new BuildingModel('shrine-sarenrae', 'shrine-sarenrae')
-    .addUpgradeTo('temple-sarenrae')
-    .setMap('assets/img/maps/shrine-sarenrae.png')
-    .setIcon('assets/img/icons/shrine-sarenrae.png')
-    .setUnrest(-1)
-    .setLoyalty(1)
-    .setMinorMagicObject(1)
-    .setPrice(8),
-  new BuildingModel('shrine-shelyn', 'shrine-shelyn')
-    .addUpgradeTo('temple-shelyn')
-    .setMap('assets/img/maps/shrine-shelyn.png')
-    .setIcon('assets/img/icons/shrine-shelyn.png')
-    .setUnrest(-1)
-    .setLoyalty(1)
-    .setMinorMagicObject(1)
-    .setPrice(8),
-  new BuildingModel('shrine-torag', 'shrine-torag')
-    .addUpgradeTo('temple-torag')
-    .setMap('assets/img/maps/shrine-torag.png')
-    .setIcon('assets/img/icons/shrine-torag.png')
-    .setUnrest(-1)
-    .setLoyalty(1)
-    .setMinorMagicObject(1)
-    .setPrice(8),
-  new BuildingModel('shrine-zon-kuthon', 'shrine-zon-kuthon')
-    .addUpgradeTo('temple-zon-kuthon')
-    .setMap('assets/img/maps/shrine-zon-kuthon.png')
-    .setIcon('assets/img/icons/shrine-zon-kuthon.png')
-    .setUnrest(-1)
-    .setLoyalty(1)
-    .setMinorMagicObject(1)
-    .setPrice(8),
-  new BuildingModel('smith', 'smith')
-    .setMap('assets/img/maps/smith.png')
-    .setIcon('assets/img/icons/smith.png')
-    .setEconomy(1)
-    .setStability(1)
-    .setPrice(6),
-  new BuildingModel('stable', 'stable')
-    .setMap('assets/img/maps/stable.png')
-    .setIcon('assets/img/icons/stable.png')
-    .setRequiredHouses(1)
-    .setEconomy(1)
-    .setLoyalty(1)
-    .setValue(500)
-    .setPrice(10),
-  new BuildingModel('tannery', 'tannery')
-    .setMap('assets/img/maps/tannery.png')
-    .setIcon('assets/img/icons/tannery.png')
-    .setRequiredHouses(1)
-    .setEconomy(1)
-    .setStability(1)
-    .setPrice(6),
-  new BuildingModel('tavern', 'tavern')
-    .setMap('assets/img/maps/tavern.png')
-    .setIcon('assets/img/icons/tavern.png')
-    .setRequiredHouses(1)
-    .addUpgradeTo('lucky-pint')
-    .setEconomy(1)
-    .setLoyalty(1)
-    .setValue(500)
-    .setPrice(12),
-  new BuildingModel('temple-abadar', 'temple-abadar')
-    .addUpgradeTo('cathedral-abadar')
-    .setSize('MEDIUM')
-    .setMap('assets/img/maps/temple-abadar.png')
-    .setIcon('assets/img/icons/temple-abadar.png')
-    .setUnrest(-2)
-    .setEconomy(3)
-    .setMinorMagicObject(3)
-    .addHalvedCost('graveyard')
-    .addHalvedCost('monument')
-    .addHalvedCost('shop')
-    .setPrice(32),
-  new BuildingModel('temple-asmodeus', 'temple-asmodeus')
-    .addUpgradeTo('cathedral-asmodeus')
-    .setSize('MEDIUM')
-    .setMap('assets/img/maps/temple-asmodeus.png')
-    .setIcon('assets/img/icons/temple-asmodeus.png')
-    .setLoyalty(2)
-    .setStability(2)
-    .setMinorMagicObject(2)
-    .addHalvedCost('graveyard')
-    .addHalvedCost('monument')
-    .addHalvedCost('shrine-abadar')
-    .addHalvedCost('shrine-asmodeus')
-    .addHalvedCost('shrine-calistria')
-    .addHalvedCost('shrine-cayden-cailean')
-    .addHalvedCost('shrine-desna')
-    .addHalvedCost('shrine-erastil')
-    .addHalvedCost('shrine-gorum')
-    .addHalvedCost('shrine-gozreh')
-    .addHalvedCost('shrine-iomedae')
-    .addHalvedCost('shrine-irori')
-    .addHalvedCost('shrine-nethys')
-    .addHalvedCost('shrine-pharasma')
-    .addHalvedCost('shrine-sarenrae')
-    .addHalvedCost('shrine-shelyn')
-    .addHalvedCost('shrine-torag')
-    .addHalvedCost('shrine-zon-kuthon')
-    .setPrice(32),
-  new BuildingModel('temple-calistria', 'temple-calistria')
-    .addUpgradeTo('cathedral-calistria')
-    .setSize('MEDIUM')
-    .setMap('assets/img/maps/temple-calistria.png')
-    .setIcon('assets/img/icons/temple-calistria.png')
-    .setLoyalty(1)
-    .setStability(3)
-    .setMinorMagicObject(2)
-    .addHalvedCost('brothel')
-    .addHalvedCost('monument')
-    .addHalvedCost('shrine-abadar')
-    .addHalvedCost('shrine-asmodeus')
-    .addHalvedCost('shrine-calistria')
-    .addHalvedCost('shrine-cayden-cailean')
-    .addHalvedCost('shrine-desna')
-    .addHalvedCost('shrine-erastil')
-    .addHalvedCost('shrine-gorum')
-    .addHalvedCost('shrine-gozreh')
-    .addHalvedCost('shrine-iomedae')
-    .addHalvedCost('shrine-irori')
-    .addHalvedCost('shrine-nethys')
-    .addHalvedCost('shrine-pharasma')
-    .addHalvedCost('shrine-sarenrae')
-    .addHalvedCost('shrine-shelyn')
-    .addHalvedCost('shrine-torag')
-    .addHalvedCost('shrine-zon-kuthon')
-    .setPrice(32),
-  new BuildingModel('temple-cayden-cailean', 'temple-cayden-cailean')
-    .addUpgradeTo('cathedral-cayden-cailean')
-    .setSize('MEDIUM')
-    .setMap('assets/img/maps/temple-cayden-cailean.png')
-    .setIcon('assets/img/icons/temple-cayden-cailean.png')
-    .setEconomy(2)
-    .setLoyalty(3)
-    .setStability(-1)
-    .setMinorMagicObject(2)
-    .addHalvedCost('graveyard')
-    .addHalvedCost('brewery')
-    .addHalvedCost('shrine-abadar')
-    .addHalvedCost('shrine-asmodeus')
-    .addHalvedCost('shrine-calistria')
-    .addHalvedCost('shrine-cayden-cailean')
-    .addHalvedCost('shrine-desna')
-    .addHalvedCost('shrine-erastil')
-    .addHalvedCost('shrine-gorum')
-    .addHalvedCost('shrine-gozreh')
-    .addHalvedCost('shrine-iomedae')
-    .addHalvedCost('shrine-irori')
-    .addHalvedCost('shrine-nethys')
-    .addHalvedCost('shrine-pharasma')
-    .addHalvedCost('shrine-sarenrae')
-    .addHalvedCost('shrine-shelyn')
-    .addHalvedCost('shrine-torag')
-    .addHalvedCost('shrine-zon-kuthon')
-    .setPrice(32),
-  new BuildingModel('temple-desna', 'temple-desna')
-    .addUpgradeTo('cathedral-desna')
-    .setSize('MEDIUM')
-    .setMap('assets/img/maps/temple-desna.png')
-    .setIcon('assets/img/icons/temple-desna.png')
-    .setLoyalty(3)
-    .setStability(1)
-    .setMinorMagicObject(2)
-    .addHalvedCost('park')
-    .addHalvedCost('monument')
-    .addHalvedCost('shrine-abadar')
-    .addHalvedCost('shrine-asmodeus')
-    .addHalvedCost('shrine-calistria')
-    .addHalvedCost('shrine-cayden-cailean')
-    .addHalvedCost('shrine-desna')
-    .addHalvedCost('shrine-erastil')
-    .addHalvedCost('shrine-gorum')
-    .addHalvedCost('shrine-gozreh')
-    .addHalvedCost('shrine-iomedae')
-    .addHalvedCost('shrine-irori')
-    .addHalvedCost('shrine-nethys')
-    .addHalvedCost('shrine-pharasma')
-    .addHalvedCost('shrine-sarenrae')
-    .addHalvedCost('shrine-shelyn')
-    .addHalvedCost('shrine-torag')
-    .addHalvedCost('shrine-zon-kuthon')
-    .setPrice(32),
-  new BuildingModel('temple-erastil', 'temple-erastil')
-    .addUpgradeTo('cathedral-erastil')
-    .setSize('MEDIUM')
-    .setMap('assets/img/maps/temple-erastil.png')
-    .setIcon('assets/img/icons/temple-erastil.png')
-    .setUnrest(-2)
-    .setLoyalty(2)
-    .setStability(2)
-    .setMinorMagicObject(2)
-    .addHalvedCost('park')
-    .addHalvedCost('mill')
-    .addHalvedCost('shrine-abadar')
-    .addHalvedCost('shrine-asmodeus')
-    .addHalvedCost('shrine-calistria')
-    .addHalvedCost('shrine-cayden-cailean')
-    .addHalvedCost('shrine-desna')
-    .addHalvedCost('shrine-erastil')
-    .addHalvedCost('shrine-gorum')
-    .addHalvedCost('shrine-gozreh')
-    .addHalvedCost('shrine-iomedae')
-    .addHalvedCost('shrine-irori')
-    .addHalvedCost('shrine-nethys')
-    .addHalvedCost('shrine-pharasma')
-    .addHalvedCost('shrine-sarenrae')
-    .addHalvedCost('shrine-shelyn')
-    .addHalvedCost('shrine-torag')
-    .addHalvedCost('shrine-zon-kuthon')
-    .setPrice(32),
-  new BuildingModel('temple-gorum', 'temple-gorum')
-    .addUpgradeTo('cathedral-gorum')
-    .setSize('MEDIUM')
-    .setMap('assets/img/maps/temple-gorum.png')
-    .setIcon('assets/img/icons/temple-gorum.png')
-    .setUnrest(-2)
-    .setLoyalty(3)
-    .setStability(1)
-    .setMinorMagicObject(2)
-    .addHalvedCost('graveyard')
-    .addHalvedCost('smith')
-    .addHalvedCost('shrine-abadar')
-    .addHalvedCost('shrine-asmodeus')
-    .addHalvedCost('shrine-calistria')
-    .addHalvedCost('shrine-cayden-cailean')
-    .addHalvedCost('shrine-desna')
-    .addHalvedCost('shrine-erastil')
-    .addHalvedCost('shrine-gorum')
-    .addHalvedCost('shrine-gozreh')
-    .addHalvedCost('shrine-iomedae')
-    .addHalvedCost('shrine-irori')
-    .addHalvedCost('shrine-nethys')
-    .addHalvedCost('shrine-pharasma')
-    .addHalvedCost('shrine-sarenrae')
-    .addHalvedCost('shrine-shelyn')
-    .addHalvedCost('shrine-torag')
-    .addHalvedCost('shrine-zon-kuthon')
-    .setPrice(32),
-  new BuildingModel('temple-gozreh', 'temple-gozreh')
-    .addUpgradeTo('cathedral-gozreh')
-    .setSize('MEDIUM')
-    .setMap('assets/img/maps/temple-gozreh.png')
-    .setIcon('assets/img/icons/temple-gozreh.png')
-    .setUnrest(-2)
-    .setLoyalty(2)
-    .setStability(2)
-    .setMinorMagicObject(2)
-    .addHalvedCost('park')
-    .addHalvedCost('monument')
-    .addHalvedCost('shrine-abadar')
-    .addHalvedCost('shrine-asmodeus')
-    .addHalvedCost('shrine-calistria')
-    .addHalvedCost('shrine-cayden-cailean')
-    .addHalvedCost('shrine-desna')
-    .addHalvedCost('shrine-erastil')
-    .addHalvedCost('shrine-gorum')
-    .addHalvedCost('shrine-gozreh')
-    .addHalvedCost('shrine-iomedae')
-    .addHalvedCost('shrine-irori')
-    .addHalvedCost('shrine-nethys')
-    .addHalvedCost('shrine-pharasma')
-    .addHalvedCost('shrine-sarenrae')
-    .addHalvedCost('shrine-shelyn')
-    .addHalvedCost('shrine-torag')
-    .addHalvedCost('shrine-zon-kuthon')
-    .setPrice(32),
-  new BuildingModel('temple-iomedae', 'temple-iomedae')
-    .addUpgradeTo('cathedral-iomedae')
-    .setSize('MEDIUM')
-    .setMap('assets/img/maps/temple-iomedae.png')
-    .setIcon('assets/img/icons/temple-iomedae.png')
-    .setUnrest(-2)
-    .setLoyalty(3)
-    .setStability(1)
-    .setMinorMagicObject(2)
-    .addHalvedCost('graveyard')
-    .addHalvedCost('watchtower')
-    .addHalvedCost('shrine-abadar')
-    .addHalvedCost('shrine-asmodeus')
-    .addHalvedCost('shrine-calistria')
-    .addHalvedCost('shrine-cayden-cailean')
-    .addHalvedCost('shrine-desna')
-    .addHalvedCost('shrine-erastil')
-    .addHalvedCost('shrine-gorum')
-    .addHalvedCost('shrine-gozreh')
-    .addHalvedCost('shrine-iomedae')
-    .addHalvedCost('shrine-irori')
-    .addHalvedCost('shrine-nethys')
-    .addHalvedCost('shrine-pharasma')
-    .addHalvedCost('shrine-sarenrae')
-    .addHalvedCost('shrine-shelyn')
-    .addHalvedCost('shrine-torag')
-    .addHalvedCost('shrine-zon-kuthon')
-    .setPrice(32),
-  new BuildingModel('temple-irori', 'temple-irori')
-    .addUpgradeTo('cathedral-irori')
-    .setSize('MEDIUM')
-    .setMap('assets/img/maps/temple-irori.png')
-    .setIcon('assets/img/icons/temple-irori.png')
-    .setUnrest(-2)
-    .setLoyalty(1)
-    .setStability(3)
-    .setMinorMagicObject(2)
-    .addHalvedCost('park')
-    .addHalvedCost('library')
-    .addHalvedCost('shrine-abadar')
-    .addHalvedCost('shrine-asmodeus')
-    .addHalvedCost('shrine-calistria')
-    .addHalvedCost('shrine-cayden-cailean')
-    .addHalvedCost('shrine-desna')
-    .addHalvedCost('shrine-erastil')
-    .addHalvedCost('shrine-gorum')
-    .addHalvedCost('shrine-gozreh')
-    .addHalvedCost('shrine-iomedae')
-    .addHalvedCost('shrine-irori')
-    .addHalvedCost('shrine-nethys')
-    .addHalvedCost('shrine-pharasma')
-    .addHalvedCost('shrine-sarenrae')
-    .addHalvedCost('shrine-shelyn')
-    .addHalvedCost('shrine-torag')
-    .addHalvedCost('shrine-zon-kuthon')
-    .setPrice(32),
-  new BuildingModel('temple-nethys', 'temple-nethys')
-    .addUpgradeTo('cathedral-nethys')
-    .setSize('MEDIUM')
-    .setMap('assets/img/maps/temple-nethys.png')
-    .setIcon('assets/img/icons/temple-nethys.png')
-    .setUnrest(-2)
-    .setLoyalty(1)
-    .setStability(1)
-    .setEconomy(1)
-    .setMinorMagicObject(3)
-    .addHalvedCost('graveyard')
-    .addHalvedCost('library')
-    .addHalvedCost('shrine-abadar')
-    .addHalvedCost('shrine-asmodeus')
-    .addHalvedCost('shrine-calistria')
-    .addHalvedCost('shrine-cayden-cailean')
-    .addHalvedCost('shrine-desna')
-    .addHalvedCost('shrine-erastil')
-    .addHalvedCost('shrine-gorum')
-    .addHalvedCost('shrine-gozreh')
-    .addHalvedCost('shrine-iomedae')
-    .addHalvedCost('shrine-irori')
-    .addHalvedCost('shrine-nethys')
-    .addHalvedCost('shrine-pharasma')
-    .addHalvedCost('shrine-sarenrae')
-    .addHalvedCost('shrine-shelyn')
-    .addHalvedCost('shrine-torag')
-    .addHalvedCost('shrine-zon-kuthon')
-    .setPrice(32),
-  new BuildingModel('temple-pharasma', 'temple-pharasma')
-    .addUpgradeTo('cathedral-pharasma')
-    .setSize('MEDIUM')
-    .setMap('assets/img/maps/temple-pharasma.png')
-    .setIcon('assets/img/icons/temple-pharasma.png')
-    .setUnrest(-2)
-    .setLoyalty(1)
-    .setStability(3)
-    .setMinorMagicObject(2)
-    .addHalvedCost('graveyard')
-    .addHalvedCost('monument')
-    .addHalvedCost('shrine-abadar')
-    .addHalvedCost('shrine-asmodeus')
-    .addHalvedCost('shrine-calistria')
-    .addHalvedCost('shrine-cayden-cailean')
-    .addHalvedCost('shrine-desna')
-    .addHalvedCost('shrine-erastil')
-    .addHalvedCost('shrine-gorum')
-    .addHalvedCost('shrine-gozreh')
-    .addHalvedCost('shrine-iomedae')
-    .addHalvedCost('shrine-irori')
-    .addHalvedCost('shrine-nethys')
-    .addHalvedCost('shrine-pharasma')
-    .addHalvedCost('shrine-sarenrae')
-    .addHalvedCost('shrine-shelyn')
-    .addHalvedCost('shrine-torag')
-    .addHalvedCost('shrine-zon-kuthon')
-    .setPrice(32),
-  new BuildingModel('temple-sarenrae', 'temple-sarenrae')
-    .addUpgradeTo('cathedral-sarenrae')
-    .setSize('MEDIUM')
-    .setMap('assets/img/maps/temple-sarenrae.png')
-    .setIcon('assets/img/icons/temple-sarenrae.png')
-    .setUnrest(-2)
-    .setLoyalty(2)
-    .setStability(2)
-    .setMinorMagicObject(2)
-    .addHalvedCost('park')
-    .addHalvedCost('monument')
-    .addHalvedCost('shrine-abadar')
-    .addHalvedCost('shrine-asmodeus')
-    .addHalvedCost('shrine-calistria')
-    .addHalvedCost('shrine-cayden-cailean')
-    .addHalvedCost('shrine-desna')
-    .addHalvedCost('shrine-erastil')
-    .addHalvedCost('shrine-gorum')
-    .addHalvedCost('shrine-gozreh')
-    .addHalvedCost('shrine-iomedae')
-    .addHalvedCost('shrine-irori')
-    .addHalvedCost('shrine-nethys')
-    .addHalvedCost('shrine-pharasma')
-    .addHalvedCost('shrine-sarenrae')
-    .addHalvedCost('shrine-shelyn')
-    .addHalvedCost('shrine-torag')
-    .addHalvedCost('shrine-zon-kuthon')
-    .setPrice(32),
-  new BuildingModel('temple-shelyn', 'temple-shelyn')
-    .addUpgradeTo('cathedral-shelyn')
-    .setSize('MEDIUM')
-    .setMap('assets/img/maps/temple-shelyn.png')
-    .setIcon('assets/img/icons/temple-shelyn.png')
-    .setUnrest(-2)
-    .setEconomy(1)
-    .setStability(3)
-    .setMinorMagicObject(2)
-    .addHalvedCost('park')
-    .addHalvedCost('monument')
-    .addHalvedCost('shrine-abadar')
-    .addHalvedCost('shrine-asmodeus')
-    .addHalvedCost('shrine-calistria')
-    .addHalvedCost('shrine-cayden-cailean')
-    .addHalvedCost('shrine-desna')
-    .addHalvedCost('shrine-erastil')
-    .addHalvedCost('shrine-gorum')
-    .addHalvedCost('shrine-gozreh')
-    .addHalvedCost('shrine-iomedae')
-    .addHalvedCost('shrine-irori')
-    .addHalvedCost('shrine-nethys')
-    .addHalvedCost('shrine-pharasma')
-    .addHalvedCost('shrine-sarenrae')
-    .addHalvedCost('shrine-shelyn')
-    .addHalvedCost('shrine-torag')
-    .addHalvedCost('shrine-zon-kuthon')
-    .setPrice(32),
-  new BuildingModel('temple-torag', 'temple-torag')
-    .addUpgradeTo('cathedral-torag')
-    .setSize('MEDIUM')
-    .setMap('assets/img/maps/temple-torag.png')
-    .setIcon('assets/img/icons/temple-torag.png')
-    .setUnrest(-2)
-    .setLoyalty(1)
-    .setStability(3)
-    .setMinorMagicObject(2)
-    .addHalvedCost('graveyard')
-    .addHalvedCost('smith')
-    .addHalvedCost('city-wall')
-    .setPrice(32),
-  new BuildingModel('temple-zon-kuthon', 'temple-zon-kuthon')
-    .addUpgradeTo('cathedral-zon-kuthon')
-    .setSize('MEDIUM')
-    .setMap('assets/img/maps/temple-zon-kuthon.png')
-    .setIcon('assets/img/icons/temple-zon-kuthon.png')
-    .setUnrest(-2)
-    .setLoyalty(3)
-    .setStability(1)
-    .setMinorMagicObject(2)
-    .addHalvedCost('graveyard')
-    .addHalvedCost('monument')
-    .addHalvedCost('shrine-abadar')
-    .addHalvedCost('shrine-asmodeus')
-    .addHalvedCost('shrine-calistria')
-    .addHalvedCost('shrine-cayden-cailean')
-    .addHalvedCost('shrine-desna')
-    .addHalvedCost('shrine-erastil')
-    .addHalvedCost('shrine-gorum')
-    .addHalvedCost('shrine-gozreh')
-    .addHalvedCost('shrine-iomedae')
-    .addHalvedCost('shrine-irori')
-    .addHalvedCost('shrine-nethys')
-    .addHalvedCost('shrine-pharasma')
-    .addHalvedCost('shrine-sarenrae')
-    .addHalvedCost('shrine-shelyn')
-    .addHalvedCost('shrine-torag')
-    .addHalvedCost('shrine-zon-kuthon')
-    .setPrice(32),
-  new BuildingModel('tenement', 'tenement')
-    .setMap('assets/img/maps/tenement.png')
-    .setIcon('assets/img/icons/tenement.png')
-    .addUpgradeTo('house')
-    .setPrice(1)
-    .setUnrest(2),
-  new BuildingModel('theatre', 'theatre')
-    .setMap('assets/img/maps/theatre.png')
-    .setIcon('assets/img/icons/theatre.png')
-    .setSize('MEDIUM')
-    .setPrice(14)
-    .setEconomy(2)
-    .addHalvedCost('brothel')
-    .addHalvedCost('park')
-    .addHalvedCost('tavern')
-    .addUpgradeTo('arena')
-    .addUpgradeTo('rose-opera')
-    .setStability(2),
-  new BuildingModel('thieves-guild', 'thieves-guild')
-    .setMap('assets/img/maps/thieves-guild.png')
-    .setIcon('assets/img/icons/thieves-guild.png')
-    .setPrice(32)
-    .setValue(1000)
-    .addHalvedCost('gallows')
-    .addHalvedCost('gambling-den')
-    .setEconomy(1)
-    .setStability(1)
-    .setDefence(1)
-    .setUnrest(1),
-  new BuildingModel('tourney-grounds', 'tourney-grounds')
-    .setSize('LARGE')
-    .setMap('assets/img/maps/tourney-grounds.png')
-    .setIcon('assets/img/icons/tourney-grounds.png')
-    .setEconomy(3)
-    .setLoyalty(1)
-    .addUpgradeTo('arena')
-    .setPrice(25),
-  new BuildingModel('town-hall', 'town-hall')
-    .setSize('MEDIUM')
-    .setMap('assets/img/maps/town-hall.png')
-    .setIcon('assets/img/icons/town-hall.png')
-    .setEconomy(1)
-    .setLoyalty(1)
-    .setStability(1)
-    .addHalvedCost('barracks')
-    .addHalvedCost('dump')
-    .addHalvedCost('watchtower')
-    .setPrice(22),
-  new BuildingModel('tradesman', 'tradesman')
-    .setMap('assets/img/maps/tradesman.png')
-    .setIcon('assets/img/icons/tradesman.png')
-    .addUpgradeTo('exotic-craftsman')
-    .addUpgradeTo('guildhall')
-    .setEconomy(1)
-    .setRequiredHouses(1)
-    .setValue(500)
-    .setStability(1)
-    .setPrice(10),
-  new BuildingModel('watchtower', 'watchtower')
-    .setMap('assets/img/maps/watchtower.png')
-    .setIcon('assets/img/icons/watchtower.png')
-    .addUpgradeTo('castle')
-    .setPrice(12)
-    .setStability(1)
-    .setDefence(2),
-  new BuildingModel('waterfront', 'waterfront')
-    .setMap('assets/img/maps/waterfront.png')
-    .setIcon('assets/img/icons/waterfront.png')
-    .setSize('LARGE')
-    .setPrice(90)
-    .setEconomy(4)
-    .setValue(4000)
-    .setPrice(90)
-    .addHalvedCost('guildhall')
-    .addHalvedCost('market')
-    .addHalvedCost('taxEdicts')
-    .setMinorMagicObject(3)
-    .setMediumMagicObject(2)
-    .setMajorMagicObject(1),
-  new BuildingModel('weaver', 'weaver')
-    .setMap('assets/img/maps/weaver.png')
-    .setIcon('assets/img/icons/weaver.png')
-    .setEconomy(1)
-    .setStability(1)
-    .setPrice(6),
-  new BuildingModel('winemaker', 'winemaker')
-    .setMap('assets/img/maps/winemaker.png')
-    .setIcon('assets/img/icons/winemaker.png')
-    .setEconomy(1)
-    .setLoyalty(1)
-    .setStability(1)
-    .setPrice(10)
+    {
+        ...defaultBuilding,
+        id: 'academy-tower',
+        name: 'academy-tower',
+        size: 'LARGE',
+        map: 'assets/img/maps/academy-tower.png',
+        icon: 'assets/img/icons/academy-tower.png',
+        economy: 3,
+        loyalty: 4,
+        minorMagicObject: 6,
+        mediumMagicObject: 4,
+        price: 67,
+        halvedCosts: [
+            'library',
+            'magic-shop'
+        ]
+    },
+    {
+        ...defaultBuilding,
+        id: 'academy',
+        name: 'academy',
+        size: 'LARGE',
+        map: 'assets/img/maps/academy.png',
+        icon: 'assets/img/icons/academy.png',
+        economy: 2,
+        loyalty: 2,
+        minorMagicObject: 3,
+        mediumMagicObject: 2,
+        price: 52,
+        halvedCosts: [
+            'caster-tower',
+            'library',
+            'magic-shop'
+        ],
+        upgradeTo: [
+            'academy-tower'
+        ]
+    },
+    {
+        ...defaultBuilding,
+        id: 'alchemist',
+        name: 'alchemist',
+        map: 'assets/img/maps/alchemist.png',
+        icon: 'assets/img/icons/alchemist.png',
+        economy: 1,
+        value: 1000,
+        minorMagicObject: 1,
+        price: 18,
+        requiredHouses: 1,
+        upgradeTo: [
+            'caster-tower'
+        ]
+    },
+    {
+        ...defaultBuilding,
+        id: 'all-seeing-eye',
+        name: 'all-seeing-eye',
+        map: 'assets/img/maps/all-seeing-eye.png',
+        icon: 'assets/img/icons/all-seeing-eye.png',
+        economy: 1,
+        loyalty: 1,
+        minorMagicObject: 4,
+        mediumMagicObject: 3,
+        majorMagicObject: 1
+    },
+    {
+        ...defaultBuilding,
+        id: 'embassy',
+        name: 'embassy',
+        map: 'assets/img/maps/embassy.png',
+        icon: 'assets/img/icons/embassy.png',
+        economy: 1,
+        stability: 2,
+        halvedCosts: [
+            'twoAlliedBuildings'
+        ],
+        price: 40
+    },
+    {
+        ...defaultBuilding,
+        id: 'arena',
+        name: 'arena',
+        map: 'assets/img/maps/arena.png',
+        icon: 'assets/img/icons/arena.png',
+        size: 'LARGE',
+        stability: 4,
+        halvedCosts: [
+            'garrison',
+            'theatre',
+            'festivalEdicts'
+        ],
+        price: 40
+    },
+    {
+        ...defaultBuilding,
+        id: 'barracks',
+        name: 'barracks',
+        map: 'assets/img/maps/barracks.png',
+        icon: 'assets/img/icons/barracks.png',
+        upgradeTo: [
+            'castle',
+            'garrison',
+            'jail'
+        ],
+        defence: 2,
+        unrest: -1,
+        price: 6
+    },
+    {
+        ...defaultBuilding,
+        id: 'black-market',
+        name: 'black-market',
+        map: 'assets/img/maps/black-market.png',
+        icon: 'assets/img/icons/black-market.png',
+        value: 2000,
+        minorMagicObject: 2,
+        mediumMagicObject: 1,
+        majorMagicObject: 1,
+        unrest: 1,
+        economy: 2,
+        stability: 1,
+        requiredHouses: 2,
+        price: 50
+    },
+    {
+        ...defaultBuilding,
+        id: 'brewery',
+        name: 'brewery',
+        map: 'assets/img/maps/brewery.png',
+        icon: 'assets/img/icons/brewery.png',
+        loyalty: 1,
+        stability: 1,
+        price: 6
+    },
+    {
+        ...defaultBuilding,
+        id: 'brothel',
+        name: 'brothel',
+        map: 'assets/img/maps/brothel.png',
+        icon: 'assets/img/icons/brothel.png',
+        requiredHouses: 1,
+        economy: 1,
+        loyalty: 2,
+        unrest: 1,
+        upgradeTo: [
+            'insatiable-flame-lust'
+        ],
+        price: 4
+    },
+    {
+        ...defaultBuilding,
+        id: 'caster-tower',
+        name: 'caster-tower',
+        map: 'assets/img/maps/caster-tower.png',
+        icon: 'assets/img/icons/caster-tower.png',
+        economy: 1,
+        loyalty: 1,
+        minorMagicObject: 3,
+        mediumMagicObject: 2,
+        upgradeTo: [
+            'all-seeing-eye'
+        ],
+        price: 30
+    },
+    {
+        ...defaultBuilding,
+        id: 'castle',
+        name: 'castle',
+        size: 'LARGE',
+        map: 'assets/img/maps/castle.png',
+        icon: 'assets/img/icons/castle.png',
+        economy: 2,
+        loyalty: 2,
+        stability: 2,
+        defence: 8,
+        unrest: -4,
+        halvedCosts: [
+            'noble-villa',
+            'town-hall'
+        ],
+        price: 54
+    },
+    {
+        ...defaultBuilding,
+        id: 'cathedral-abadar',
+        name: 'cathedral-abadar',
+        size: 'LARGE',
+        map: 'assets/img/maps/cathedral-abadar.png',
+        icon: 'assets/img/icons/cathedral-abadar.png',
+        unrest: -4,
+        loyalty: 2,
+        economy: 1,
+        value: 1000,
+        stability: 3,
+        minorMagicObject: 3,
+        mediumMagicObject: 2,
+        halvedCosts: [
+            'academy',
+            'temple-abadar',
+            'temple-asmodeus',
+            'temple-calistria',
+            'temple-cayden-cailean',
+            'temple-desna',
+            'temple-erastil',
+            'temple-gorum',
+            'temple-gozreh',
+            'temple-iomedae',
+            'temple-irori',
+            'temple-nethys',
+            'temple-pharasma',
+            'temple-sarenrae',
+            'temple-shelyn',
+            'temple-torag',
+            'temple-zon-kuthon',
+            'promotionEdicts'
+        ],
+        price: 58
+    },
+    {
+        ...defaultBuilding,
+        id: 'cathedral-asmodeus',
+        name: 'cathedral-asmodeus',
+        size: 'LARGE',
+        map: 'assets/img/maps/cathedral-asmodeus.png',
+        icon: 'assets/img/icons/cathedral-asmodeus.png',
+        unrest: -4,
+        loyalty: 2,
+        stability: 3,
+        minorMagicObject: 3,
+        mediumMagicObject: 2,
+        halvedCosts: [
+            'academy',
+            'temple-abadar',
+            'temple-asmodeus',
+            'temple-calistria',
+            'temple-cayden-cailean',
+            'temple-desna',
+            'temple-erastil',
+            'temple-gorum',
+            'temple-gozreh',
+            'temple-iomedae',
+            'temple-irori',
+            'temple-nethys',
+            'temple-pharasma',
+            'temple-sarenrae',
+            'temple-shelyn',
+            'temple-torag',
+            'temple-zon-kuthon',
+            'promotionEdicts'
+        ],
+        price: 58
+    },
+    {
+        ...defaultBuilding,
+        id: 'cathedral-calistria',
+        name: 'cathedral-calistria',
+        size: 'LARGE',
+        map: 'assets/img/maps/cathedral-calistria.png',
+        icon: 'assets/img/icons/cathedral-calistria.png',
+        unrest: -4,
+        loyalty: 2,
+        minorMagicObject: 3,
+        mediumMagicObject: 2,
+        halvedCosts: [
+            'academy',
+            'temple-abadar',
+            'temple-asmodeus',
+            'temple-calistria',
+            'temple-cayden-cailean',
+            'temple-desna',
+            'temple-erastil',
+            'temple-gorum',
+            'temple-gozreh',
+            'temple-iomedae',
+            'temple-irori',
+            'temple-nethys',
+            'temple-pharasma',
+            'temple-sarenrae',
+            'temple-shelyn',
+            'temple-torag',
+            'temple-zon-kuthon',
+            'promotionEdicts'
+        ],
+        price: 58
+    },
+    {
+        ...defaultBuilding,
+        id: 'cathedral-cayden-cailean',
+        name: 'cathedral-cayden-cailean',
+        size: 'LARGE',
+        map: 'assets/img/maps/cathedral-cayden-cailean.png',
+        icon: 'assets/img/icons/cathedral-cayden-cailean.png',
+        unrest: -4,
+        loyalty: 2,
+        minorMagicObject: 3,
+        mediumMagicObject: 2,
+        halvedCosts: [
+            'academy',
+            'temple-abadar',
+            'temple-asmodeus',
+            'temple-calistria',
+            'temple-cayden-cailean',
+            'temple-desna',
+            'temple-erastil',
+            'temple-gorum',
+            'temple-gozreh',
+            'temple-iomedae',
+            'temple-irori',
+            'temple-nethys',
+            'temple-pharasma',
+            'temple-sarenrae',
+            'temple-shelyn',
+            'temple-torag',
+            'temple-zon-kuthon',
+            'promotionEdicts'
+        ],
+        price: 58
+    },
+    {
+        ...defaultBuilding,
+        id: 'cathedral-desna',
+        name: 'cathedral-desna',
+        size: 'LARGE',
+        map: 'assets/img/maps/cathedral-desna.png',
+        icon: 'assets/img/icons/cathedral-desna.png',
+        unrest: -4,
+        loyalty: 4,
+        minorMagicObject: 3,
+        mediumMagicObject: 2,
+        halvedCosts: [
+            'promotionEdicts'
+        ],
+        price: 58
+    },
+    {
+        ...defaultBuilding,
+        id: 'cathedral-erastil',
+        name: 'cathedral-erastil',
+        size: 'LARGE',
+        map: 'assets/img/maps/cathedral-erastil.png',
+        icon: 'assets/img/icons/cathedral-erastil.png',
+        unrest: -4,
+        loyalty: 4,
+        minorMagicObject: 3,
+        mediumMagicObject: 2,
+        halvedCosts: [
+            'promotionEdicts'
+        ],
+        price: 58
+    },
+    {
+        ...defaultBuilding,
+        id: 'cathedral-gorum',
+        name: 'cathedral-gorum',
+        size: 'LARGE',
+        map: 'assets/img/maps/cathedral-gorum.png',
+        icon: 'assets/img/icons/cathedral-gorum.png',
+        unrest: -4,
+        loyalty: 4,
+        minorMagicObject: 3,
+        mediumMagicObject: 2,
+        halvedCosts: [
+            'promotionEdicts'
+        ],
+        price: 58
+    },
+    {
+        ...defaultBuilding,
+        id: 'cathedral-gozreh',
+        name: 'cathedral-gozreh',
+        size: 'LARGE',
+        map: 'assets/img/maps/cathedral-gozreh.png',
+        icon: 'assets/img/icons/cathedral-gozreh.png',
+        unrest: -4,
+        loyalty: 4,
+        minorMagicObject: 3,
+        mediumMagicObject: 2,
+        halvedCosts: [
+            'promotionEdicts'
+        ],
+        price: 58
+    },
+    {
+        ...defaultBuilding,
+        id: 'cathedral-iomedae',
+        name: 'cathedral-iomedae',
+        size: 'LARGE',
+        map: 'assets/img/maps/cathedral-iomedae.png',
+        icon: 'assets/img/icons/cathedral-iomedae.png',
+        unrest: -4,
+        loyalty: 4,
+        minorMagicObject: 3,
+        mediumMagicObject: 2,
+        halvedCosts: [
+            'promotionEdicts'
+        ],
+        price: 58
+    },
+    {
+        ...defaultBuilding,
+        id: 'cathedral-irori',
+        name: 'cathedral-irori',
+        size: 'LARGE',
+        map: 'assets/img/maps/cathedral-irori.png',
+        icon: 'assets/img/icons/cathedral-irori.png',
+        unrest: -4,
+        loyalty: 2,
+        minorMagicObject: 3,
+        mediumMagicObject: 2,
+        halvedCosts: [
+            'academy',
+            'temple-abadar',
+            'temple-asmodeus',
+            'temple-calistria',
+            'temple-cayden-cailean',
+            'temple-desna',
+            'temple-erastil',
+            'temple-gorum',
+            'temple-gozreh',
+            'temple-iomedae',
+            'temple-irori',
+            'temple-nethys',
+            'temple-pharasma',
+            'temple-sarenrae',
+            'temple-shelyn',
+            'temple-torag',
+            'temple-zon-kuthon',
+            'promotionEdicts'
+        ],
+        price: 58
+    },
+    {
+        ...defaultBuilding,
+        id: 'cathedral-nethys',
+        name: 'cathedral-nethys',
+        size: 'LARGE',
+        map: 'assets/img/maps/cathedral-nethys.png',
+        icon: 'assets/img/icons/cathedral-nethys.png',
+        unrest: -4,
+        loyalty: 4,
+        minorMagicObject: 3,
+        mediumMagicObject: 2,
+        halvedCosts: [
+            'promotionEdicts'
+        ],
+        price: 58
+    },
+    {
+        ...defaultBuilding,
+        id: 'cathedral-pharasma',
+        name: 'cathedral-pharasma',
+        size: 'LARGE',
+        map: 'assets/img/maps/cathedral-pharasma.png',
+        icon: 'assets/img/icons/cathedral-pharasma.png',
+        unrest: -4,
+        loyalty: 2,
+        minorMagicObject: 3,
+        mediumMagicObject: 2,
+        halvedCosts: [
+            'academy',
+            'temple-abadar',
+            'temple-asmodeus',
+            'temple-calistria',
+            'temple-cayden-cailean',
+            'temple-desna',
+            'temple-erastil',
+            'temple-gorum',
+            'temple-gozreh',
+            'temple-iomedae',
+            'temple-irori',
+            'temple-nethys',
+            'temple-pharasma',
+            'temple-sarenrae',
+            'temple-shelyn',
+            'temple-torag',
+            'temple-zon-kuthon',
+            'promotionEdicts'
+        ],
+        price: 58
+    },
+    {
+        ...defaultBuilding,
+        id: 'cathedral-sarenrae',
+        name: 'cathedral-sarenrae',
+        size: 'LARGE',
+        map: 'assets/img/maps/cathedral-sarenrae.png',
+        icon: 'assets/img/icons/cathedral-sarenrae.png',
+        unrest: -4,
+        loyalty: 4,
+        minorMagicObject: 3,
+        mediumMagicObject: 2,
+        halvedCosts: [
+            'promotionEdicts'
+        ],
+        price: 58
+    },
+    {
+        ...defaultBuilding,
+        id: 'cathedral-shelyn',
+        name: 'cathedral-shelyn',
+        size: 'LARGE',
+        map: 'assets/img/maps/cathedral-shelyn.png',
+        icon: 'assets/img/icons/cathedral-shelyn.png',
+        unrest: -4,
+        loyalty: 2,
+        minorMagicObject: 3,
+        mediumMagicObject: 2,
+        halvedCosts: [
+            'academy',
+            'temple-abadar',
+            'temple-asmodeus',
+            'temple-calistria',
+            'temple-cayden-cailean',
+            'temple-desna',
+            'temple-erastil',
+            'temple-gorum',
+            'temple-gozreh',
+            'temple-iomedae',
+            'temple-irori',
+            'temple-nethys',
+            'temple-pharasma',
+            'temple-sarenrae',
+            'temple-shelyn',
+            'temple-torag',
+            'temple-zon-kuthon',
+            'promotionEdicts'
+        ],
+        price: 58
+    },
+    {
+        ...defaultBuilding,
+        id: 'cathedral-torag',
+        name: 'cathedral-torag',
+        size: 'LARGE',
+        map: 'assets/img/maps/cathedral-torag.png',
+        icon: 'assets/img/icons/cathedral-torag.png',
+        unrest: -4,
+        loyalty: 2,
+        defence: 4,
+        minorMagicObject: 3,
+        mediumMagicObject: 2,
+        halvedCosts: [
+            'academy',
+            'temple-abadar',
+            'temple-asmodeus',
+            'temple-calistria',
+            'temple-cayden-cailean',
+            'temple-desna',
+            'temple-erastil',
+            'temple-gorum',
+            'temple-gozreh',
+            'temple-iomedae',
+            'temple-irori',
+            'temple-nethys',
+            'temple-pharasma',
+            'temple-sarenrae',
+            'temple-shelyn',
+            'temple-torag',
+            'temple-zon-kuthon',
+            'promotionEdicts'
+        ],
+        price: 58
+    },
+    {
+        ...defaultBuilding,
+        id: 'cathedral-zon-kuthon',
+        name: 'cathedral-zon-kuthon',
+        size: 'LARGE',
+        map: 'assets/img/maps/cathedral-zon-kuthon.png',
+        icon: 'assets/img/icons/cathedral-zon-kuthon.png',
+        unrest: -4,
+        loyalty: 3,
+        defence: 2,
+        minorMagicObject: 3,
+        mediumMagicObject: 2,
+        halvedCosts: [
+            'academy',
+            'temple-abadar',
+            'temple-asmodeus',
+            'temple-calistria',
+            'temple-cayden-cailean',
+            'temple-desna',
+            'temple-erastil',
+            'temple-gorum',
+            'temple-gozreh',
+            'temple-iomedae',
+            'temple-irori',
+            'temple-nethys',
+            'temple-pharasma',
+            'temple-sarenrae',
+            'temple-shelyn',
+            'temple-torag',
+            'temple-zon-kuthon',
+            'promotionEdicts'
+        ],
+        price: 58
+    },
+    {
+        ...defaultBuilding,
+        id: 'city-wall',
+        name: 'city-wall',
+        icon: 'assets/img/icons/city-wall.png',
+        defence: 4,
+        unrest: -2,
+        price: 8
+    },
+    {
+        ...defaultBuilding,
+        id: 'dump',
+        name: 'dump',
+        map: 'assets/img/maps/dump.png',
+        icon: 'assets/img/icons/dump.png',
+        loyalty: 1,
+        stability: 1,
+        price: 6
+    },
+    {
+        ...defaultBuilding,
+        id: 'exotic-craftsman',
+        name: 'exotic-craftsman',
+        map: 'assets/img/maps/exotic-craftsman.png',
+        icon: 'assets/img/icons/exotic-craftsman.png',
+        economy: 1,
+        stability: 1,
+        minorMagicObject: 1,
+        price: 10,
+        requiredHouses: 1
+    },
+    {
+        ...defaultBuilding,
+        id: 'gallows',
+        name: 'gallows',
+        map: 'assets/img/maps/gallows.png',
+        icon: 'assets/img/icons/gallows.png',
+        stability: 1,
+        unrest: -2,
+        price: 8
+    },
+    {
+        ...defaultBuilding,
+        id: 'gambling-den',
+        name: 'gambling-den',
+        map: 'assets/img/maps/gambling-den.png',
+        icon: 'assets/img/icons/gambling-den.png',
+        loyalty: -1,
+        unrest: -1,
+        value: 500,
+        price: 12
+    },
+    {
+        ...defaultBuilding,
+        id: 'garrison',
+        name: 'garrison',
+        size: 'MEDIUM',
+        map: 'assets/img/maps/garrison.png',
+        icon: 'assets/img/icons/garrison.png',
+        loyalty: 2,
+        stability: 2,
+        unrest: -2,
+        halvedCosts: [
+            'city-wall',
+            'granary',
+            'jail'
+        ],
+        upgradeTo: [
+            'castle'
+        ],
+        price: 28
+    },
+    {
+        ...defaultBuilding,
+        id: 'granary',
+        name: 'granary',
+        map: 'assets/img/maps/granary.png',
+        icon: 'assets/img/icons/granary.png',
+        loyalty: 1,
+        stability: 1,
+        price: 12
+    },
+    {
+        ...defaultBuilding,
+        id: 'graveyard',
+        name: 'graveyard',
+        map: 'assets/img/maps/graveyard.png',
+        icon: 'assets/img/icons/graveyard.png',
+        loyalty: 1,
+        upgradeTo: [
+            'ossuary'
+        ],
+        price: 4
+    },
+    {
+        ...defaultBuilding,
+        id: 'guildhall',
+        name: 'guildhall',
+        map: 'assets/img/maps/guildhall.png',
+        icon: 'assets/img/icons/guildhall.png',
+        size: 'MEDIUM',
+        requiredHouses: 1,
+        value: 1000,
+        loyalty: 2,
+        economy: 2,
+        halvedCosts: [
+            'pier',
+            'stable',
+            'tradesman'
+        ],
+        price: 34
+    },
+    {
+        ...defaultBuilding,
+        id: 'herbalist',
+        name: 'herbalist',
+        map: 'assets/img/maps/herbalist.png',
+        icon: 'assets/img/icons/herbalist.png',
+        upgradeTo: [
+            'alchemist'
+        ],
+        requiredHouses: 1,
+        loyalty: 1,
+        stability: 1,
+        minorMagicObject: 1,
+        price: 10
+    },
+    {
+        ...defaultBuilding,
+        id: 'house',
+        name: 'house',
+        map: 'assets/img/maps/house.png',
+        icon: 'assets/img/icons/house.png',
+        upgradeTo: [
+            'mansion'
+        ],
+        unrest: -1,
+        price: 3
+    },
+    {
+        ...defaultBuilding,
+        id: 'inn',
+        name: 'inn',
+        map: 'assets/img/maps/inn.png',
+        icon: 'assets/img/icons/inn.png',
+        price: 10,
+        requiredHouses: 1,
+        economy: 1,
+        loyalty: 1,
+        value: 500
+    },
+    {
+        ...defaultBuilding,
+        id: 'insatiable-flame-lust',
+        name: 'insatiable-flame-lust',
+        map: 'assets/img/maps/insatiable-flame-lust.png',
+        icon: 'assets/img/icons/insatiable-flame-lust.png',
+        requiredHouses: 1,
+        economy: 2,
+        loyalty: 3,
+        unrest: 1
+    },
+    {
+        ...defaultBuilding,
+        id: 'jail',
+        name: 'jail',
+        map: 'assets/img/maps/jail.png',
+        icon: 'assets/img/icons/jail.png',
+        loyalty: 2,
+        stability: 2,
+        unrest: -2,
+        price: 14
+    },
+    {
+        ...defaultBuilding,
+        id: 'library',
+        name: 'library',
+        map: 'assets/img/maps/library.png',
+        icon: 'assets/img/icons/library.png',
+        upgradeTo: [
+            'academy'
+        ],
+        economy: 1,
+        loyalty: 1,
+        price: 6
+    },
+    {
+        ...defaultBuilding,
+        id: 'lighthouse',
+        name: 'lighthouse',
+        map: 'assets/img/maps/lighthouse.png',
+        icon: 'assets/img/icons/lighthouse.png',
+        economy: 1,
+        loyalty: 1,
+        stability: 2,
+        unrest: -1,
+        price: 22
+    },
+    {
+        ...defaultBuilding,
+        id: 'lucky-pint',
+        name: 'lucky-pint',
+        map: 'assets/img/maps/lucky-pint.png',
+        icon: 'assets/img/icons/lucky-pint.png',
+        requiredHouses: 1,
+        economy: 2,
+        loyalty: 2,
+        value: 500
+    },
+    {
+        ...defaultBuilding,
+        id: 'luxury-shop',
+        name: 'luxury-shop',
+        map: 'assets/img/maps/luxury-shop.png',
+        icon: 'assets/img/icons/luxury-shop.png',
+        upgradeTo: [
+            'magic-shop'
+        ],
+        price: 28,
+        requiredHouses: 1,
+        value: 2000,
+        minorMagicObject: 2,
+        economy: 1
+    },
+    {
+        ...defaultBuilding,
+        id: 'magic-shop',
+        name: 'magic-shop',
+        map: 'assets/img/maps/magic-shop.png',
+        icon: 'assets/img/icons/magic-shop.png',
+        requiredHouses: 2,
+        economy: 1,
+        value: 2000,
+        minorMagicObject: 4,
+        mediumMagicObject: 2,
+        majorMagicObject: 1,
+        price: 68
+    },
+    {
+        ...defaultBuilding,
+        id: 'mansion',
+        name: 'mansion',
+        map: 'assets/img/maps/mansion.png',
+        icon: 'assets/img/icons/mansion.png',
+        upgradeTo: [
+            'noble-villa'
+        ],
+        price: 10,
+        stability: 1
+    },
+    {
+        ...defaultBuilding,
+        id: 'market',
+        name: 'market',
+        size: 'MEDIUM',
+        map: 'assets/img/maps/market.png',
+        icon: 'assets/img/icons/market.png',
+        requiredHouses: 2,
+        economy: 2,
+        stability: 2,
+        value: 2000,
+        minorMagicObject: 2,
+        halvedCosts: [
+            'black-market',
+            'inn',
+            'shop'
+        ],
+        upgradeTo: [
+            'black-market'
+        ],
+        price: 48
+    },
+    {
+        ...defaultBuilding,
+        id: 'mill',
+        name: 'mill',
+        map: 'assets/img/maps/mill.png',
+        icon: 'assets/img/icons/mill.png',
+        economy: 1,
+        stability: 1,
+        price: 6
+    },
+    {
+        ...defaultBuilding,
+        id: 'monument',
+        name: 'monument',
+        map: 'assets/img/maps/monument.png',
+        icon: 'assets/img/icons/monument.png',
+        loyalty: 3,
+        unrest: -1,
+        price: 6
+    },
+    {
+        ...defaultBuilding,
+        id: 'noble-villa',
+        name: 'noble-villa',
+        map: 'assets/img/maps/noble-villa.png',
+        icon: 'assets/img/icons/noble-villa.png',
+        size: 'MEDIUM',
+        economy: 1,
+        stability: 1,
+        loyalty: 1,
+        halvedCosts: [
+            'exotic-craftsman',
+            'luxury-shop',
+            'mansion'
+        ],
+        price: 24
+    },
+    {
+        ...defaultBuilding,
+        id: 'ossuary',
+        name: 'ossuary',
+        map: 'assets/img/maps/ossuary.png',
+        icon: 'assets/img/icons/ossuary.png',
+        loyalty: 2,
+        economy: 1
+    },
+    {
+        ...defaultBuilding,
+        id: 'park',
+        name: 'park',
+        map: 'assets/img/maps/park.png',
+        icon: 'assets/img/icons/park.png',
+        upgradeTo: [
+            'theatre'
+        ],
+        unrest: -1,
+        loyalty: 1,
+        price: 4
+    },
+    {
+        ...defaultBuilding,
+        id: 'pier',
+        name: 'pier',
+        map: 'assets/img/maps/pier.png',
+        icon: 'assets/img/icons/pier.png',
+        economy: 1,
+        stability: 1,
+        value: 1000,
+        upgradeTo: [
+            'waterfront'
+        ],
+        price: 16
+    },
+    {
+        ...defaultBuilding,
+        id: 'rose-opera',
+        name: 'rose-opera',
+        map: 'assets/img/maps/rose-opera.png',
+        icon: 'assets/img/icons/rose-opera.png',
+        size: 'MEDIUM',
+        economy: 3,
+        stability: 3
+    },
+    {
+        ...defaultBuilding,
+        id: 'sawmill',
+        name: 'sawmill',
+        map: 'assets/img/maps/sawmill.png',
+        icon: 'assets/img/icons/sawmill.png',
+        economy: 1,
+        stability: 1
+    },
+    {
+        ...defaultBuilding,
+        id: 'shipyard',
+        name: 'shipyard',
+        map: 'assets/img/maps/shipyard.png',
+        icon: 'assets/img/icons/shipyard.png',
+        size: 'MEDIUM',
+        economy: 2,
+        stability: 1,
+        value: 1000,
+        halvedCosts: [
+            'lighthouse'
+        ],
+        price: 30
+    },
+    {
+        ...defaultBuilding,
+        id: 'shop',
+        name: 'shop',
+        map: 'assets/img/maps/shop.png',
+        icon: 'assets/img/icons/shop.png',
+        requiredHouses: 1,
+        upgradeTo: [
+            'market',
+            'luxury-shop'
+        ],
+        economy: 1,
+        value: 500,
+        price: 8
+    },
+    {
+        ...defaultBuilding,
+        id: 'shrine-abadar',
+        name: 'shrine-abadar',
+        upgradeTo: [
+            'temple-abadar'
+        ],
+        map: 'assets/img/maps/shrine-abadar.png',
+        icon: 'assets/img/icons/shrine-abadar.png',
+        unrest: -1,
+        loyalty: 1,
+        minorMagicObject: 1,
+        price: 8
+    },
+    {
+        ...defaultBuilding,
+        id: 'shrine-asmodeus',
+        name: 'shrine-asmodeus',
+        upgradeTo: [
+            'temple-asmodeus'
+        ],
+        map: 'assets/img/maps/shrine-asmodeus.png',
+        icon: 'assets/img/icons/shrine-asmodeus.png',
+        unrest: -1,
+        loyalty: 1,
+        minorMagicObject: 1,
+        price: 8
+    },
+    {
+        ...defaultBuilding,
+        id: 'shrine-calistria',
+        name: 'shrine-calistria',
+        upgradeTo: [
+            'temple-calistria'
+        ],
+        map: 'assets/img/maps/shrine-calistria.png',
+        icon: 'assets/img/icons/shrine-calistria.png',
+        unrest: -1,
+        loyalty: 1,
+        minorMagicObject: 1,
+        price: 8
+    },
+    {
+        ...defaultBuilding,
+        id: 'shrine-cayden-cailean',
+        name: 'shrine-cayden-cailean',
+        upgradeTo: [
+            'temple-cayden-cailean'
+        ],
+        map: 'assets/img/maps/shrine-cayden-cailean.png',
+        icon: 'assets/img/icons/shrine-cayden-cailean.png',
+        unrest: -1,
+        loyalty: 1,
+        minorMagicObject: 1,
+        price: 8
+    },
+    {
+        ...defaultBuilding,
+        id: 'shrine-desna',
+        name: 'shrine-desna',
+        upgradeTo: [
+            'temple-desna'
+        ],
+        map: 'assets/img/maps/shrine-desna.png',
+        icon: 'assets/img/icons/shrine-desna.png',
+        unrest: -1,
+        loyalty: 1,
+        minorMagicObject: 1,
+        price: 8
+    },
+    {
+        ...defaultBuilding,
+        id: 'shrine-erastil',
+        name: 'shrine-erastil',
+        upgradeTo: [
+            'temple-erastil'
+        ],
+        map: 'assets/img/maps/shrine-erastil.png',
+        icon: 'assets/img/icons/shrine-erastil.png',
+        unrest: -1,
+        loyalty: 1,
+        price: 8
+    },
+    {
+        ...defaultBuilding,
+        id: 'shrine-gorum',
+        name: 'shrine-gorum',
+        upgradeTo: [
+            'temple-gorum'
+        ],
+        map: 'assets/img/maps/shrine-gorum.png',
+        icon: 'assets/img/icons/shrine-gorum.png',
+        unrest: -1,
+        loyalty: 1,
+        price: 8
+    },
+    {
+        ...defaultBuilding,
+        id: 'shrine-gozreh',
+        name: 'shrine-gozreh',
+        upgradeTo: [
+            'temple-gozreh'
+        ],
+        map: 'assets/img/maps/shrine-gozreh.png',
+        icon: 'assets/img/icons/shrine-gozreh.png',
+        unrest: -1,
+        loyalty: 1,
+        price: 8
+    },
+    {
+        ...defaultBuilding,
+        id: 'shrine-iomedae',
+        name: 'shrine-iomedae',
+        upgradeTo: [
+            'temple-iomedae'
+        ],
+        map: 'assets/img/maps/shrine-iomedae.png',
+        icon: 'assets/img/icons/shrine-iomedae.png',
+        unrest: -1,
+        loyalty: 1,
+        price: 8
+    },
+    {
+        ...defaultBuilding,
+        id: 'shrine-irori',
+        name: 'shrine-irori',
+        upgradeTo: [
+            'temple-irori'
+        ],
+        map: 'assets/img/maps/shrine-irori.png',
+        icon: 'assets/img/icons/shrine-irori.png',
+        unrest: -1,
+        loyalty: 1,
+        minorMagicObject: 1,
+        price: 8
+    },
+    {
+        ...defaultBuilding,
+        id: 'shrine-nethys',
+        name: 'shrine-nethys',
+        upgradeTo: [
+            'temple-nethys'
+        ],
+        map: 'assets/img/maps/shrine-nethys.png',
+        icon: 'assets/img/icons/shrine-nethys.png',
+        unrest: -1,
+        loyalty: 1,
+        minorMagicObject: 1,
+        price: 8
+    },
+    {
+        ...defaultBuilding,
+        id: 'shrine-pharasma',
+        name: 'shrine-pharasma',
+        upgradeTo: [
+            'temple-pharasma'
+        ],
+        map: 'assets/img/maps/shrine-pharasma.png',
+        icon: 'assets/img/icons/shrine-pharasma.png',
+        unrest: -1,
+        loyalty: 1,
+        minorMagicObject: 1,
+        price: 8
+    },
+    {
+        ...defaultBuilding,
+        id: 'shrine-sarenrae',
+        name: 'shrine-sarenrae',
+        upgradeTo: [
+            'temple-sarenrae'
+        ],
+        map: 'assets/img/maps/shrine-sarenrae.png',
+        icon: 'assets/img/icons/shrine-sarenrae.png',
+        unrest: -1,
+        loyalty: 1,
+        minorMagicObject: 1,
+        price: 8
+    },
+    {
+        ...defaultBuilding,
+        id: 'shrine-shelyn',
+        name: 'shrine-shelyn',
+        upgradeTo: [
+            'temple-shelyn'
+        ],
+        map: 'assets/img/maps/shrine-shelyn.png',
+        icon: 'assets/img/icons/shrine-shelyn.png',
+        unrest: -1,
+        loyalty: 1,
+        minorMagicObject: 1,
+        price: 8
+    },
+    {
+        ...defaultBuilding,
+        id: 'shrine-torag',
+        name: 'shrine-torag',
+        upgradeTo: [
+            'temple-torag'
+        ],
+        map: 'assets/img/maps/shrine-torag.png',
+        icon: 'assets/img/icons/shrine-torag.png',
+        unrest: -1,
+        loyalty: 1,
+        minorMagicObject: 1,
+        price: 8
+    },
+    {
+        ...defaultBuilding,
+        id: 'shrine-zon-kuthon',
+        name: 'shrine-zon-kuthon',
+        upgradeTo: [
+            'temple-zon-kuthon'
+        ],
+        map: 'assets/img/maps/shrine-zon-kuthon.png',
+        icon: 'assets/img/icons/shrine-zon-kuthon.png',
+        unrest: -1,
+        loyalty: 1,
+        minorMagicObject: 1,
+        price: 8
+    },
+    {
+        ...defaultBuilding,
+        id: 'smith',
+        name: 'smith',
+        map: 'assets/img/maps/smith.png',
+        icon: 'assets/img/icons/smith.png',
+        economy: 1,
+        stability: 1,
+        price: 6
+    },
+    {
+        ...defaultBuilding,
+        id: 'stable',
+        name: 'stable',
+        map: 'assets/img/maps/stable.png',
+        icon: 'assets/img/icons/stable.png',
+        requiredHouses: 1,
+        economy: 1,
+        loyalty: 1,
+        value: 500,
+        price: 10
+    },
+    {
+        ...defaultBuilding,
+        id: 'tannery',
+        name: 'tannery',
+        map: 'assets/img/maps/tannery.png',
+        icon: 'assets/img/icons/tannery.png',
+        requiredHouses: 1,
+        economy: 1,
+        stability: 1,
+        price: 6
+    },
+    {
+        ...defaultBuilding,
+        id: 'tavern',
+        name: 'tavern',
+        map: 'assets/img/maps/tavern.png',
+        icon: 'assets/img/icons/tavern.png',
+        requiredHouses: 1,
+        upgradeTo: [
+            'lucky-pint'
+        ],
+        economy: 1,
+        loyalty: 1,
+        value: 500,
+        price: 12
+    },
+    {
+        ...defaultBuilding,
+        id: 'temple-abadar',
+        name: 'temple-abadar',
+        upgradeTo: [
+            'cathedral-abadar'
+        ],
+        size: 'MEDIUM',
+        map: 'assets/img/maps/temple-abadar.png',
+        icon: 'assets/img/icons/temple-abadar.png',
+        unrest: -2,
+        economy: 3,
+        minorMagicObject: 3,
+        halvedCosts: [
+            'graveyard',
+            'monument',
+            'shop'
+        ],
+        price: 32
+    },
+    {
+        ...defaultBuilding,
+        id: 'temple-asmodeus',
+        name: 'temple-asmodeus',
+        upgradeTo: [
+            'cathedral-asmodeus'
+        ],
+        size: 'MEDIUM',
+        map: 'assets/img/maps/temple-asmodeus.png',
+        icon: 'assets/img/icons/temple-asmodeus.png',
+        loyalty: 2,
+        stability: 2,
+        minorMagicObject: 2,
+        halvedCosts: [
+            'graveyard',
+            'monument',
+            'shrine-abadar',
+            'shrine-asmodeus',
+            'shrine-calistria',
+            'shrine-cayden-cailean',
+            'shrine-desna',
+            'shrine-erastil',
+            'shrine-gorum',
+            'shrine-gozreh',
+            'shrine-iomedae',
+            'shrine-irori',
+            'shrine-nethys',
+            'shrine-pharasma',
+            'shrine-sarenrae',
+            'shrine-shelyn',
+            'shrine-torag',
+            'shrine-zon-kuthon'
+        ],
+        price: 32
+    },
+    {
+        ...defaultBuilding,
+        id: 'temple-calistria',
+        name: 'temple-calistria',
+        upgradeTo: [
+            'cathedral-calistria'
+        ],
+        size: 'MEDIUM',
+        map: 'assets/img/maps/temple-calistria.png',
+        icon: 'assets/img/icons/temple-calistria.png',
+        loyalty: 1,
+        stability: 3,
+        minorMagicObject: 2,
+        halvedCosts: [
+            'brothel',
+            'monument',
+            'shrine-abadar',
+            'shrine-asmodeus',
+            'shrine-calistria',
+            'shrine-cayden-cailean',
+            'shrine-desna',
+            'shrine-erastil',
+            'shrine-gorum',
+            'shrine-gozreh',
+            'shrine-iomedae',
+            'shrine-irori',
+            'shrine-nethys',
+            'shrine-pharasma',
+            'shrine-sarenrae',
+            'shrine-shelyn',
+            'shrine-torag',
+            'shrine-zon-kuthon'
+        ],
+        price: 32
+    },
+    {
+        ...defaultBuilding,
+        id: 'temple-cayden-cailean',
+        name: 'temple-cayden-cailean',
+        upgradeTo: [
+            'cathedral-cayden-cailean'
+        ],
+        size: 'MEDIUM',
+        map: 'assets/img/maps/temple-cayden-cailean.png',
+        icon: 'assets/img/icons/temple-cayden-cailean.png',
+        economy: 2,
+        loyalty: 3,
+        stability: -1,
+        minorMagicObject: 2,
+        halvedCosts: [
+            'graveyard',
+            'brewery',
+            'shrine-abadar',
+            'shrine-asmodeus',
+            'shrine-calistria',
+            'shrine-cayden-cailean',
+            'shrine-desna',
+            'shrine-erastil',
+            'shrine-gorum',
+            'shrine-gozreh',
+            'shrine-iomedae',
+            'shrine-irori',
+            'shrine-nethys',
+            'shrine-pharasma',
+            'shrine-sarenrae',
+            'shrine-shelyn',
+            'shrine-torag',
+            'shrine-zon-kuthon'
+        ],
+        price: 32
+    },
+    {
+        ...defaultBuilding,
+        id: 'temple-desna',
+        name: 'temple-desna',
+        upgradeTo: [
+            'cathedral-desna'
+        ],
+        size: 'MEDIUM',
+        map: 'assets/img/maps/temple-desna.png',
+        icon: 'assets/img/icons/temple-desna.png',
+        loyalty: 3,
+        stability: 1,
+        minorMagicObject: 2,
+        halvedCosts: [
+            'park',
+            'monument',
+            'shrine-abadar',
+            'shrine-asmodeus',
+            'shrine-calistria',
+            'shrine-cayden-cailean',
+            'shrine-desna',
+            'shrine-erastil',
+            'shrine-gorum',
+            'shrine-gozreh',
+            'shrine-iomedae',
+            'shrine-irori',
+            'shrine-nethys',
+            'shrine-pharasma',
+            'shrine-sarenrae',
+            'shrine-shelyn',
+            'shrine-torag',
+            'shrine-zon-kuthon'
+        ],
+        price: 32
+    },
+    {
+        ...defaultBuilding,
+        id: 'temple-erastil',
+        name: 'temple-erastil',
+        upgradeTo: [
+            'cathedral-erastil'
+        ],
+        size: 'MEDIUM',
+        map: 'assets/img/maps/temple-erastil.png',
+        icon: 'assets/img/icons/temple-erastil.png',
+        unrest: -2,
+        loyalty: 2,
+        stability: 2,
+        minorMagicObject: 2,
+        halvedCosts: [
+            'park',
+            'mill',
+            'shrine-abadar',
+            'shrine-asmodeus',
+            'shrine-calistria',
+            'shrine-cayden-cailean',
+            'shrine-desna',
+            'shrine-erastil',
+            'shrine-gorum',
+            'shrine-gozreh',
+            'shrine-iomedae',
+            'shrine-irori',
+            'shrine-nethys',
+            'shrine-pharasma',
+            'shrine-sarenrae',
+            'shrine-shelyn',
+            'shrine-torag',
+            'shrine-zon-kuthon'
+        ],
+        price: 32
+    },
+    {
+        ...defaultBuilding,
+        id: 'temple-gorum',
+        name: 'temple-gorum',
+        upgradeTo: [
+            'cathedral-gorum'
+        ],
+        size: 'MEDIUM',
+        map: 'assets/img/maps/temple-gorum.png',
+        icon: 'assets/img/icons/temple-gorum.png',
+        unrest: -2,
+        loyalty: 3,
+        stability: 1,
+        minorMagicObject: 2,
+        halvedCosts: [
+            'graveyard',
+            'smith',
+            'shrine-abadar',
+            'shrine-asmodeus',
+            'shrine-calistria',
+            'shrine-cayden-cailean',
+            'shrine-desna',
+            'shrine-erastil',
+            'shrine-gorum',
+            'shrine-gozreh',
+            'shrine-iomedae',
+            'shrine-irori',
+            'shrine-nethys',
+            'shrine-pharasma',
+            'shrine-sarenrae',
+            'shrine-shelyn',
+            'shrine-torag',
+            'shrine-zon-kuthon'
+        ],
+        price: 32
+    },
+    {
+        ...defaultBuilding,
+        id: 'temple-gozreh',
+        name: 'temple-gozreh',
+        upgradeTo: [
+            'cathedral-gozreh'
+        ],
+        size: 'MEDIUM',
+        map: 'assets/img/maps/temple-gozreh.png',
+        icon: 'assets/img/icons/temple-gozreh.png',
+        unrest: -2,
+        loyalty: 2,
+        stability: 2,
+        minorMagicObject: 2,
+        halvedCosts: [
+            'park',
+            'monument',
+            'shrine-abadar',
+            'shrine-asmodeus',
+            'shrine-calistria',
+            'shrine-cayden-cailean',
+            'shrine-desna',
+            'shrine-erastil',
+            'shrine-gorum',
+            'shrine-gozreh',
+            'shrine-iomedae',
+            'shrine-irori',
+            'shrine-nethys',
+            'shrine-pharasma',
+            'shrine-sarenrae',
+            'shrine-shelyn',
+            'shrine-torag',
+            'shrine-zon-kuthon'
+        ],
+        price: 32
+    },
+    {
+        ...defaultBuilding,
+        id: 'temple-iomedae',
+        name: 'temple-iomedae',
+        upgradeTo: [
+            'cathedral-iomedae'
+        ],
+        size: 'MEDIUM',
+        map: 'assets/img/maps/temple-iomedae.png',
+        icon: 'assets/img/icons/temple-iomedae.png',
+        unrest: -2,
+        loyalty: 3,
+        stability: 1,
+        minorMagicObject: 2,
+        halvedCosts: [
+            'graveyard',
+            'watchtower',
+            'shrine-abadar',
+            'shrine-asmodeus',
+            'shrine-calistria',
+            'shrine-cayden-cailean',
+            'shrine-desna',
+            'shrine-erastil',
+            'shrine-gorum',
+            'shrine-gozreh',
+            'shrine-iomedae',
+            'shrine-irori',
+            'shrine-nethys',
+            'shrine-pharasma',
+            'shrine-sarenrae',
+            'shrine-shelyn',
+            'shrine-torag',
+            'shrine-zon-kuthon'
+        ],
+        price: 32
+    },
+    {
+        ...defaultBuilding,
+        id: 'temple-irori',
+        name: 'temple-irori',
+        upgradeTo: [
+            'cathedral-irori'
+        ],
+        size: 'MEDIUM',
+        map: 'assets/img/maps/temple-irori.png',
+        icon: 'assets/img/icons/temple-irori.png',
+        unrest: -2,
+        loyalty: 1,
+        stability: 3,
+        minorMagicObject: 2,
+        halvedCosts: [
+            'park',
+            'library',
+            'shrine-abadar',
+            'shrine-asmodeus',
+            'shrine-calistria',
+            'shrine-cayden-cailean',
+            'shrine-desna',
+            'shrine-erastil',
+            'shrine-gorum',
+            'shrine-gozreh',
+            'shrine-iomedae',
+            'shrine-irori',
+            'shrine-nethys',
+            'shrine-pharasma',
+            'shrine-sarenrae',
+            'shrine-shelyn',
+            'shrine-torag',
+            'shrine-zon-kuthon'
+        ],
+        price: 32
+    },
+    {
+        ...defaultBuilding,
+        id: 'temple-nethys',
+        name: 'temple-nethys',
+        upgradeTo: [
+            'cathedral-nethys'
+        ],
+        size: 'MEDIUM',
+        map: 'assets/img/maps/temple-nethys.png',
+        icon: 'assets/img/icons/temple-nethys.png',
+        unrest: -2,
+        loyalty: 1,
+        stability: 1,
+        economy: 1,
+        minorMagicObject: 3,
+        halvedCosts: [
+            'graveyard',
+            'library',
+            'shrine-abadar',
+            'shrine-asmodeus',
+            'shrine-calistria',
+            'shrine-cayden-cailean',
+            'shrine-desna',
+            'shrine-erastil',
+            'shrine-gorum',
+            'shrine-gozreh',
+            'shrine-iomedae',
+            'shrine-irori',
+            'shrine-nethys',
+            'shrine-pharasma',
+            'shrine-sarenrae',
+            'shrine-shelyn',
+            'shrine-torag',
+            'shrine-zon-kuthon'
+        ],
+        price: 32
+    },
+    {
+        ...defaultBuilding,
+        id: 'temple-pharasma',
+        name: 'temple-pharasma',
+        upgradeTo: [
+            'cathedral-pharasma'
+        ],
+        size: 'MEDIUM',
+        map: 'assets/img/maps/temple-pharasma.png',
+        icon: 'assets/img/icons/temple-pharasma.png',
+        unrest: -2,
+        loyalty: 1,
+        stability: 3,
+        minorMagicObject: 2,
+        halvedCosts: [
+            'graveyard',
+            'monument',
+            'shrine-abadar',
+            'shrine-asmodeus',
+            'shrine-calistria',
+            'shrine-cayden-cailean',
+            'shrine-desna',
+            'shrine-erastil',
+            'shrine-gorum',
+            'shrine-gozreh',
+            'shrine-iomedae',
+            'shrine-irori',
+            'shrine-nethys',
+            'shrine-pharasma',
+            'shrine-sarenrae',
+            'shrine-shelyn',
+            'shrine-torag',
+            'shrine-zon-kuthon'
+        ],
+        price: 32
+    },
+    {
+        ...defaultBuilding,
+        id: 'temple-sarenrae',
+        name: 'temple-sarenrae',
+        upgradeTo: [
+            'cathedral-sarenrae'
+        ],
+        size: 'MEDIUM',
+        map: 'assets/img/maps/temple-sarenrae.png',
+        icon: 'assets/img/icons/temple-sarenrae.png',
+        unrest: -2,
+        loyalty: 2,
+        stability: 2,
+        minorMagicObject: 2,
+        halvedCosts: [
+            'park',
+            'monument',
+            'shrine-abadar',
+            'shrine-asmodeus',
+            'shrine-calistria',
+            'shrine-cayden-cailean',
+            'shrine-desna',
+            'shrine-erastil',
+            'shrine-gorum',
+            'shrine-gozreh',
+            'shrine-iomedae',
+            'shrine-irori',
+            'shrine-nethys',
+            'shrine-pharasma',
+            'shrine-sarenrae',
+            'shrine-shelyn',
+            'shrine-torag',
+            'shrine-zon-kuthon'
+        ],
+        price: 32
+    },
+    {
+        ...defaultBuilding,
+        id: 'temple-shelyn',
+        name: 'temple-shelyn',
+        upgradeTo: [
+            'cathedral-shelyn'
+        ],
+        size: 'MEDIUM',
+        map: 'assets/img/maps/temple-shelyn.png',
+        icon: 'assets/img/icons/temple-shelyn.png',
+        unrest: -2,
+        economy: 1,
+        stability: 3,
+        minorMagicObject: 2,
+        halvedCosts: [
+            'park',
+            'monument',
+            'shrine-abadar',
+            'shrine-asmodeus',
+            'shrine-calistria',
+            'shrine-cayden-cailean',
+            'shrine-desna',
+            'shrine-erastil',
+            'shrine-gorum',
+            'shrine-gozreh',
+            'shrine-iomedae',
+            'shrine-irori',
+            'shrine-nethys',
+            'shrine-pharasma',
+            'shrine-sarenrae',
+            'shrine-shelyn',
+            'shrine-torag',
+            'shrine-zon-kuthon'
+        ],
+        price: 32
+    },
+    {
+        ...defaultBuilding,
+        id: 'temple-torag',
+        name: 'temple-torag',
+        upgradeTo: [
+            'cathedral-torag'
+        ],
+        size: 'MEDIUM',
+        map: 'assets/img/maps/temple-torag.png',
+        icon: 'assets/img/icons/temple-torag.png',
+        unrest: -2,
+        loyalty: 1,
+        stability: 3,
+        minorMagicObject: 2,
+        halvedCosts: [
+            'graveyard',
+            'smith',
+            'city-wall'
+        ],
+        price: 32
+    },
+    {
+        ...defaultBuilding,
+        id: 'temple-zon-kuthon',
+        name: 'temple-zon-kuthon',
+        upgradeTo: [
+            'cathedral-zon-kuthon'
+        ],
+        size: 'MEDIUM',
+        map: 'assets/img/maps/temple-zon-kuthon.png',
+        icon: 'assets/img/icons/temple-zon-kuthon.png',
+        unrest: -2,
+        loyalty: 3,
+        stability: 1,
+        minorMagicObject: 2,
+        halvedCosts: [
+            'graveyard',
+            'monument',
+            'shrine-abadar',
+            'shrine-asmodeus',
+            'shrine-calistria',
+            'shrine-cayden-cailean',
+            'shrine-desna',
+            'shrine-erastil',
+            'shrine-gorum',
+            'shrine-gozreh',
+            'shrine-iomedae',
+            'shrine-irori',
+            'shrine-nethys',
+            'shrine-pharasma',
+            'shrine-sarenrae',
+            'shrine-shelyn',
+            'shrine-torag',
+            'shrine-zon-kuthon'
+        ],
+        price: 32
+    },
+    {
+        ...defaultBuilding,
+        id: 'tenement',
+        name: 'tenement',
+        map: 'assets/img/maps/tenement.png',
+        icon: 'assets/img/icons/tenement.png',
+        upgradeTo: [
+            'house'
+        ],
+        price: 1,
+        unrest: 2
+    },
+    {
+        ...defaultBuilding,
+        id: 'theatre',
+        name: 'theatre',
+        map: 'assets/img/maps/theatre.png',
+        icon: 'assets/img/icons/theatre.png',
+        size: 'MEDIUM',
+        price: 14,
+        economy: 2,
+        halvedCosts: [
+            'brothel',
+            'park',
+            'tavern'
+        ],
+        upgradeTo: [
+            'arena',
+            'rose-opera'
+        ],
+        stability: 2
+    },
+    {
+        ...defaultBuilding,
+        id: 'thieves-guild',
+        name: 'thieves-guild',
+        map: 'assets/img/maps/thieves-guild.png',
+        icon: 'assets/img/icons/thieves-guild.png',
+        price: 32,
+        value: 1000,
+        halvedCosts: [
+            'gallows',
+            'gambling-den'
+        ],
+        economy: 1,
+        stability: 1,
+        defence: 1,
+        unrest: 1
+    },
+    {
+        ...defaultBuilding,
+        id: 'tourney-grounds',
+        name: 'tourney-grounds',
+        size: 'LARGE',
+        map: 'assets/img/maps/tourney-grounds.png',
+        icon: 'assets/img/icons/tourney-grounds.png',
+        economy: 3,
+        loyalty: 1,
+        upgradeTo: [
+            'arena'
+        ],
+        price: 25
+    },
+    {
+        ...defaultBuilding,
+        id: 'town-hall',
+        name: 'town-hall',
+        size: 'MEDIUM',
+        map: 'assets/img/maps/town-hall.png',
+        icon: 'assets/img/icons/town-hall.png',
+        economy: 1,
+        loyalty: 1,
+        stability: 1,
+        halvedCosts: [
+            'barracks',
+            'dump',
+            'watchtower'
+        ],
+        price: 22
+    },
+    {
+        ...defaultBuilding,
+        id: 'tradesman',
+        name: 'tradesman',
+        map: 'assets/img/maps/tradesman.png',
+        icon: 'assets/img/icons/tradesman.png',
+        upgradeTo: [
+            'exotic-craftsman',
+            'guildhall'
+        ],
+        economy: 1,
+        requiredHouses: 1,
+        value: 500,
+        stability: 1,
+        price: 10
+    },
+    {
+        ...defaultBuilding,
+        id: 'watchtower',
+        name: 'watchtower',
+        map: 'assets/img/maps/watchtower.png',
+        icon: 'assets/img/icons/watchtower.png',
+        upgradeTo: [
+            'castle'
+        ],
+
+
+        price: 12,
+        stability: 1,
+        defence: 2
+    },
+    {
+        ...defaultBuilding,
+        id: 'waterfront',
+        name: 'waterfront',
+        map: 'assets/img/maps/waterfront.png',
+        icon: 'assets/img/icons/waterfront.png',
+        size: 'LARGE',
+        price: 90,
+        economy: 4,
+        value: 4000,
+        halvedCosts: [
+            'guildhall',
+            'market',
+            'taxEdicts'
+        ],
+        minorMagicObject: 3,
+        mediumMagicObject: 2,
+        majorMagicObject: 1
+    },
+    {
+        ...defaultBuilding,
+        id: 'weaver',
+        name: 'weaver',
+        map: 'assets/img/maps/weaver.png',
+        icon: 'assets/img/icons/weaver.png',
+        economy: 1,
+        stability: 1,
+        price: 6
+    },
+    {
+        ...defaultBuilding,
+        id: 'winemaker',
+        name: 'winemaker',
+        map: 'assets/img/maps/winemaker.png',
+        icon: 'assets/img/icons/winemaker.png',
+        economy: 1,
+        loyalty: 1,
+        stability: 1,
+        price: 10
+    }
 ];
