@@ -1,5 +1,5 @@
 export * from './app/app.component';
-export * from './block/block.component';
+export * from './building/building.component';
 export * from './building-detail/building-detail.component';
 export * from './building-icon/building-icon.component';
 export * from './buildings/buildings.component';

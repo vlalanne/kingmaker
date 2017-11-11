@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
 import { BuildingsService, TranslationService } from '../../services';
 import { BuildingModel } from '../../models';
 
@@ -13,7 +12,7 @@ export class BuildingsComponent implements OnInit {
     order: string;
     ascending = true;
 
-    buildings$: Observable<BuildingModel[]>;
+    buildings: BuildingModel[];
     error: any;
     economy: string;
     loyalty: string;
@@ -33,7 +32,7 @@ export class BuildingsComponent implements OnInit {
     constructor(private buildingsService: BuildingsService, private translationService: TranslationService) { }
 
     ngOnInit() {
-        this.buildings$ = this.buildingsService.getModels();
+        this.buildings = this.buildingsService.getModels();
         this.economy = this.translationService.getMessage('economy');
         this.loyalty = this.translationService.getMessage('loyalty');
         this.stability = this.translationService.getMessage('stability');

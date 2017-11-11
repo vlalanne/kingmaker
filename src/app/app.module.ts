@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
 
 import {
     AppComponent,
-    BlockComponent,
+    BuildingComponent,
     BuildingDetailComponent,
     BuildingIconComponent,
     BuildingsComponent,
@@ -38,7 +38,7 @@ import { AppRoutingModule } from './app-routing.module';
         BuildingIconComponent,
         SortBuildingsPipe,
         DistrictComponent,
-        BlockComponent
+        BuildingComponent
     ],
     imports: [
         BrowserModule,

@@ -1,98 +1,85 @@
-td, tr {
-    border-width: 0;
-    text-align: center;
-}
-
-.water {
-    background: lightblue
-}
-
-.north.bridge, .south.bridge {
-    background: linear-gradient(to left, lightblue 0%,lightblue 45%,lightgrey 45%,lightgrey 55%,lightblue 55%,lightblue 100%);
-}
-.west.bridge, .east.bridge {
-    background: linear-gradient(to bottom, lightblue 0%,lightblue 45%,lightgrey 45%,lightgrey 55%,lightblue 55%,lightblue 100%);
-}
-
-.grass {
-    background: lightgreen
-}
-
-.vertical-text {
-    transform: rotate(90deg);
-}
-
-.north, .south {
-    height: 4em
-}
-
-.east, .west {
-    width: 4em
-}
-
-.north.district, .south.district {
-    height: 0em
-}
-
-.east.district, .west.district {
-    width: 0em
-}
-
-.buildings {
-    position: relative;
-    background-color: lightgrey;
-}
-
-.watermark {
-    position: absolute;
-    top: 5.25em;
-    left: 8em;
-    opacity: 0.9;
-    z-index: 50;
-    color: #202020;
-}
-
-.buildings .block {
-    width: 8em;
-    height: 8em;
-    display: inline-block;
-}
-
-.buildings .block.streetBottom {
-    margin-bottom: 2em;
-}
-
-.buildings .block.streetRight {
-    margin-right: 2em;
-}
-
-.buildings>div {
-    border-style: solid;
-    border-width: .5em;
-    padding: 2em;
-    border-color: transparent;
-}
-
-.buildings>div.wall {
-    border-color: #202020;
-}
-
-.buildings>div.waterWest {
-    border-left-color: lightblue;
-    padding-left: 0;
-}
-
-.buildings>div.waterNorth {
-    border-top-color: lightblue;
-    padding-top: 0;
-}
-
-.buildings>div.waterEast {
-    border-right-color: lightblue;
-    padding-right: 0;
-}
-
-.buildings>div.waterSouth {
-    border-bottom-color: lightblue;
-    padding-bottom: 0;
+:host {
+    display: grid;
+    grid-template-rows: max-content max-content max-content;
+    grid-template-columns: max-content max-content max-content;
+    .water {
+        background: lightblue
+    }
+    .north.bridge,
+    .south.bridge {
+        background: linear-gradient(to left, lightblue 0%, lightblue 45%, lightgrey 45%, lightgrey 55%, lightblue 55%, lightblue 100%);
+    }
+    .west.bridge,
+    .east.bridge {
+        background: linear-gradient(to bottom, lightblue 0%, lightblue 45%, lightgrey 45%, lightgrey 55%, lightblue 55%, lightblue 100%);
+    }
+    .grass {
+        background: lightgreen
+    }
+    .north,
+    .south,
+    .east,
+    .west {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .north,
+    .south {
+        grid-column: 1 / -1;
+        height: 4em;
+        &.district {
+            height: 0;
+        }
+    }
+    .east,
+    .west {
+        width: 4em;
+        span {
+            display: block;
+            white-space: nowrap;
+            transform: rotate(90deg);
+        }
+        &.district {
+            width: 0;
+        }
+    }
+    .buildings {
+        position: relative;
+        background-color: lightgrey;
+        display: grid;
+        grid-template-columns: 4em 4em 2em 4em 4em 2em 4em 4em;
+        grid-template-rows: 4em 4em 2em 4em 4em 2em 4em 4em;
+        padding: 2em;
+        border: .5em solid transparent;
+        border-width: .5em;
+        padding: 2em;
+        &.wall {
+            border-color: #202020;
+        }
+        &.waterWest {
+            border-left-color: lightblue;
+            padding-left: 0;
+        }
+        &.waterNorth {
+            border-top-color: lightblue;
+            padding-top: 0;
+        }
+        &.waterEast {
+            border-right-color: lightblue;
+            padding-right: 0;
+        }
+        &.waterSouth {
+            border-bottom-color: lightblue;
+            padding-bottom: 0;
+        }
+        .watermark {
+            position: absolute;
+            top: 5.25em;
+            left: 8em;
+            opacity: 0.9;
+            z-index: 50;
+            color: #202020;
+        }
+    }
 }

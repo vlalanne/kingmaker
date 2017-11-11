@@ -1,4 +1,4 @@
-<table class="table table-striped buildings" *ngIf="buildings$ | async as buildings">
+<table class="table table-striped buildings">
     <thead>
         <tr>
             <th class="medium" rowspan="2" (click)="sort('name')" [class.sort]="'name' === order" [class.ascending]="ascending"></th>
