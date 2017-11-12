@@ -13,7 +13,8 @@ import {
     CitiesComponent,
     CityComponent,
     DistrictComponent,
-    MapComponent
+    MapComponent,
+    RegionComponent
 } from './components';
 import { SortBuildingsPipe } from './pipes';
 import {
@@ -38,7 +39,8 @@ import { AppRoutingModule } from './app-routing.module';
         BuildingIconComponent,
         SortBuildingsPipe,
         DistrictComponent,
-        BuildingComponent
+        BuildingComponent,
+        RegionComponent
     ],
     imports: [
         BrowserModule,

@@ -9,15 +9,24 @@
     background: transparent;
     color: white;
     font-family: parrishRoman;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
     font-size: 1em;
     margin-left: -2.5em !important;
     width: 5em !important;
     text-align: center;
+    &.city-text {
+        line-height: 2em;
+        margin-left: 1em !important;
+        margin-top: -1em !important;
+        width: max-content !important;
+    }
+    &.kingdom-text {
+        font-size: 2em;
+        margin-left: 0 !important;
+        margin-top: 0 !important;
+        width: max-content !important;
+    }
 }
-
-
-/*.number-icon {
-}*/
 
 .element-icon {
     margin-top: -3em !important;

@@ -1,7 +1,8 @@
 <ul class="nav">
-    <li [routerLinkActive]="['active']"><a [routerLink]="['buildings']">{{buildingsLabel}}</a></li>
-    <li [routerLinkActive]="['active']"><a [routerLink]="['cities']">{{citiesLabel}}</a></li>
-    <li [routerLinkActive]="['active']"><a [routerLink]="['map']">{{mapLabel}}</a></li>
+    <li [routerLinkActive]="['active']"><a routerLink="buildings">{{buildingsLabel}}</a></li>
+    <li [routerLinkActive]="['active']"><a routerLink="cities">{{citiesLabel}}</a></li>
+    <li [routerLinkActive]="['active']"><a routerLink="map">{{mapLabel}}</a></li>
+    <li [routerLinkActive]="['active']"><a routerLink="region">{{regionLabel}}</a></li>
 </ul>
 <div id="router">
     <router-outlet></router-outlet>

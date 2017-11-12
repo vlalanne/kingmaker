@@ -7,3 +7,4 @@ export * from './cities/cities.component';
 export * from './city/city.component';
 export * from './district/district.component';
 export * from './map/map.component';
+export * from './region/region.component';
