@@ -1,0 +1,6 @@
+<ng-container *ngIf="$city | async; let city">
+    <ng-container *ngFor="let row of city.districts; let rowIndex = index">
+        <app-district *ngFor="let district of row; let columnIndex = index" [district]="district" [ngStyle]="{'grid-column' : columnIndex + 1, 'grid-row' : rowIndex + 1}" >
+        </app-district>
+    </ng-container>
+</ng-container>

@@ -1,0 +1,20 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    >ul {
+        flex: 0 0 auto;
+        display: flex;
+        align-items: stretch;
+        border-bottom: 1px solid lightgrey;
+    }
+    div#router::ng-deep {
+        flex: 1 1 auto;
+        flex-direction: column;
+        display: flex;
+        >* {
+            flex: 1 1 auto;
+        }
+    }
+}

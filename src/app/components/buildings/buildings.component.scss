@@ -1,0 +1,38 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    table.buildings {
+        flex: 1 1 auto;
+        table-layout: fixed;
+        display: flex;
+        flex-direction: column;
+        thead {
+            flex: 0 0 auto;
+        }
+        tbody {
+            flex: 1 1 auto;
+            overflow: auto;
+        }
+        td.small,
+        th.small {
+            width: 5%;
+        }
+        td.medium,
+        th.medium {
+            width: 10%;
+        }
+        td.large,
+        th.large {
+            width: 20%;
+        }
+    }
+}
+
+.sort::after {
+    content: ' \21E9';
+}
+
+.sort.ascending::after {
+    content: ' \21E7';
+}

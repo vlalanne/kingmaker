@@ -1,0 +1,957 @@
+[{
+        "name": "Port Colombe",
+        "districts": [
+            [{
+                "name": "Mont-Sur",
+                "south": {
+                    "type": "DISTRICT",
+                    "name": "Port"
+                },
+                "west": {
+                    "type": "GRASS"
+                },
+                "north": {
+                    "type": "GRASS"
+                },
+                "east": {
+                    "type": "WATER",
+                    "name": "Rivière Epine"
+                },
+                "buildings": [{
+                        "x": 2,
+                        "y": 0,
+                        "model": "stable"
+                    },
+                    {
+                        "x": 3,
+                        "y": 0,
+                        "model": "granary"
+                    },
+                    {
+                        "x": 4,
+                        "y": 0,
+                        "model": "shop"
+                    },
+                    {
+                        "x": 5,
+                        "y": 0,
+                        "model": "barracks"
+                    },
+                    {
+                        "x": 0,
+                        "y": 0,
+                        "model": "cathedral-sarenrae"
+                    },
+                    {
+                        "x": 2,
+                        "y": 1,
+                        "model": "house"
+                    },
+                    {
+                        "x": 3,
+                        "y": 1,
+                        "model": "tavern"
+                    },
+                    {
+                        "x": 4,
+                        "y": 1,
+                        "model": "house"
+                    },
+                    {
+                        "x": 5,
+                        "y": 1,
+                        "model": "sawmill"
+                    },
+                    {
+                        "x": 0,
+                        "y": 2,
+                        "model": "castle"
+                    },
+                    {
+                        "x": 2,
+                        "y": 2,
+                        "model": "shrine-sarenrae"
+                    },
+                    {
+                        "x": 3,
+                        "y": 2,
+                        "model": "monument",
+                        "name": "Statue de Talacos"
+                    },
+                    {
+                        "x": 4,
+                        "y": 2,
+                        "model": "inn",
+                        "name": "Auberge de l'Ours Hibou"
+                    },
+                    {
+                        "x": 5,
+                        "y": 2,
+                        "model": "mill"
+                    },
+                    {
+                        "x": 2,
+                        "y": 3,
+                        "model": "graveyard"
+                    },
+                    {
+                        "x": 3,
+                        "y": 3,
+                        "model": "park"
+                    },
+                    {
+                        "x": 4,
+                        "y": 3,
+                        "model": "house"
+                    },
+                    {
+                        "x": 5,
+                        "y": 3,
+                        "model": "brewery"
+                    },
+                    {
+                        "x": 0,
+                        "y": 4,
+                        "model": "exotic-craftsman"
+                    },
+                    {
+                        "x": 1,
+                        "y": 4,
+                        "model": "house"
+                    },
+                    {
+                        "x": 2,
+                        "y": 4,
+                        "vertical": true,
+                        "model": "town-hall"
+                    },
+                    {
+                        "x": 3,
+                        "y": 4,
+                        "model": "library"
+                    },
+                    {
+                        "x": 4,
+                        "y": 4,
+                        "model": "jail"
+                    },
+                    {
+                        "x": 5,
+                        "y": 4,
+                        "model": "pier"
+                    },
+                    {
+                        "x": 0,
+                        "y": 5,
+                        "model": "smith"
+                    },
+                    {
+                        "x": 1,
+                        "y": 5,
+                        "model": "smith"
+                    },
+                    {
+                        "x": 3,
+                        "y": 5,
+                        "model": "noble-villa"
+                    },
+                    {
+                        "x": 4,
+                        "y": 5,
+                        "model": "dump"
+                    },
+                    {
+                        "x": 5,
+                        "y": 5,
+                        "model": "weaver"
+                    },
+                    {
+                        "model": "city-wall"
+                    }
+                ]
+            }],
+            [{
+                "name": "Marché",
+                "south": {
+                    "type": "WATER",
+                    "name": "Lac de la Défense"
+                },
+                "west": {
+                    "type": "GRASS"
+                },
+                "north": {
+                    "type": "DISTRICT",
+                    "name": "Chateau"
+                },
+                "east": {
+                    "type": "WATER",
+                    "name": "Rivière Epine"
+                },
+                "buildings": [{
+                        "x": 0,
+                        "y": 0,
+                        "model": "garrison"
+                    },
+                    {
+                        "x": 0,
+                        "y": 1,
+                        "model": "temple-erastil"
+                    },
+                    {
+                        "x": 4,
+                        "y": 0,
+                        "model": "shrine-pharasma"
+                    },
+                    {
+                        "x": 5,
+                        "y": 0,
+                        "model": "embassy",
+                        "name": "Ambassade du Brévoy"
+                    },
+                    {
+                        "x": 2,
+                        "y": 0,
+                        "model": "herbalist"
+                    },
+                    {
+                        "x": 2,
+                        "y": 1,
+                        "model": "house"
+                    },
+                    {
+                        "x": 3,
+                        "y": 1,
+                        "model": "shrine-abadar"
+                    },
+                    {
+                        "x": 0,
+                        "y": 2,
+                        "model": "shrine-shelyn"
+                    },
+                    {
+                        "x": 1,
+                        "y": 2,
+                        "model": "shop"
+                    },
+                    {
+                        "x": 2,
+                        "y": 2,
+                        "model": "market"
+                    },
+                    {
+                        "x": 4,
+                        "y": 2,
+                        "model": "inn",
+                        "name": "Auberge du Marché"
+                    },
+                    {
+                        "x": 5,
+                        "y": 2,
+                        "model": "house"
+                    },
+                    {
+                        "x": 0,
+                        "y": 3,
+                        "model": "shop"
+                    },
+                    {
+                        "x": 1,
+                        "y": 3,
+                        "model": "house"
+                    },
+                    {
+                        "x": 2,
+                        "y": 3,
+                        "model": "house"
+                    },
+                    {
+                        "x": 3,
+                        "y": 3,
+                        "model": "house"
+                    },
+                    {
+                        "x": 4,
+                        "y": 3,
+                        "model": "shrine-calistria"
+                    },
+                    {
+                        "x": 4,
+                        "y": 4,
+                        "model": "waterfront"
+                    },
+                    {
+                        "model": "city-wall"
+                    }
+                ]
+            }]
+        ]
+    },
+    {
+        "name": "Olegbourg",
+        "districts": [
+            [{
+                "name": "Avant-Poste",
+                "south": {
+                    "type": "GRASS"
+                },
+                "west": {
+                    "type": "GRASS"
+                },
+                "north": {
+                    "type": "GRASS"
+                },
+                "east": {
+                    "type": "GRASS"
+                },
+                "buildings": [{
+                        "x": 0,
+                        "y": 2,
+                        "model": "temple-erastil"
+                    },
+                    {
+                        "x": 0,
+                        "y": 3,
+                        "model": "library"
+                    },
+                    {
+                        "x": 1,
+                        "y": 1,
+                        "model": "park"
+                    },
+                    {
+                        "x": 1,
+                        "y": 3,
+                        "model": "monument",
+                        "name": "Statue du Cerf"
+                    },
+                    {
+                        "x": 2,
+                        "y": 1,
+                        "model": "town-hall"
+                    },
+                    {
+                        "x": 2,
+                        "y": 2,
+                        "model": "house"
+                    },
+                    {
+                        "x": 3,
+                        "y": 2,
+                        "model": "stable"
+                    },
+                    {
+                        "x": 4,
+                        "y": 2,
+                        "model": "shrine-sarenrae"
+                    },
+                    {
+                        "x": 2,
+                        "y": 3,
+                        "model": "shop"
+                    },
+                    {
+                        "x": 3,
+                        "y": 3,
+                        "model": "watchtower"
+                    },
+                    {
+                        "x": 0,
+                        "y": 4,
+                        "model": "granary"
+                    },
+                    {
+                        "x": 1,
+                        "y": 4,
+                        "model": "house"
+                    },
+                    {
+                        "x": 2,
+                        "y": 4,
+                        "model": "house"
+                    },
+                    {
+                        "x": 3,
+                        "y": 4,
+                        "model": "inn"
+                    },
+                    {
+                        "x": 2,
+                        "y": 5,
+                        "model": "house"
+                    },
+                    {
+                        "x": 3,
+                        "y": 5,
+                        "model": "house"
+                    },
+                    {
+                        "model": "city-wall"
+                    }
+                ]
+            }]
+        ]
+    },
+    {
+        "name": "Akadomia",
+        "districts": [
+            [{
+                "name": "Akadomia",
+                "south": {
+                    "type": "GRASS"
+                },
+                "west": {
+                    "type": "GRASS"
+                },
+                "north": {
+                    "type": "GRASS"
+                },
+                "east": {
+                    "type": "GRASS"
+                },
+                "buildings": [{
+                        "x": 0,
+                        "y": 0,
+                        "model": "shrine-irori"
+                    },
+                    {
+                        "x": 1,
+                        "y": 0,
+                        "model": "library"
+                    },
+                    {
+                        "x": 2,
+                        "y": 0,
+                        "model": "house"
+                    },
+                    {
+                        "x": 3,
+                        "y": 0,
+                        "model": "house"
+                    },
+                    {
+                        "x": 2,
+                        "y": 1,
+                        "model": "magic-shop"
+                    },
+                    {
+                        "x": 0,
+                        "y": 2,
+                        "model": "garrison",
+                        "vertical": true
+                    },
+                    {
+                        "x": 1,
+                        "y": 2,
+                        "model": "house"
+                    },
+                    {
+                        "x": 2,
+                        "y": 2,
+                        "model": "academy-tower"
+                    },
+                    {
+                        "x": 4,
+                        "y": 2,
+                        "model": "granary"
+                    },
+                    {
+                        "x": 5,
+                        "y": 2,
+                        "model": "house"
+                    },
+                    {
+                        "x": 1,
+                        "y": 3,
+                        "model": "tavern"
+                    },
+                    {
+                        "x": 5,
+                        "y": 3,
+                        "model": "stable"
+                    },
+                    {
+                        "x": 1,
+                        "y": 4,
+                        "model": "shrine-cayden-cailean"
+                    },
+                    {
+                        "x": 2,
+                        "y": 4,
+                        "model": "shrine-nethys"
+                    },
+                    {
+                        "x": 3,
+                        "y": 4,
+                        "model": "shrine-sarenrae"
+                    },
+                    {
+                        "x": 4,
+                        "y": 4,
+                        "model": "house"
+                    },
+                    {
+                        "x": 5,
+                        "y": 4,
+                        "model": "inn"
+                    },
+                    {
+                        "x": 4,
+                        "y": 5,
+                        "model": "shop"
+                    },
+                    {
+                        "model": "city-wall"
+                    }
+                ]
+            }]
+        ]
+    },
+    {
+        "name": "Varnhold",
+        "districts": [
+            [{
+                "name": "Varnhold",
+                "south": {
+                    "type": "GRASS"
+                },
+                "west": {
+                    "type": "GRASS"
+                },
+                "north": {
+                    "type": "GRASS"
+                },
+                "east": {
+                    "type": "BRIDGE",
+                    "name": "Rivière Kiravoy"
+                },
+                "buildings": [{
+                        "x": 1,
+                        "y": 0,
+                        "model": "shrine-irori"
+                    },
+                    {
+                        "x": 2,
+                        "y": 0,
+                        "model": "house"
+                    },
+                    {
+                        "x": 3,
+                        "y": 0,
+                        "model": "house"
+                    },
+                    {
+                        "x": 4,
+                        "y": 0,
+                        "model": "house"
+                    },
+                    {
+                        "x": 5,
+                        "y": 0,
+                        "model": "house"
+                    },
+                    {
+                        "x": 1,
+                        "y": 1,
+                        "model": "park"
+                    },
+                    {
+                        "x": 2,
+                        "y": 1,
+                        "model": "granary"
+                    },
+                    {
+                        "x": 3,
+                        "y": 1,
+                        "model": "shop"
+                    },
+                    {
+                        "x": 4,
+                        "y": 1,
+                        "model": "smith"
+                    },
+                    {
+                        "x": 5,
+                        "y": 1,
+                        "model": "shop"
+                    },
+                    {
+                        "x": 0,
+                        "y": 2,
+                        "model": "castle"
+                    },
+                    {
+                        "x": 2,
+                        "y": 2,
+                        "model": "brewery"
+                    },
+                    {
+                        "x": 3,
+                        "y": 2,
+                        "model": "shop"
+                    },
+                    {
+                        "x": 2,
+                        "y": 3,
+                        "model": "inn"
+                    },
+                    {
+                        "x": 3,
+                        "y": 3,
+                        "model": "house"
+                    },
+                    {
+                        "x": 5,
+                        "y": 3,
+                        "model": "tannery"
+                    },
+                    {
+                        "x": 0,
+                        "y": 4,
+                        "model": "temple-erastil"
+                    },
+                    {
+                        "x": 2,
+                        "y": 4,
+                        "model": "exotic-craftsman"
+                    },
+                    {
+                        "x": 3,
+                        "y": 4,
+                        "model": "house"
+                    },
+                    {
+                        "x": 0,
+                        "y": 5,
+                        "model": "house"
+                    },
+                    {
+                        "x": 1,
+                        "y": 5,
+                        "model": "house"
+                    },
+                    {
+                        "x": 2,
+                        "y": 5,
+                        "model": "monument",
+                        "name": "Statue de la Victoire sur Vordakoi"
+                    },
+                    {
+                        "x": 3,
+                        "y": 5,
+                        "model": "stable"
+                    },
+                    {
+                        "x": 4,
+                        "y": 4,
+                        "model": "temple-sarenrae"
+                    },
+                    {
+                        "x": 4,
+                        "y": 5,
+                        "model": "library"
+                    },
+                    {
+                        "x": 5,
+                        "y": 5,
+                        "model": "graveyard"
+                    },
+                    {
+                        "model": "city-wall"
+                    }
+                ]
+            }]
+        ]
+    },
+    {
+        "name": "Drelev",
+        "districts": [
+            [{
+                "name": "Drelev",
+                "south": {
+                    "type": "WATER"
+                },
+                "west": {
+                    "type": "GRASS"
+                },
+                "north": {
+                    "type": "GRASS"
+                },
+                "east": {
+                    "type": "WATER"
+                },
+                "buildings": [{
+                        "model": "city-wall"
+                    },
+                    {
+                        "x": 0,
+                        "y": 0,
+                        "model": "castle"
+                    },
+                    {
+                        "x": 2,
+                        "y": 0,
+                        "model": "smith"
+                    },
+                    {
+                        "x": 3,
+                        "y": 0,
+                        "model": "house"
+                    },
+                    {
+                        "x": 4,
+                        "y": 0,
+                        "model": "temple-irori"
+                    },
+                    {
+                        "x": 2,
+                        "y": 1,
+                        "model": "shop"
+                    },
+                    {
+                        "x": 3,
+                        "y": 1,
+                        "model": "house"
+                    },
+                    {
+                        "x": 4,
+                        "y": 1,
+                        "model": "garrison"
+                    },
+                    {
+                        "x": 2,
+                        "y": 2,
+                        "model": "stable"
+                    },
+                    {
+                        "x": 3,
+                        "y": 2,
+                        "model": "town-hall",
+                        "vertical": true
+                    },
+                    {
+                        "x": 4,
+                        "y": 2,
+                        "model": "temple-sarenrae"
+                    },
+                    {
+                        "x": 0,
+                        "y": 2,
+                        "model": "watchtower"
+                    },
+                    {
+                        "x": 1,
+                        "y": 2,
+                        "model": "granary"
+                    },
+                    {
+                        "x": 0,
+                        "y": 3,
+                        "model": "temple-erastil"
+                    },
+                    {
+                        "x": 2,
+                        "y": 3,
+                        "model": "house"
+                    },
+                    {
+                        "x": 4,
+                        "y": 3,
+                        "model": "barracks"
+                    },
+                    {
+                        "x": 5,
+                        "y": 3,
+                        "model": "jail"
+                    },
+                    {
+                        "x": 0,
+                        "y": 4,
+                        "model": "herbalist"
+                    },
+                    {
+                        "x": 1,
+                        "y": 4,
+                        "model": "house"
+                    },
+                    {
+                        "x": 2,
+                        "y": 4,
+                        "model": "library"
+                    },
+                    {
+                        "x": 3,
+                        "y": 4,
+                        "model": "house"
+                    },
+                    {
+                        "x": 4,
+                        "y": 4,
+                        "model": "house"
+                    },
+                    {
+                        "x": 5,
+                        "y": 4,
+                        "model": "house"
+                    },
+                    {
+                        "x": 0,
+                        "y": 5,
+                        "model": "shrine-calistria"
+                    },
+                    {
+                        "x": 1,
+                        "y": 5,
+                        "model": "brothel"
+                    },
+                    {
+                        "x": 2,
+                        "y": 5,
+                        "model": "pier"
+                    },
+                    {
+                        "x": 3,
+                        "y": 5,
+                        "model": "inn"
+                    },
+                    {
+                        "x": 4,
+                        "y": 5,
+                        "model": "tavern"
+                    },
+                    {
+                        "x": 5,
+                        "y": 5,
+                        "model": "shop"
+                    }
+                ]
+            }]
+        ]
+    },
+    {
+        "name": "Guet de Tazl",
+        "districts": [
+            [{
+                    "name": "Quartier du Temple",
+                    "south": {
+                        "type": "GRASS"
+                    },
+                    "west": {
+                        "type": "GRASS"
+                    },
+                    "north": {
+                        "type": "GRASS"
+                    },
+                    "east": {
+                        "type": "DISTRICT"
+                    },
+                    "buildings": [{
+                            "x": 4,
+                            "y": 0,
+                            "model": "temple-erastil"
+                        },
+                        {
+                            "x": 5,
+                            "y": 4,
+                            "model": "inn"
+                        },
+                        {
+                            "x": 5,
+                            "y": 5,
+                            "model": "house"
+                        },
+                        {
+                            "model": "city-wall"
+                        }
+                    ]
+                },
+                {
+                    "name": "Guet de Tazl",
+                    "south": {
+                        "type": "GRASS"
+                    },
+                    "west": {
+                        "type": "BRIDGE",
+                        "name": "Rivière de la Mouflette"
+                    },
+                    "north": {
+                        "type": "GRASS"
+                    },
+                    "east": {
+                        "type": "GRASS"
+                    },
+                    "buildings": [{
+                            "x": 3,
+                            "y": 0,
+                            "model": "smith"
+                        },
+                        {
+                            "x": 4,
+                            "y": 0,
+                            "model": "brewery"
+                        },
+                        {
+                            "x": 5,
+                            "y": 0,
+                            "model": "granary"
+                        },
+                        {
+                            "x": 2,
+                            "y": 1,
+                            "model": "shop"
+                        },
+                        {
+                            "x": 3,
+                            "y": 1,
+                            "model": "house"
+                        },
+                        {
+                            "x": 4,
+                            "y": 1,
+                            "model": "tavern"
+                        },
+                        {
+                            "x": 5,
+                            "y": 1,
+                            "model": "house"
+                        },
+                        {
+                            "x": 1,
+                            "y": 2,
+                            "model": "exotic-craftsman",
+                            "name": "Bijoutier"
+                        },
+                        {
+                            "x": 3,
+                            "y": 2,
+                            "model": "town-hall",
+                            "vertical": true
+                        },
+                        {
+                            "x": 4,
+                            "y": 2,
+                            "model": "library"
+                        },
+                        {
+                            "x": 1,
+                            "y": 3,
+                            "model": "house"
+                        },
+                        {
+                            "x": 4,
+                            "y": 3,
+                            "model": "house"
+                        },
+                        {
+                            "x": 0,
+                            "y": 4,
+                            "model": "tannery"
+                        },
+                        {
+                            "model": "city-wall"
+                        }
+                    ]
+                }
+            ]
+        ]
+    }
+]

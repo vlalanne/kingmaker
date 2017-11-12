@@ -1,0 +1,6 @@
+<ul class="nav nav-pills" *ngIf="$cities | async; let cities">
+    <li role="presentation" *ngFor="let city of cities"><a [routerLink]="city">{{city}}</a></li>
+</ul>
+<div id="router">
+    <router-outlet></router-outlet>
+</div>

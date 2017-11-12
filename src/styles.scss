@@ -1,0 +1,49 @@
+/* You can add global styles to this file, and also import other style files */
+
+@font-face {
+    font-family: parrishRoman;
+    src: url(p22-parrish-roman.ttf);
+}
+
+.map-icon {
+    background: transparent;
+    color: white;
+    font-family: parrishRoman;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+    font-size: 1em;
+    margin-left: -2.5em !important;
+    width: 5em !important;
+    text-align: center;
+    &.city-text {
+        line-height: 2em;
+        margin-left: 1em !important;
+        margin-top: -1em !important;
+        width: max-content !important;
+    }
+    &.kingdom-text {
+        font-size: 2em;
+        margin-left: 0 !important;
+        margin-top: 0 !important;
+        width: max-content !important;
+    }
+}
+
+.element-icon {
+    margin-top: -3em !important;
+    height: auto !important;
+}
+
+.element-icon img {
+    height: 4em;
+    width: 4em;
+    align-self: center;
+}
+
+.icon {
+    border-radius: 50%;
+    border: goldenrod ridge 3px;
+}
+
+router-outlet {
+    display: none;
+}

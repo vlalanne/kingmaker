@@ -1,0 +1,19 @@
+<div *ngIf="district.north.type != 'DISTRICT'" class="north {{district.north.type | lowercase}}">
+    {{district.north.name}}
+</div>
+<div *ngIf="district.west.type!='DISTRICT'" class="west {{district.west.type | lowercase}}">
+    <span>{{district.west.name}}</span>
+</div>
+<div class=" buildings" [class.wall]="hasWall()" [class.waterWest]="district.west.type === 'WATER'" [class.waterNorth]="district.north.type === 'WATER'" [class.waterEast]="district.east.type === 'WATER'" [class.waterSouth]="district.south.type === 'WATER'">
+    <h3 class="watermark">{{district.name}}</h3>
+    <ng-container *ngFor="let building of district.buildings">
+        <app-building *ngIf="building.model !== 'city-wall'" [building]="building" [ngStyle]="getStyle(building)">
+        </app-building>
+    </ng-container>
+</div>
+<div *ngIf="district.east.type!='DISTRICT'" class="east {{district.east.type | lowercase}}">
+    <span>{{district.east.name}}</span>
+</div>
+<div *ngIf="district.south.type!='DISTRICT'" class="south {{district.south.type | lowercase}}">
+    {{district.south.name}}
+</div>
