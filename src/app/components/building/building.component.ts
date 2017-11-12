@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
 import { Building, BuildingModel } from '../../models';
-import { BuildingsService, TranslationService } from '../../services';
+import { BuildingsService } from '../../services';
 
 @Component({
     selector: 'app-building',
@@ -15,7 +14,7 @@ export class BuildingComponent implements OnInit {
     model: BuildingModel;
     label: string;
 
-    constructor(private buildingsService: BuildingsService, private translationService: TranslationService) { }
+    constructor(private buildingsService: BuildingsService) { }
 
     ngOnInit() {
         this.model = this.buildingsService.getModel(this.building.model);

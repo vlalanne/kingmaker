@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers, RequestOptions } from '@angular/http';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { SPREADSHEET_ID, API_KEY } from './google.config';
 import 'rxjs/add/operator/mergeMap';

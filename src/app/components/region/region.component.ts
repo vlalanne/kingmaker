@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, AfterViewInit, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { KingdomsService } from '../../services';
 import { Hex } from '../../models';
