@@ -11,4 +11,5 @@ export interface Hex {
     guardTower?: boolean;
     pointOfInterest?: PointOfInterest;
     roads?: boolean;
+    pillaged?: boolean;
 }

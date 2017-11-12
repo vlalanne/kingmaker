@@ -130,5 +130,7 @@
     "farm": "Ferme",
     "fishery": "Port de pèche",
     "lumberjack": "Bucheron",
-    "monastery": "Monastère"
+    "monastery": "Monastère",
+    "pillaged": "Dévasté",
+    "tower_round": "Tour de guet"
 }

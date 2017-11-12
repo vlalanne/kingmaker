@@ -130,5 +130,7 @@
     "farm": "Farm",
     "fishery": "Fishery",
     "lumberjack": "Lumberjack",
-    "monastery": "Monastery"
+    "monastery": "Monastery",
+    "pillaged": "Pillaged",
+    "tower_round": "Watchtower"
 }
