@@ -26,17 +26,21 @@
         margin-top: 0 !important;
         width: max-content !important;
     }
-}
-
-.element-icon {
-    margin-top: -3em !important;
-    height: auto !important;
-}
-
-.element-icon img {
-    height: 4em;
-    width: 4em;
-    align-self: center;
+    &.element-icon {
+        margin-top: -3em !important;
+        height: auto !important;
+        img {
+            height: 4em;
+            width: 4em;
+            align-self: center;
+        }
+        &.pillaged {
+            margin-top: -2em !important;
+            img {
+                height: auto;
+            }
+        }
+    }
 }
 
 .icon {

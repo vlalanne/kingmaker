@@ -21,7 +21,7 @@
     "medium": "Intermédiare",
     "major": "Majeur",
     "no-building": "Pas de Bâtiment",
-    "academy-tower": "Academie avec Tour de Mage",
+    "academy-tower": "Académie avec Tour de Mage",
     "academy": "Académie",
     "alchemist": "Alchimiste",
     "all-seeing-eye": "OEil qui Voit Tout",
@@ -130,5 +130,7 @@
     "farm": "Ferme",
     "fishery": "Port de pèche",
     "lumberjack": "Bucheron",
-    "monastery": "Monastère"
+    "monastery": "Monastère",
+    "pillaged": "Dévasté",
+    "tower_round": "Tour de guet"
 }

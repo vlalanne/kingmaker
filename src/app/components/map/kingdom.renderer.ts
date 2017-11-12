@@ -105,6 +105,10 @@ export class KingdomRenderer {
         } else {
             this.paintCountryside(hex);
         }
+        if (hex.pillaged) {
+
+            this.paintResource('pillaged', this.computePoint(hex, 0, 2 / 3));
+        }
     }
 
     paintCity(hex: Hex) {
@@ -123,7 +127,7 @@ export class KingdomRenderer {
             const buildingPlots = this.getBuildingPlots(hex, nbOfElement);
             let index = 0;
             if (hex.resource) {
-                this.paintResource(hex, buildingPlots[index]);
+                this.paintResource(hex.resource, buildingPlots[index]);
                 index++;
             }
             if (hex.guardTower) {
@@ -137,20 +141,16 @@ export class KingdomRenderer {
         }
     }
 
-    paintResource(hex: Hex, point) {
-        const resource = L.divIcon({
-            html: `<img src='assets/img/map/${hex.resource}.svg' title='${this.translationService.getMessage(hex.resource)}' >`,
-            className: 'element-icon map-icon'
+    paintResource(resource: string, point) {
+        const icon = L.divIcon({
+            html: `<img src='assets/img/map/${resource}.svg' title='${this.translationService.getMessage(resource)}' >`,
+            className: `element-icon map-icon ${resource}`
         });
-        L.marker(point, { icon: resource }).addTo(this.map);
+        L.marker(point, { icon }).addTo(this.map);
     }
 
     paintGuardTower(hex: Hex, point) {
-        const tower = L.divIcon({
-            html: '<img src="assets/img/map/tower_round.svg" >',
-            className: 'element-icon map-icon'
-        });
-        L.marker(point, { icon: tower }).addTo(this.map);
+        this.paintResource('tower_round', point);
     }
 
     paintPointOfInterest(pointOfInterest: PointOfInterest, point) {

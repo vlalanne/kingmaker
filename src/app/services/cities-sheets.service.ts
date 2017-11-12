@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 
 import { Border, Building, City, District } from '../models';
@@ -141,6 +140,8 @@ export class CitiesSheetsService extends CitiesService {
         const lowercase = value.toLowerCase();
         if (this.map.hasOwnProperty(lowercase)) {
             return [this.map[lowercase]];
+        } else if (lowercase.includes('académie')) {
+            return ['academy', this.getName(value, 'académie')];
         } else if (lowercase.includes('académie')) {
             return ['academy', this.getName(value, 'académie')];
         } else if (lowercase.includes('maison')) {

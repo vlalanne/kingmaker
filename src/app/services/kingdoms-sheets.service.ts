@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/catch';
@@ -18,15 +17,15 @@ export class KingdomsSheetService extends KingdomsService {
     }
 
     getKingdoms(): Observable<Kingdom[]> {
-        return Observable.combineLatest(this.sheets.getValues('Royaume', 'B3', 'N114'),
-            this.sheets.getValues('Royaumes Voisins', 'A2', 'E')
+        return Observable.combineLatest(this.sheets.getValues('Royaume', 'B3', 'O114'),
+            this.sheets.getValues('Royaumes Voisins', 'A2', 'F')
         )
-            .map(values => {
+            .map(([own, neighbors]) => {
                 const kingdoms = {};
-                kingdoms[values[0][0][0]] = values[0].splice(1, 114).map(x => x.splice(9, 12));
-                values[1].reduce((map, value) => {
+                kingdoms[own[0][0]] = own.splice(1, 114).map(x => x.splice(9, 13));
+                neighbors.reduce((map, value) => {
                     const array = map[value[0]] || [];
-                    array.push(value.slice(1, 5));
+                    array.push(value.slice(1, 6));
                     map[value[0]] = array;
                     return map;
                 }, kingdoms);
@@ -60,7 +59,8 @@ export class KingdomsSheetService extends KingdomsService {
             pointOfInterest,
             guardTower: value[2] && value[2].toLowerCase() === 'tour de guet',
             roads: !!value[3],
-            resource: this.toResource(value[2])
+            resource: this.toResource(value[2]),
+            pillaged: 'OK' === value[4]
         } as Hex;
 
     }
