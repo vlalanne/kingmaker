@@ -1,37 +1,26 @@
-<div class="container-fluid">
-  <div class="row">
-    <h3><img class="icon" src="{{building.icon}}"> {{label}} </h3>
-    <div class="col-sm-4">
-      <label>{{economy}}</label><span>{{building.economy}}</span>
-    </div>
-    <div class="col-sm-4">
-      <label>{{loyalty}}</label><span>{{building.loyalty}}</span>
-    </div>
-    <div class="col-sm-4">
-      <label>{{stability}}</label><span>{{building.stability}}</span>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-4">
-      <label>{{defence}}</label><span>{{building.defence}}</span>
-    </div>
-    <div class="col-sm-4">
-      <label>{{value}}</label><span>{{building.value}}</span>
-    </div>
-    <div class="col-sm-4">
-      <label>{{price}}</label><span>{{building.price}}</span>
-    </div>
-  </div>
-  <h4>{{magicObjects}}</h4>
-  <div class="row">
-    <div class="col-sm-4">
-      <label>{{minor}}</label><span>{{building.minorMagicObject}}</span>
-    </div>
-    <div class="col-sm-4">
-      <label>{{medium}}</label><span>{{building.mediumMagicObject}}</span>
-    </div>
-    <div class="col-sm-4">
-      <label>{{major}}</label><span>{{building.majorMagicObject}}</span>
-    </div>
-  </div>
-</div>
+<h3>
+    <img class="icon" src="{{building.icon}}"> {{label}}
+</h3>
+<dl>
+    <dt>{{economy}}</dt>
+    <dd>{{building.economy}}</dd>
+    <dt>{{loyalty}}</dt>
+    <dd>{{building.loyalty}}</dd>
+    <dt>{{stability}}</dt>
+    <dd>{{building.stability}}</dd>
+    <dt>{{defence}}</dt>
+    <dd>{{building.defence}}</dd>
+    <dt>{{value}}</dt>
+    <dd>{{building.value}}</dd>
+    <dt>{{price}}</dt>
+    <dd>{{building.price}}</dd>
+</dl>
+<h4>{{magicObjects}}</h4>
+<dl>
+    <dt>{{minor}}</dt>
+    <dd>{{building.minorMagicObject}}</dd>
+    <dt>{{medium}}</dt>
+    <dd>{{building.mediumMagicObject}}</dd>
+    <dt>{{major}}</dt>
+    <dd>{{building.majorMagicObject}}</dd>
+</dl>

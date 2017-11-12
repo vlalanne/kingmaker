@@ -1,25 +1,17 @@
-label::after {
-    content: ':';
-}
-
-label {
-    padding-right: 1em;
-}
-
-.image {
-    height: 10em;
-    border-radius: 5%;
-    border: goldenrod ridge 5px;
-    margin-right: 2%;
-    float: left;
-}
-
-h3 {
-    margin: 0;
-}
-
-.main {
-    width: 100%;
-    height: auto;
-    padding: 0;
+:host {
+    h3 {
+        margin: 0;
+    }
+    dl {
+        margin: auto;
+        display: grid;
+        grid-gap: .5em;
+        grid-template-columns: repeat(6, 1fr);
+        dt {
+            padding-right: 1em;
+            &::after {
+                content: ':';
+            }
+        }
+    }
 }

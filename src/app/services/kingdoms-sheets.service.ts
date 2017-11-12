@@ -5,7 +5,7 @@ import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/combineLatest';
 
-import { Hex, Kingdom } from '../models';
+import { Hex, Kingdom, PointOfInterest, PointOfInterestType } from '../models';
 import { SheetsApiService } from './sheets-api.service';
 import { KingdomsService } from './kingdoms.service';
 
@@ -49,22 +49,53 @@ export class KingdomsSheetService extends KingdomsService {
 
     private toHex(value: string[]): Hex {
         const coordinates = value[0].split(';');
-        const isCity = value[2] && value[2].toLocaleLowerCase() === 'ville';
+        const isCity = value[2] && value[2].toLowerCase() === 'ville';
+        const text = value[1];
+        const pointOfInterest: PointOfInterest = isCity || text.length === 0 || text === '-' || text.toLowerCase() === 'forêt' ? undefined :
+            { name: text, type: this.toPointOfInterestType(text) };
         return {
             x: parseInt(coordinates[0], 10),
             y: parseInt(coordinates[1], 10),
-            city: isCity && value[1],
-            pointOfInterest: !isCity && value[1] !== '-' && value[1].toLocaleLowerCase() !== 'forêt' && value[1],
-            guardTower: value[2] && value[2].toLocaleLowerCase() === 'tour de guet',
+            city: isCity && text,
+            pointOfInterest,
+            guardTower: value[2] && value[2].toLowerCase() === 'tour de guet',
             roads: !!value[3],
             resource: this.toResource(value[2])
         } as Hex;
 
     }
 
+
+
+    private toPointOfInterestType(name: string): PointOfInterestType {
+        const lowerCase = name.toLowerCase();
+        if (lowerCase.includes('statue')) {
+            return 'statue';
+        } else if (lowerCase.includes('grotte')
+            || lowerCase.includes('tertre')) {
+            return 'cave';
+        } else if (lowerCase.includes('pierre')
+            || lowerCase.includes('tomb')) {
+            return 'obelisk';
+        } else if (lowerCase.includes('festival')) {
+            return 'tent';
+        } else if (lowerCase.includes('chuuls')
+            || lowerCase.includes('homme')
+            || lowerCase.includes('loup')) {
+            return 'animal';
+        } else if (lowerCase.includes('fée')
+            || lowerCase.includes('vallée')) {
+            return 'magic';
+        } else if (lowerCase.includes('bac')) {
+            return 'bridge';
+        } else {
+            return 'ruins';
+        }
+    }
+
     private toResource(value: string): string {
         if (value) {
-            switch (value.toLocaleLowerCase().trim()) {
+            switch (value.toLowerCase().trim()) {
                 case 'argent':
                 case 'mine':
                 case 'or':

@@ -126,5 +126,9 @@
     "watchtower": "Watchtower",
     "waterfront": "Waterfront",
     "weaver": "Weaver",
-    "winemaker": "Winemaker"
+    "winemaker": "Winemaker",
+    "farm": "Farm",
+    "fishery": "Fishery",
+    "lumberjack": "Lumberjack",
+    "monastery": "Monastery"
 }

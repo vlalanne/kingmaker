@@ -1,6 +1,6 @@
 import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
-import { KingdomsService } from '../../services';
+import { KingdomsService, TranslationService } from '../../services';
 import { KingdomRenderer } from './kingdom.renderer';
 import { WIDTH, HEIGHT, HEX_WIDTH, HEX_HEIGHT, EVEN_X_OFFSET, ODD_X_OFFSET, Y_OFFSET } from './map.constants';
 
@@ -12,7 +12,10 @@ import { WIDTH, HEIGHT, HEX_WIDTH, HEX_HEIGHT, EVEN_X_OFFSET, ODD_X_OFFSET, Y_OF
 })
 export class MapComponent implements AfterViewInit {
 
-    constructor(private kingdomsService: KingdomsService, private router: Router, private host: ElementRef) { }
+    constructor(private kingdomsService: KingdomsService,
+        private router: Router,
+        private translationService: TranslationService,
+        private host: ElementRef) { }
     ngAfterViewInit() {
         const map = L.map(this.host.nativeElement, {
             minZoom: 18,
@@ -42,7 +45,7 @@ export class MapComponent implements AfterViewInit {
 
         this.kingdomsService
             .getKingdoms()
-            .subscribe(x => new KingdomRenderer(this.router, map).paintKingdoms(x));
+            .subscribe(x => new KingdomRenderer(this.router, map, this.translationService).paintKingdoms(x));
 
     }
 

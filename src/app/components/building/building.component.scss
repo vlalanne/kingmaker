@@ -11,15 +11,28 @@
     }
     position: relative;
     .detail {
+        position: relative;
         top: 100%;
-        text-align: initial;
-        height: max-content;
-        width: 30em;
         background-color: white;
         padding: .5em;
         position: absolute;
         z-index: 100;
         border: black solid 1px;
+        border-radius: .5em;
+        &::before {
+            content: '';
+            position: absolute;
+            top: -.5em;
+            left: 1em;
+            z-index: 0;
+            width: 1em;
+            height: 1em;
+            background: linear-gradient(45deg, white, white 50%, transparent 0) no-repeat;
+            border: 1px solid transparent;
+            border-left-color: black;
+            border-bottom-color: black;
+            transform: rotate(135deg)
+        }
     }
     &:not(:hover) .detail {
         display: none;

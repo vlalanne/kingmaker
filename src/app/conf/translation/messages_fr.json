@@ -126,5 +126,9 @@
     "watchtower": "Tour de Garde",
     "waterfront": "Front de Mer",
     "weaver": "Tisserand",
-    "winemaker": "Fabrique de Vin"
+    "winemaker": "Fabrique de Vin",
+    "farm": "Ferme",
+    "fishery": "Port de pèche",
+    "lumberjack": "Bucheron",
+    "monastery": "Monastère"
 }
